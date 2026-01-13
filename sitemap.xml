@@ -2,22 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bmeaut.github.io/mkdocs-course-materials-template/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://bmeaut.github.io/mkdocs-course-materials-template/homework/01-hw/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://bmeaut.github.io/mkdocs-course-materials-template/information/contributing/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://bmeaut.github.io/mkdocs-course-materials-template/lecture-notes/01-topic/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/seminar/01-test/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/seminar/00%20-%20Adatb%C3%A1zis%20alapok/00%20-%20Adatbazisok%20ismetles/</loc>
+         <lastmod>2026-01-13</lastmod>
+    </url>
+    <url>
+         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/seminar/01%20-%20Tervezes/01%20-%20Tervezes/</loc>
+         <lastmod>2026-01-13</lastmod>
+    </url>
+    <url>
+         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/seminar/02%20-%20Projekt%20struktura/02%20-%20Projekt%20struktura%20es%20adatmodell/</loc>
+         <lastmod>2026-01-13</lastmod>
     </url>
 </urlset>
