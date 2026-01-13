@@ -7,27 +7,31 @@
         <meta name="author" content="Gábor Gincsai">
       
       
-        <link rel="canonical" href="https://bmeaut.github.io/mkdocs-course-materials-template/seminar/02%20-%20Projekt%20struktura/02%20-%20Projekt%20struktura%20es%20adatmodell/">
+        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/02%20-%20Projekt%20struktura/">
       
       
+        <link rel="prev" href="../01%20-%20Tervezes/">
+      
+      
+        <link rel="next" href="../../homework/01-hw/">
       
       
         
       
       
-      <link rel="icon" href="../../../favicon.ico">
+      <link rel="icon" href="../../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Project struktúra és adatmodell - VIAUJV83 - Webportálok fejlesztése</title>
+        <title>2. Project struktúra és adatmodell - VIAUJV83 - Webportálok fejlesztése</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -46,17 +50,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../extra-material-theme.css">
+      <link rel="stylesheet" href="../../extra-material-theme.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -85,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#project-struktura-es-adatmodell" class="md-skip">
+        <a href="#2-project-struktura-es-adatmodell" class="md-skip">
           Kihagyás
         </a>
       
@@ -99,9 +103,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Élőfej">
-    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../../logo-bme-aut.png" alt="logo">
+  <img src="../../logo-bme-aut.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -118,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Project struktúra és adatmodell
+              2. Project struktúra és adatmodell
             
           </span>
         </div>
@@ -200,13 +204,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/bmeaut/mkdocs-course-materials-template" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+        <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
-    bmeaut/mkdocs-course-materials-template
+    webportalok
   </div>
 </a>
       </div>
@@ -231,7 +235,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -252,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../information/contributing/" class="md-tabs__link">
+        <a href="../../information/contributing/" class="md-tabs__link">
           
   
   
@@ -268,11 +272,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../01-test/index.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../00%20-%20Adatb%C3%A1zis%20alapok/" class="md-tabs__link">
           
   
   
@@ -292,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../homework/01-hw/" class="md-tabs__link">
+        <a href="../../homework/01-hw/" class="md-tabs__link">
           
   
   
@@ -312,7 +318,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../lecture-notes/01-topic/" class="md-tabs__link">
+        <a href="../../lecture-notes/01-topic/" class="md-tabs__link">
           
   
   
@@ -346,22 +352,22 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../../logo-bme-aut.png" alt="logo">
+  <img src="../../logo-bme-aut.png" alt="logo">
 
     </a>
     VIAUJV83 - Webportálok fejlesztése
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/bmeaut/mkdocs-course-materials-template" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+      <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
-    bmeaut/mkdocs-course-materials-template
+    webportalok
   </div>
 </a>
     </div>
@@ -375,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -452,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../information/contributing/" class="md-nav__link">
+      <a href="../../information/contributing/" class="md-nav__link">
         
   
   
@@ -484,24 +490,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -519,7 +530,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -537,14 +548,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-test/index.md" class="md-nav__link">
+      <a href="../00%20-%20Adatb%C3%A1zis%20alapok/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    MS SQL ADATBÁZIS ÉS EF ALAPOK
   
 
     
@@ -553,6 +564,265 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01%20-%20Tervezes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tervezés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Project struktúra és adatmodell
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Project struktúra és adatmodell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architektura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architektúra
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architektúra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-oldali-rendereles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server oldali renderelés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kliens-oldali-rendereles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kliens oldali renderelés
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kozos-backend-resz-kialakitasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Közös backend rész kialakítása
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Közös backend rész kialakítása">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-access-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Access Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Access Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db-diagram-keszitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB diagram készítése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kezdeti-adatfeltoltes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kezdeti adatfeltöltés
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dto-k-keszitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DTO-k készítése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bll-service-ek-megvalositasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BLL service-ek megvalósítása
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BLL service-ek megvalósítása">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AutoMapper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#console-app-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console App létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teljes-dal-reteg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teljes DAL réteg
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -622,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homework/01-hw/" class="md-nav__link">
+      <a href="../../homework/01-hw/" class="md-nav__link">
         
   
   
@@ -707,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lecture-notes/01-topic/" class="md-nav__link">
+      <a href="../../lecture-notes/01-topic/" class="md-nav__link">
         
   
   
@@ -774,10 +1044,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#server-oldali-rendereles-eseten" class="md-nav__link">
+  <a href="#server-oldali-rendereles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Server oldali renderelés esetén
+        Server oldali renderelés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kliens-oldali-rendereles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kliens oldali renderelés
       
     </span>
   </a>
@@ -786,17 +1067,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kliens-oldali-rendereles-eseten" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kliens oldali renderelés esetén
-      
-    </span>
-  </a>
   
 </li>
       
@@ -813,21 +1083,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#data-access-layer-megvalositasa" class="md-nav__link">
+  <a href="#data-access-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Access Layer megvalósítása
+        Data Access Layer
       
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Data Access Layer">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adatbazis-model-diagram-keszitese" class="md-nav__link">
+  <a href="#db-diagram-keszitese" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adatbázis model diagram készítése
+        DB diagram készítése
       
     </span>
   </a>
@@ -849,57 +1120,35 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#boohshoptransfer-dto-k-keszitese" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#dto-k-keszitese" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BoohShop.Transfer - DTO-k készítése
+        DTO-k készítése
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#bll-service-ek-megvalositasa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bll service-ek megvalósítása
+        BLL service-ek megvalósítása
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Bll service-ek megvalósítása">
+    <nav class="md-nav" aria-label="BLL service-ek megvalósítása">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#automapper" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automapper
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#console-app-letrehozasa-mint-ui-reteg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Console App létrehozása mint UI réteg
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#teljes-dal-reteg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Teljes DAL réteg
+        AutoMapper
       
     </span>
   </a>
@@ -908,6 +1157,33 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#console-app-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console App létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teljes-dal-reteg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teljes DAL réteg
+      
+    </span>
+  </a>
   
 </li>
       
@@ -928,7 +1204,7 @@
 
 
   
-    <a href="https://github.com/bmeaut/mkdocs-course-materials-template/edit/master/docs/seminar/02 - Projekt struktura/02 - Projekt struktura es adatmodell.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/02 - Projekt struktura/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -936,32 +1212,46 @@
   
 
 
-<h1 id="project-struktura-es-adatmodell">Project struktúra és adatmodell<a class="headerlink" href="#project-struktura-es-adatmodell" title="Permanent link">¶</a></h1>
+<h1 id="2-project-struktura-es-adatmodell">2. Project struktúra és adatmodell<a class="headerlink" href="#2-project-struktura-es-adatmodell" title="Permanent link">¶</a></h1>
 <h2 id="architektura">Architektúra<a class="headerlink" href="#architektura" title="Permanent link">¶</a></h2>
 <p>Az alkalmazást klasszikus többrétegű architektúrában valósítjuk meg.</p>
 <ul>
-<li><strong>UI</strong>: A felhasználói felültet magába foglaló réteg. Attól függ, hogy milyen technológiát választunk.  </li>
-<li>ASP.NET MVC és Razor page esetén (szerver oldali renderelés) a kontrét HTML olalt jelenti.</li>
-<li>Blazor esetén (kliend oldali renderelés) a kliens oldali kódot jelenti, de ilyen esetben megjelenik egy Web API réteg is, amit HTTP-n keresztül a kliens tud hívni.</li>
-<li><strong>Business Logic (Bll)</strong>: Az alkalmazás üzleti logikai rétege. Ez a réteg kérdezi le EF segítségével az adatokat az adatbázisból és adja vissza a hívó rétegnek az adatokat miután DTO-kra konvertálta.</li>
-<li><strong>Data Access (Dal)</strong>: Az adatbázis Entity Framework rétegét tartalmazza. Itt találjatók az adatbázis entitások, a DbContext és migrációk.</li>
+<li><strong>UI</strong>: A felhasználói felültet magába foglaló réteg. Attól függ, hogy milyen technológiát választunk.  <ul>
+<li>ASP.NET MVC és Razor page esetén (szerver oldali renderelés) a konkrét HTML oldalt jelenti.</li>
+<li>Blazor esetén (kliens oldali renderelés) a kliens oldali kódot jelenti, de ilyen esetben megjelenik egy Web API réteg is, amit HTTP-n keresztül a kliens tud hívni.</li>
 </ul>
-<h3 id="server-oldali-rendereles-eseten">Server oldali renderelés esetén<a class="headerlink" href="#server-oldali-rendereles-eseten" title="Permanent link">¶</a></h3>
+</li>
+<li><strong>Business Logic (BLL)</strong>: Az alkalmazás üzleti logikai rétegbe. Ez a réteg kérdezi le EF segítségével az adatokat az  adatbázisból és adja vissza a hívó rétegnek az adatokat miután DTO-kra konvertálta.</li>
+<li><strong>Data Access (DAL)</strong>: Az adatbázis Entity Framework rétegét tartalmazza. Itt találhatók az adatbázis entitások, a DbContext és migrációk.</li>
+</ul>
+<h3 id="server-oldali-rendereles">Server oldali renderelés<a class="headerlink" href="#server-oldali-rendereles" title="Permanent link">¶</a></h3>
 <p>ASP.NET MVC vagy Razor Page esetén a szerver állítja elő a HTML tartalmat, amit a böngészőnek csak meg kell jeleníteni. Ilyen esetben kliens oldalon minimális JavaScript kód található.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Bookshop_architektura_server.png" data-desc-position="bottom"><img alt="Szerver architektúra" src="../images/Bookshop_architektura_server.png"></a></p>
-<p>Mint a fenti ábrán is látható, nincs érdemi Frontend kód, hiszen a kliens oldalra HTML kód kerül leküldésre, amit csak meg kell jeleníteni. A kliens oldali interációkhoz nincs sepiális támogatás, azt csak JavaScript segítségével tudjuk megvalósítani.
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Bookshop_architektura_server.png" data-desc-position="bottom"><img alt="Szerver architektúra" src="images/Bookshop_architektura_server.png"></a></p>
+<figcaption>
+<p>Szerver oldali renderelés architektúrája</p>
+</figcaption>
+</figure>
+<p>Mint a fenti ábrán is látható, nincs érdemi Frontend kód, hiszen a kliens oldalra HTML kód kerül leküldésre, amit csak meg kell jeleníteni. A kliens oldali interaciókhoz nincs speciális támogatás, azt csak JavaScript segítségével tudjuk megvalósítani.
 Esetleg <a href="https://jquery.com/">jQuery</a> és <a href="https://jqueryui.com/">jQuery UI</a>-t tudunk még erre használni.</p>
-<h2 id="kliens-oldali-rendereles-eseten">Kliens oldali renderelés esetén<a class="headerlink" href="#kliens-oldali-rendereles-eseten" title="Permanent link">¶</a></h2>
+<h3 id="kliens-oldali-rendereles">Kliens oldali renderelés<a class="headerlink" href="#kliens-oldali-rendereles" title="Permanent link">¶</a></h3>
 <p>Blazor Web Assembly esetén, a kód egy része (UI réteg) a kliensen fut így backend oldalon szükség van egy Web API rétegre, amit a kliens meg tud hívni az adatok letöltéséhez.</p>
 <ul>
 <li>Első oldal betöltéskor letöltődik az alkalmazás kódja a kliensre</li>
 <li>Ezt követően a kliens aszinkron kérésekkel tölti le a szükséges adatokat, amit aztán megjelenít a felületen.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Bookshop_architektura_client.png" data-desc-position="bottom"><img alt="Kliens architektúra" src="../images/Bookshop_architektura_client.png"></a></p>
-<p>Figyeljük meg, hogy a kliens és szerver jözött JSON-ban utaznak a DTO (Data Transfer Object) osztályok. Blazor esetén a kliens és szerver oldali kód is C#-ban készül így a DTO-kat magába foglaló Transfer projekre a kliens és a szerver is tartalmaz referenciát, tehát nincs szükség a szerver oldali DTO-k generálására kliens oldalon. (React és Angular esetén ez szükséges lenne, hiszen ott a kliens oldali programozási nyelv a JS / TS, így a DTO-kat is azon a nyelven kell megvalósítani.)</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Bookshop_architektura_client.png" data-desc-position="bottom"><img alt="Kliens architektúra" src="images/Bookshop_architektura_client.png"></a></p>
+<figcaption>
+<p>Kliens oldali renderelés architektúrája</p>
+</figcaption>
+</figure>
+<p>Figyeljük meg, hogy a kliens és szerver között JSON-ban utaznak a DTO (Data Transfer Object) osztályok. Blazor esetén a kliens és szerver oldali kód is C#-ban készül így a DTO-kat magába foglaló Transfer projektre a kliens és a szerver is tartalmaz referenciát, tehát nincs szükség a szerver oldali DTO-k generálására kliens oldalon. (React és Angular esetén ez szükséges lenne, hiszen ott a kliens oldali programozási nyelv a JS / TS, így a DTO-kat is azon a nyelven kell megvalósítani.)</p>
 <h2 id="kozos-backend-resz-kialakitasa">Közös backend rész kialakítása<a class="headerlink" href="#kozos-backend-resz-kialakitasa" title="Permanent link">¶</a></h2>
 <p>Ahogy a fenti architektúra ábrákon is látszik mindkét megközelítés esetén a <em>Business Logic</em> és a <em>Data Access</em> réteg lehet közös, sőt a DTO-kat tartalmazó Transfer projekt is.</p>
 <p>Ha az alkalmazásunk több projektből áll, akkor a projekteket egy ún. solution fogja össze, amely egy logikai egységet ad a projektek köré. Alapvetően a projekt egy egységnyi, egyértelmű kimenettel rendelkező kódhalmaz, például egy szerelvény (.exe, .dll saját függőségeivel) vagy website (.dll-ek, statikusan kiszolgálandó fájlok stb). Az egy solution-ben levő projektek tehát egy nagyobb probléma megoldásáért felelős nagyobb építőkockák.</p>
+<ol>
+<li>
 <p>Hozzunk létre a BookShop.Dal projektet. Ehhez válasszuk a <code>File → New → Projekt / Solution</code> opciót, majd a felugró ablakban adjuk meg a szükséges adatokat.</p>
 <ul>
 <li>Project típusa: Class Library</li>
@@ -969,37 +1259,110 @@ Esetleg <a href="https://jquery.com/">jQuery</a> és <a href="https://jqueryui.c
 <li>Solution neve: BookShop</li>
 <li>Framework: .NET 10</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Create-Dal-1.png" data-desc-position="bottom"><img alt="New Project 1" src="../images/Create-Dal-1.png"></a>
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Create-Dal-2.png" data-desc-position="bottom"><img alt="New Project 2" src="../images/Create-Dal-2.png"></a>
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Create-Dal-3.png" data-desc-position="bottom"><img alt="New Project 3" src="../images/Create-Dal-3.png"></a></p>
-<p>Ezt kövtően létrejön a Solution és benne a projekt is, ahogy azt a Solution Explorer ablakban láthatjuk.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Solution-Dal-1.png" data-desc-position="bottom"><img alt="Solution 1" src="../images/Solution-Dal-1.png"></a></p>
-<p>Adjuk hozzá a solution-höz a <code>BoohShop.Bll</code> projektet is. Ehhez jobb gombbal kattintsunk a Solution-re, majd válasszuk az <code>Add → New Project</code> opciót, majd adjuk meg a projekt adatait.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Add-New-Project.png" data-desc-position="bottom"><img alt="Add new project 1" src="../images/Add-New-Project.png"></a></p>
-<!-- ![Add new project 2](images/Add-New-Project-2.png) -->
-
+<details class="info">
+<summary>Segítség - Képernyőképek a projekt létrehozásról</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Create-Dal-1.png" data-desc-position="bottom"><img alt="New Project 1" src="images/Create-Dal-1.png"></a></p>
+<figcaption>
+<p>Új projekt létrehozása 1.</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Create-Dal-2.png" data-desc-position="bottom"><img alt="New Project 2" src="images/Create-Dal-2.png"></a></p>
+<figcaption>
+<p>Új projekt létrehozása 2.</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Create-Dal-3.png" data-desc-position="bottom"><img alt="New Project 3" src="images/Create-Dal-3.png"></a></p>
+<figcaption>
+<p>Új projekt létrehozása 3.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Ezt követően létrejön a Solution és benne a projekt is, ahogy azt a Solution Explorer ablakban láthatjuk.</p>
+<details class="success" open="open">
+<summary>A létrejött solution és project</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Solution-Dal-1.png" data-desc-position="bottom"><img alt="Solution 1" src="images/Solution-Dal-1.png"></a></p>
+<figcaption>
+<p>A létrejött solution és projekt</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Adjuk hozzá a solution-höz a <code>BoohShop.Bll</code> projektet is. Ehhez jobb gombbal kattintsunk a Solution-re, majd válasszuk az <code>Add → New Project</code> opciót, és adjuk meg a projekt adatait.</p>
+<details class="info">
+<summary>Segítség - Képernyőképek az új projekt hozzáadásáról</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Add-New-Project.png" data-desc-position="bottom"><img alt="Add new project 1" src="images/Add-New-Project.png"></a></p>
+<figcaption>
+<p>Új projekt hozzáadása</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Add-New-Project-2.png" data-desc-position="bottom"><img alt="Add new project 2" src="images/Add-New-Project-2.png"></a></p>
+<figcaption>
+<p>Új projekt hozzáadása 2.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
 <p>A fentihez hasonló módon vegyük fel a <code>BookShop.Transfer</code> projektet is.</p>
+</li>
+<li>
 <p>Adjuk referenciát a <code>BookShop.Bll</code> projektből a <code>BookShop.Dal</code> és <code>BookShop.Transfer</code> projektekre.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Add-reference-1.png" data-desc-position="bottom"><img alt="Add reference 1" src="../images/Add-reference-1.png"></a>
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Add-reference-2.png" data-desc-position="bottom"><img alt="Add reference 2" src="../images/Add-reference-2.png"></a></p>
-<h3 id="data-access-layer-megvalositasa">Data Access Layer megvalósítása<a class="headerlink" href="#data-access-layer-megvalositasa" title="Permanent link">¶</a></h3>
+<details class="info">
+<summary>Segítség - Képernyőképek a projekt referencia hozzadásáról</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Add-reference-1.png" data-desc-position="bottom"><img alt="Add reference 1" src="images/Add-reference-1.png"></a></p>
+<figcaption>
+<p>Projekt refererencia hozzáadása</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Add-reference-2.png" data-desc-position="bottom"><img alt="Add reference 2" src="images/Add-reference-2.png"></a></p>
+<figcaption>
+<p>Projektek kiválasztása és hozzáadás</p>
+</figcaption>
+</figure>
+</details>
+</li>
+</ol>
+<h3 id="data-access-layer">Data Access Layer<a class="headerlink" href="#data-access-layer" title="Permanent link">¶</a></h3>
 <p>A projekt struktúra elkészítése után nekifoghatunk a legalsó réteg megvalósításához.</p>
 <ol>
 <li>A projekten vagy a projekt alatti Dependencies elemen jobb klikkelve a <code>Manage NuGet Packages...</code> telepíthetünk NuGet csomagokat.</li>
-<li>A Browse tabon adjuk meg a csomag nevét <code>Microsoft.EntityFrameworkCore.SqlServer</code>, válasszuk ki a listából, ellenőrizzük a verziószámot, majd installáljuk a projekthez!
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Add-nuget-ef.png" data-desc-position="bottom"><img alt="Add NuGet EF 2" src="../images/Add-nuget-ef.png"></a></li>
-<li>A telepítés megkezdése eltt meg kell erősítenünk, hogy a szükséges módosításokat végrehajthatja és el kell fogadni a felhasználási feltételeket.</li>
+<li>
+<p>A Browse tab-on adjuk meg a csomag nevét <code>Microsoft.EntityFrameworkCore.SqlServer</code>, válasszuk ki a listából, ellenőrizzük a verziószámot, majd installáljuk a projekthez!</p>
+<details class="info">
+<summary>Segítség - Képernyőképek a NuGet package hozzadásáról</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Add-nuget-ef.png" data-desc-position="bottom"><img alt="Add NuGet EF 2" src="images/Add-nuget-ef.png"></a></p>
+<figcaption>
+<p>NuGet package hozzáadása egy projekthez</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>A telepítés megkezdése előtt meg kell erősítenünk, hogy a szükséges módosításokat végrehajthatja és el kell fogadni a felhasználási feltételeket.</p>
+</li>
 <li>Törölhetjük a kiinduláskor létrejött <code>Class1.cs</code> fájlt.</li>
 <li>
 <p>Hozzunk létre egy <code>Entities</code> mappát, benne a <code>Book.cs</code> osztállyal! Ennek tartalma az alábbi:</p>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
-
+<div class="highlight"><span class="filename">Book.cs</span><pre><span></span><code><span class="hll"><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
+</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Book</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">Subtitle</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
+</span><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">Subtitle</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">ShortDescription</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="n">Price</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal?</span><span class="w"> </span><span class="n">DiscountedPrice</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
@@ -1013,16 +1376,16 @@ Esetleg <a href="https://jquery.com/">jQuery</a> és <a href="https://jqueryui.c
 <ul>
 <li>Nincs az osztályban külön using rész, mert csak olyan névtereket használunk amik globálisan using-olva vannak.</li>
 <li>A namespace után nincs kapcsoszárójel, hanem <code>;</code> szerepel, így csökkentve a kódbehúzást.</li>
-<li>A <code>Title</code> és <code>Author</code> mezők nem lehetnek üresek, így a property végén szereplel az <code>= null!</code>
-   Ha nem szerepelne ott a <code>= null!</code> warningot kapnánk rá, mert a projekten alapértelmezés szerint engedélyezve van a referencia szerinti null-ok kezelése.
+<li>A <code>Title</code> és <code>Author</code> mezők nem lehetnek üresek, így a property végén szerepel az <code>= null!</code>
+   Ha nem szerepelne ott a <code>= null!</code> warning-ot kapnánk rá, mert a projekten alapértelmezés szerint engedélyezve van a referencia szerinti null-ok kezelése.
    A projekt fájlban a <code>&lt;Nullable&gt;enable&lt;/Nullable&gt;</code> sor engedélyezi.
    A null-forgiving operator (!) segítségével beállítjuk null-ra úgy, hogy ne szóljon érte a fordító. Navigation property-k esetén ez a javasolt megoldás.</li>
-<li>Vagy készítsünk hozzá egy konstruktort, ami várja a Title-t és beállítja. Egyszerű property-k esetén ez a javasolt megoldás. De bizonyos estekben ez nehézséget okoz, mert nem tudjuk a default constructort használni, így általában a <code>null!</code>-es megoldást szoktuk használni.</li>
+<li>Vagy készítsünk hozzá egy konstruktort, ami várja a Title-t és beállítja. Egyszerű property-k esetén ez a javasolt megoldás. De bizonyos estekben ez nehézséget okoz, mert nem tudjuk a default konstruktort használni, így általában a <code>null!</code>-es megoldást szoktuk használni.</li>
 </ul>
 </li>
 <li>
 <p>A fentihez hasonlóan hozzuk létre a <code>Category.cs</code> entitást is.</p>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
+<div class="highlight"><span class="filename">Category.cs</span><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
 
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Category</span>
 <span class="p">{</span>
@@ -1040,7 +1403,7 @@ Esetleg <a href="https://jquery.com/">jQuery</a> és <a href="https://jqueryui.c
 </li>
 <li>
 <p>Vegyünk fel a projekt gyökerébe egy <code>BookShopDbContext.cs</code> fájlt a lentebbi tartalommal!</p>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
+<div class="highlight"><span class="filename">BookShopDbContext.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Dal</span><span class="p">;</span>
@@ -1059,13 +1422,23 @@ Esetleg <a href="https://jquery.com/">jQuery</a> és <a href="https://jqueryui.c
 <p>Ha kézzel hozzuk létre az osztályt, a <code>using</code>-okat később szoktuk a kódba helyezni, amikor hivatkozás történik rájuk, ehhez a <code>Ctrl</code> + <code>.</code> billentyűket vagy a bal oldali sárga villanykörtét tudjuk használni.</p>
 </li>
 <li>
-<p>A fenti kódot tuduk még törmörebben írni a <code>primary constructor</code> használatával. Ehhez kattintsunk a sor elején található lámpa ikonra, vagy a konstruktor neve alatt lévő ... részre.
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Quick-actions.png" data-desc-position="bottom"><img alt="Quick actions" src="../images/Quick-actions.png"></a></p>
+<p>A fenti kódot tudjuk még tömörebben írni a <code>primary constructor</code> használatával. Ehhez kattintsunk a sor elején található lámpa ikonra, vagy a konstruktor neve alatt lévő ... részre.</p>
+<details class="tip" open="open">
+<summary>Quick actions - Primary constructor</summary>
+<figure>
+<p>A primary constructort érdemes használni egyszerűbb osztályoknál, a tömörebb kód érdekében.
+Részletesen info: <a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/primary-constructors">primary constructor</a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Quick-actions.png" data-desc-position="bottom"><img alt="Quick actions" src="images/Quick-actions.png"></a></p>
+<figcaption>
+<p>Quick actions</p>
+</figcaption>
+</figure>
+</details>
 </li>
 <li>
 <p>Így a fenti kódunk még tömörebb lett.</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookShopDbContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"> </span>
-<span class="p">{</span>
+<div class="highlight"><span class="filename">BookShopDbContext.cs</span><pre><span></span><code><span class="hll"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookShopDbContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"> </span>
+</span><span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">Category</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Categories</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
@@ -1074,28 +1447,28 @@ Esetleg <a href="https://jquery.com/">jQuery</a> és <a href="https://jqueryui.c
 <li>
 <p>Az osztály konstruktorában egy <code>DbContextOptions</code> példányt vár, ami az adatbázis-kapcsolat konfigurációs beállításait (timeout, connection string) tartalmazza. Ezt később konfiguráljuk fel.
 Ez az osztály, és a benne található <code>DbSet&lt;T&gt;</code> példányok megvalósítják az ún. repository mintát. A minta gyakorlatilag távoli objektumok proxy-zását, esetleges cache-elését valósítja meg a CRUD műveletek elérhetővé tételével.
-Az utóbbi időszakban egyre trendibb lett (sajnos) plusz egy repository réteg felépítése az EF réteg fölé, ezt a megközelítést erősen ellenjavalljuk (kódkarbantarthatósági, teljesítménybeli és architekturális okokból). Egy <code>DbContext</code> példányt használva mi magunk valósítjuk meg a Unit of work mintát, a példány létrejötte és az egyes <code>SaveChanges</code> hívások között egy egységnyi munka történik.
+Az utóbbi időszakban egyre trendibb lett (sajnos) plusz egy repository réteg felépítése az EF réteg fölé, ezt a megközelítést erősen ellenjavalljuk (kódkarbantarthatósági, teljesítménybeli és architektúrális okokból). Egy <code>DbContext</code> példányt használva mi magunk valósítjuk meg a Unit of work mintát, a példány létrejötte és az egyes <code>SaveChanges</code> hívások között egy egységnyi munka történik.
 A <code>DbContext</code> megvalósítja az <code>IDisposable</code> interfészt, tehát van saját <code>Dispose</code> metódusa, mely az adatbázis kapcsolat bontásáért felelős. Ha nem <code>DI</code> segítségével adjuk át a megfelelő példányt hanem kézzel hozzuk létre (ami nem javasolt), akkor mindig <code>using</code> vagy <code>try-(catch-)finally</code> blokkban használjuk a <code>DbContext</code> példányokat, mert így garantálható csak a drága adatbáziskapcsolatok megszüntetése, amikor már nincsen rájuk tovább szükség!</p>
 </li>
 <li>
 <p>A séma megadásához Code First megközelítést használunk (tehát a DB modelljét .NET kódban adjuk meg), az adatbázis sémájának karbantartásához pedig a keretrendszer által támogatott ún. migrációkat használunk.</p>
 </li>
-<li>Ahhoz, hogy a migrációkat létre tudjuk hozni induló projket nélkül szükséges egy <code>IDesignTimeDbContextFactory</code> implementálása.</li>
+<li>Ahhoz, hogy a migrációkat létre tudjuk hozni induló projekt nélkül szükséges egy <code>IDesignTimeDbContextFactory</code> implementálása.</li>
 <li>Készítsük el a <code>BookShop.Dal</code> projektben a saját <code>IDesignTimeDbContextFactory</code> implementációnkat. Ez az ideiglenes megoldás arra jó, hogy ki tudjuk próbálni a migrációt, a nélkül hogy további rétegeket vennénk fel.</li>
 <li>
 <p>Hozzuk létre a <code>BookShopDbContextFactory</code> osztályt az alábbi implementációval.</p>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
+<div class="highlight"><span class="filename">BookShopDbContextFactory.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore.Design</span><span class="p">;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Dal</span><span class="p">;</span>
 
-<span class="k">internal</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BookShopDbContextFactory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IDesignTimeDbContextFactory</span><span class="o">&lt;</span><span class="n">BookShopDbContext</span><span class="o">&gt;</span>
-<span class="p">{</span>
+<span class="hll"><span class="k">internal</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BookShopDbContextFactory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IDesignTimeDbContextFactory</span><span class="o">&lt;</span><span class="n">BookShopDbContext</span><span class="o">&gt;</span>
+</span><span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">BookShopDbContext</span><span class="w"> </span><span class="nf">CreateDbContext</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">optionsBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DbContextOptionsBuilder</span><span class="o">&lt;</span><span class="n">BookShopDbContext</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="w">        </span><span class="n">optionsBuilder</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="s">"Data Source=.;Initial Catalog=BookShopDb;Integrated Security=True;TrustServerCertificate=True"</span><span class="p">);</span>
-
+<span class="hll"><span class="w">        </span><span class="n">optionsBuilder</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="s">"Data Source=.;Initial Catalog=BookShopDb;Integrated Security=True;TrustServerCertificate=True"</span><span class="p">);</span>
+</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">BookShopDbContext</span><span class="p">(</span><span class="n">optionsBuilder</span><span class="p">.</span><span class="n">Options</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -1103,35 +1476,80 @@ A <code>DbContext</code> megvalósítja az <code>IDisposable</code> interfészt,
 </li>
 <li>
 <p>Figyeljük meg, hogy az osztály <code>internal</code> hiszen nem szeretnénk máshonnan elérni. Ezen felül ennek a megoldásnak a hátrányát is vegyük észre, hiszen itt az adatbázis kapcsolódási sztringet bele kellett írni a kódba, nem konfigurációból olvassuk fel!
-Ezen felül az SQL kapcsolódái sztringben szerepel egy <code>TrustServerCertificate=True</code> ami azt jelzi, hogy a szerver SSL tanúsítványát fogadja el akkor is, ha az nem érvényes.</p>
+Ezen felül az SQL kapcsolódási sztringben szerepel egy <code>TrustServerCertificate=True</code> ami azt jelzi, hogy a szerver SSL tanúsítványát fogadja el akkor is, ha az nem érvényes.</p>
 </li>
 <li>
 <p>A migráció automatizált létrehozására két lehetőségünk van: <code>PowerShell</code> vagy a platform független <code>.NET Core CLI</code> (Command Line Interface), ami a <code>dotnet ef</code> parancs (ezt érdemes global package-ként telepíteni, ha ezt szeretnénk használni).
 Számunkra egyszerűbb most az első megoldás, ezért nyissuk meg a <code>Package Manager Console</code>-t (View → Other Windows → Package Manager Console), és adjuk ki az alábbi parancsot (közben ügyeljünk, hogy a Default projekt a <code>BookShop.Dal</code> legyen!):</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Package-manager-console.png" data-desc-position="bottom"><img alt="Package manager console" src="../images/Package-manager-console.png"></a></p>
+<details class="info">
+<summary>Hol találom a Package Manager Console ablakot?</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Package-manager-console.png" data-desc-position="bottom"><img alt="Package manager console" src="images/Package-manager-console.png"></a></p>
+<figcaption>
+<p>Package Manager Console megnyitása</p>
+</figcaption>
+</figure>
+</details>
 <p>Ahhoz, hogy ki tudjuk adni az Add-Migration parancsot, fel kell telepíteni a <code>Microsoft.EntityFrameworkCore.Tools</code> nuget packaget a DAL projekthez</p>
 </li>
 <li>
 <p>A <code>Package Manager Console</code>-ból adjuk ki a parancsot, ami legenerálja a kezdeti migrációt. Figyeljünk arra, hogy a Default project a <code>BookShop.Dal</code> legyen. Az átadott <code>Initial</code> paraméter egy szabadszöveges sting, mely a migrációnk nevét adja. Ez tehát a kiinduló (initial) migrációnk.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Add-Migration</span> <span class="n">Initial</span>
 </code></pre></div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/package-manager-initial.png" data-desc-position="bottom"><img alt="Initial migration" src="../images/package-manager-initial.png"></a></p>
+<details class="info">
+<summary>Segítség - Hol találom a Package Manager Console ablakot?</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/package-manager-initial.png" data-desc-position="bottom"><img alt="Initial migration" src="images/package-manager-initial.png"></a></p>
+<figcaption>
+<p>Package Manager Console - kezdeti migráció létrehozása</p>
+</figcaption>
+</figure>
+</details>
 </li>
 <li>
 <p>Nézzük meg a solution explorer ablakban, hogy létrejöttek a migrációk.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/initial-migration-created.png" data-desc-position="bottom"><img alt="Initial migration created" src="../images/initial-migration-created.png"></a></p>
+<details class="success" open="open">
+<summary>Létrejöttek a migrációs fájlok</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/initial-migration-created.png" data-desc-position="bottom"><img alt="Initial migration created" src="images/initial-migration-created.png"></a></p>
+<figcaption>
+<p>A létrejött migrációs fájlok</p>
+</figcaption>
+</figure>
+</details>
 <p>A migrációs fájlokban (pl.: <code>Datum_Initial.cs</code>) jól értelmezhető, generált kódot találunk, amelyekben szükség esetén akár módosításokat is végezhetünk, és bár ez általánosságban nem jellemző, mindenképp tudni illik, mert előfordul, hogy kézi módosítást kell végeznünk ezekben a fájlokban. Ez építi fel a migrációhoz szükséges SQL parancsokat az alkalmazáshoz, tehát definiálja a sémát: táblákat, kulcsokat, megkötéseket stb.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/inital-migration-cs.png" data-desc-position="bottom"><img alt="Initial migration code" src="../images/inital-migration-cs.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/inital-migration-cs.png" data-desc-position="bottom"><img alt="Initial migration code" src="images/inital-migration-cs.png"></a></p>
+<figcaption>
+<p>A kezdeti migráció tartalma</p>
+</figcaption>
+</figure>
 </li>
 <li>
 <p>Futtassuk le a migrációt, hogy létrejöjjön az adatbázis is.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Update-Database</span>
 </code></pre></div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/package-manager-console-db-migrate.png" data-desc-position="bottom"><img alt="DB migate" src="../images/package-manager-console-db-migrate.png"></a></p>
+<details class="info">
+<summary>Segítség - Képernyőkép az update-database futtatásáról</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/package-manager-console-db-migrate.png" data-desc-position="bottom"><img alt="DB migate" src="images/package-manager-console-db-migrate.png"></a></p>
+<figcaption>
+<p>Adatbázis migráció futtatása</p>
+</figcaption>
+</figure>
+</details>
 </li>
 <li>
 <p>Ezután megvizsgálhatjuk SQL Server Object Explorerben a létrejött sémát is.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/created-DB.png" data-desc-position="bottom"><img alt="Created DB" src="../images/created-DB.png"></a></p>
+<details class="success" open="open">
+<summary>Létrejött az adatbázis</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/created-DB.png" data-desc-position="bottom"><img alt="Created DB" src="images/created-DB.png"></a></p>
+<figcaption>
+<p>A létrejött adatbázis MS SQL Management studióban.</p>
+</figcaption>
+</figure>
+</details>
 <p>Érdemes észrevennünk, hogy az <code>Id</code> oszlophoz automatikusan DB-generált kulcs jön létre, pedig ezt nem fogalmaztuk meg sehol. Az EF konvenciókat használ nagyon sok sémával kapcsolatos művelethez, ilyen például az elsődleges kulcs kényszer is, amivel, ha egy entitásban egy <code>int</code> vagy <code>Guid</code> típusú, <code>ID</code>, <code>Id</code> vagy <code>&lt;Típus&gt;Id</code> nevű mezőt hozunk létre, az automatikus kulcsa lesz az adott táblának.
 23. A migrációban láthatjuk, hogy egy <code>Up()</code> és egy <code>Down()</code> metódus kerül definiálásra. Az <code>Up()</code> metódusok lefuttatásával a keretrendszer olyan SQL kódot generál, amelyet egy korábbi (tehát üres) adatbázison lefuttatva a migráció állapotának megfelelő sémát hoz létre. A <code>Down()</code> futtatásával a korábbi állapotra tudunk visszaállni.
 Figyeljük meg, hogy az adatbázisban is beállítja a <code>Book.cs</code>-ben megadott property-k típusa alapján, hogy az adott mező lehet-e null.</p>
@@ -1142,47 +1560,71 @@ Figyeljük meg, hogy az adatbázisban is beállítja a <code>Book.cs</code>-ben 
 </ul>
 </li>
 </ol>
-<h3 id="adatbazis-model-diagram-keszitese">Adatbázis model diagram készítése<a class="headerlink" href="#adatbazis-model-diagram-keszitese" title="Permanent link">¶</a></h3>
+<h4 id="db-diagram-keszitese">DB diagram készítése<a class="headerlink" href="#db-diagram-keszitese" title="Permanent link">¶</a></h4>
 <ol>
-<li>A későbbiekben a fejlesztést nagy mértékben segíti, ha az adatmodellről van egy diagramunk. Ezt úgy tudjuk létrehozni, hogy a <code>BoohShop.Dal/Entites</code> könyvráthoz hozzáadunk egy új <code>Class Diagram</code> típusú elemet.</li>
+<li>
+<p>A későbbiekben a fejlesztést nagy mértékben segíti, ha az adatmodellről van egy diagramunk. Ezt úgy tudjuk létrehozni, hogy a <code>BoohShop.Dal/Entites</code> könyvtárhoz hozzáadunk egy új <code>Class Diagram</code> típusú elemet.</p>
+<details class="info">
+<summary>Segítség - Class diagram hozzáadása a projekthez</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/add-db-diagram.png" data-desc-position="bottom"><img alt="Add DB Diagram" src="images/add-db-diagram.png"></a></p>
+<figcaption>
+<p>Class diagram hozzáadása a projekthez.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Ezt követően húzzuk rá a diagramra a <code>Book</code> és <code>Category</code> entitásokat. Azonban ez még kevés, mert szeretnénk a "táblák" (valójában entitások) közötti kapcsolatokat is látni. Ehhez kattintunk jobb gombbal a <code>Category</code> entitás <code>ChildCategories</code> tulajdonságára, majd válasszuk a <code>Show as Collection Association</code>-t, hiszen egy egy lista. Ha nem lista lenne akkor a <code>Show as Assiciation</code> a megfelelő választás.</p>
+<details class="info">
+<summary>Segítség - Navigációs tulajdonságok mutatása kapcsolatként</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/db-show-as-assosication.png" data-desc-position="bottom"><img alt="Add DB Diagram" src="images/db-show-as-assosication.png"></a></p>
+<figcaption>
+<p>Class diagram hozzáadása a projekthez.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Állítsuk be a <code>ParentCategory</code>-ra és a <code>Books</code>-ra is, hogy kapcsolatként mutassa.</p>
+<details class="success" open="open">
+<summary>Elészült adat modell diagram</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/Db-diagram.png" data-desc-position="bottom"><img alt="Add DB Diagram" src="images/Db-diagram.png"></a></p>
+<figcaption>
+<p>Az elkészített adat modell diagram.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Így már van egy folyamatosan frissülő diagramunk a kódban, ahol áttekinthetjük a EF modellünket.</p>
+</li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/add-db-diagram.png" data-desc-position="bottom"><img alt="Add DB Diagram" src="../images/add-db-diagram.png"></a></p>
+<h4 id="kezdeti-adatfeltoltes">Kezdeti adatfeltöltés<a class="headerlink" href="#kezdeti-adatfeltoltes" title="Permanent link">¶</a></h4>
 <ol>
-<li>Ezt követően húzzuk rá a diagramra a <code>Book</code> és <code>Category</code> entitásokat. Azonban ez még kevés, mert szeretnénk a "táblák" (valójában entitások) közötti kapcsolatokat is látni. Ehhez kattintunk jobb gombbal a <code>Category</code> entités <code>ChildCategories</code> tulajdonságára, majd válasszuk a <code>Show as Collection Association</code>-t, hiszen egy egy lista. Ha nem lista lenne akkor a <code>Show as Assiciation</code> a megfelelő választás.</li>
-</ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/db-show-as-assosication.png" data-desc-position="bottom"><img alt="Add DB Diagram" src="../images/db-show-as-assosication.png"></a></p>
-<ol>
-<li>Állítsuk be a <code>ParentCategory</code>-ra és a <code>Books</code>-ra is, hogy kapcsolatként mutassa.</li>
-</ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Db-diagram.png" data-desc-position="bottom"><img alt="Add DB Diagram" src="../images/Db-diagram.png"></a></p>
-<ol>
-<li>Így már van egy folyamatosan frissülő diagramunk a kódban, ahol áttekinthetjük a EF modellünket.</li>
-</ol>
-<h3 id="kezdeti-adatfeltoltes">Kezdeti adatfeltöltés<a class="headerlink" href="#kezdeti-adatfeltoltes" title="Permanent link">¶</a></h3>
-<ol>
-<li>Az alkalmazás kezdeti, ún. ősadatokkal történő feltöltését (seed) a keretrendszer segítségével oldjuk meg.
-Ősadatokat a <code>DbContext.OnModelCreating</code> metódusának felüldefiniálásával, és a <code>ModelBuilder</code> fluent API használatával tudunk az alkalmazáshoz felvenni. Ehhez override-olnunk kell a megfelelő metódust a <code>BookShopDbContext</code>-ben</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookShopDbContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"> </span>
+<li>
+<p>Az alkalmazás kezdeti, ún. ősadatokkal történő feltöltését (seed) a keretrendszer segítségével oldjuk meg.
+Ős adatokat a <code>DbContext.OnModelCreating</code> metódusának felüldefiniálásával, és a <code>ModelBuilder</code> fluent API használatával tudunk az alkalmazáshoz felvenni. Ehhez override-olnunk kell a megfelelő metódust a <code>BookShopDbContext</code>-ben</p>
+<div class="highlight"><span class="filename">BookShopDbContext.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookShopDbContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"> </span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">Category</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Categories</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span><span class="w"> </span><span class="n">modelBuilder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="p">().</span><span class="n">HasData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Book</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Teszt könyv"</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">});</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span><span class="w"> </span><span class="n">modelBuilder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="p">().</span><span class="n">HasData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Book</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Teszt könyv"</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">});</span>
+</span><span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>Fontos megemlíteni, hogy a fenti példához hasonlóan a HasData API-n keresztül mindig kötelező kitölteni az entitások elsődleges kulcsait! Ez azért lehet szokatlan, mert mesterséges kulcsok esetén (mint a <code>Book</code> esetében is) alapvetően az adatbázis feladata megadni egy elem ID-ját, ezért más helyen az <code>Id</code>-t az alapértelmezett <code>0</code> értéken fogjuk hagyni az üzleti logikában létrehozáskor, azt az adatbázis fogja kitölteni szekvencia alapján. Most azért kell megadnunk az ID-kat, mert ezek a kódban definiált entitások valójában úgy kezelendők, mintha az adatbázisban lennének megtalálhatók, tehát minden tulajdonságukat előre számítottuk és fixnek, determinisztikusnak kell lenniük. Ha nem determinisztikusak ezek az értékek, minden migráció generálásakor újra és újra be fognak szúródni az adatbázisba az entitások vagy hibára fogunk futni. Röviden tehát itt beégetett ID-kat kell használnunk.
-A fenti API használatával nem csak ősadatokat, hanem egyéb metaadat-szintű konfigurációt is megadhatunk, például adattáblák nevét, oszlopok egyediségét, indexeket stb. Ezt az API-t a későbbiekben, a végleges adatmodell készítésekor fogjuk alaposabban megvizsgálni.</p>
+A fenti API használatával nem csak ős adatokat, hanem egyéb metaadat-szintű konfigurációt is megadhatunk, például adattáblák nevét, oszlopok egyediségét, indexeket stb. Ezt az API-t a későbbiekben, a végleges adatmodell készítésekor fogjuk alaposabban megvizsgálni.</p>
 </li>
 <li>
 <p>Töltsünk fel egy pár kezdeti könyvet az alábbi kóddal</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookShopDbContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"> </span>
+<div class="highlight"><span class="filename">BookShopDbContext.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookShopDbContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"> </span>
 <span class="p">{</span>
 <span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
@@ -1252,28 +1694,50 @@ A fenti API használatával nem csak ősadatokat, hanem egyéb metaadat-szintű 
 <span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Most, hogy elkészültünk az ősadatokkal, újabb migrációt kell készítenünk, ami az adatok betöltéséért lesz felelős. Szintén a <code>Package Manager Console</code>-ban adjuk ki az alábbi parancsot, ügyelve arra, hogy a <code>Bookshop.Dal</code> projekt legyen kiválasztva:</li>
-</ol>
+</li>
+<li>
+<p>Most, hogy elkészültünk az ősadatokkal, újabb migrációt kell készítenünk, ami az adatok betöltéséért lesz felelős. Szintén a <code>Package Manager Console</code>-ban adjuk ki a <code>Add-Migration</code> parancsot, ügyelve arra, hogy a <code>Bookshop.Dal</code> projekt legyen kiválasztva:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Add-Migration</span> <span class="n">InitialSeed</span>
 </code></pre></div>
-<p>Ha mindent jól csináltunk így fog kinézni a migrációnk.
-   <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/initial-seed.png" data-desc-position="bottom"><img alt="Initial seed" src="../images/initial-seed.png"></a></p>
-<ol>
-<li>Futtassuk is le a migrációt</li>
-</ol>
+<details class="success">
+<summary>Ha mindent jól csináltunk így fog kinézni a migrációnk.</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/initial-seed.png" data-desc-position="bottom"><img alt="Initial seed" src="images/initial-seed.png"></a></p>
+<figcaption>
+<p>Migrációs fájl az ősadat feltöltéshez.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Futtassuk is le a migrációt</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Update-Database</span>
 </code></pre></div>
-<p>Az adatbázisba is bekerülnek az adatok.
-   <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/initial-data-in-db.png" data-desc-position="bottom"><img alt="Initial data in DB" src="../images/initial-data-in-db.png"></a></p>
-<ol>
-<li>Figyeljük meg, hogy bár a <code>Book.cs</code>-ben nem vettük fel <code>CategoryId</code> tulajdonságot, mégis az adatbázisba létrejött egy ilyen osztlop. Ez azért van, mert a <code>Category.cs</code>-ben felvettünk egy navigációs tulajdonságot a <code>Books</code> listát, ami egy egy-többes kapcsolat a kategória és a könyv között így az EF automatikusan létrehozza az adatbázisban a szükséges mezőt.</li>
-</ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/db-categoryId.png" data-desc-position="bottom"><img alt="DB categoryId" src="../images/db-categoryId.png"></a></p>
-<ol>
-<li>Azért, hogy az EF modellben is látható legyen ez a kapcsolat érdemes a modellt kibővíteni ezzel a tulajdonsággal és a navigációt tulajdonságot a másik irányba is felvenni. Mivel most nem szeretnénk mindenhol kitölteni ezt az értéket ezért nullable-nek vesszük fel.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Book</span>
+<details class="success" open="open">
+<summary>Ősadatok bekerültek az</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/initial-data-in-db.png" data-desc-position="bottom"><img alt="Initial data in DB" src="images/initial-data-in-db.png"></a></p>
+<figcaption>
+<p>Az adatok bekerültek az adatbázisba is.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Figyeljük meg, hogy bár a <code>Book.cs</code>-ben nem vettük fel <code>CategoryId</code> tulajdonságot, mégis az adatbázisba létrejött egy ilyen oszlop. Ez azért van, mert a <code>Category.cs</code>-ben felvettünk egy navigációs tulajdonságot a <code>Books</code> listát, ami egy egy-többes kapcsolat a kategória és a könyv között így az EF automatikusan létrehozza az adatbázisban a szükséges mezőt.</p>
+<details class="warning" open="open">
+<summary>CategoryId az adatbázisban???</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/db-categoryId.png" data-desc-position="bottom"><img alt="DB categoryId" src="images/db-categoryId.png"></a></p>
+<figcaption>
+<p>Adatbázisban ott van a CategoryId a Book táblában</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Azért, hogy az EF modellben is látható legyen ez a kapcsolat érdemes a modellt kibővíteni ezzel a tulajdonsággal és a navigációt tulajdonságot a másik irányba is felvenni. Mivel most nem szeretnénk mindenhol kitölteni ezt az értéket ezért nullable-nek vesszük fel.</p>
+<div class="highlight"><span class="filename">Book.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Book</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
@@ -1285,28 +1749,37 @@ A fenti API használatával nem csak ősadatokat, hanem egyéb metaadat-szintű 
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PublishYear</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PageNumber</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int?</span><span class="w"> </span><span class="n">CategoryId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Category</span><span class="o">?</span><span class="w"> </span><span class="n">Category</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int?</span><span class="w"> </span><span class="n">CategoryId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Category</span><span class="o">?</span><span class="w"> </span><span class="n">Category</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Illetve a DbDiagram-ot is érdemes beállítani ezt a kapcsolatot. A tulajdonság már ott lesz, hiszen a modellbe bekerlült. Általánosságban elmondható, hogy a navigációs tulajdonságoknál érdemes mind a két irányt felvenni.
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/diagram-categoryId.png" data-desc-position="bottom"><img alt="diagram-categoryId" src="../images/diagram-categoryId.png"></a></li>
-</ol>
-<h2 id="boohshoptransfer-dto-k-keszitese">BoohShop.Transfer - DTO-k készítése<a class="headerlink" href="#boohshoptransfer-dto-k-keszitese" title="Permanent link">¶</a></h2>
-<p>Az adatbázis entitások már megvannak, viszont nem szeretnénk, hogy a kliens oldalra, vagy a webes felületre entitások jussanak el, ezért a Transfer projektben hozzuk létre azokat a DTO osztályokat, amit majd a Webes projekt / kliens használni fog.
-A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Erről beszédesebb az alábbi konvenció</p>
-<ul>
-<li>Header: Csak alapadatokat tartalmaz, nem hivatkozik más DTO-ra</li>
-<li>Data: A fontosabb adatokat tartalmazza, hivatkozhat más DTO-ra is.</li>
+</li>
 <li>
-<p>Details: Minden vagy a szerkesztéshez szükséges adatokat tartalmazza.</p>
+<p>Illetve a DbDiagram-ot is érdemes beállítani ezt a kapcsolatot. A tulajdonság már ott lesz, hiszen a modellbe bekerült. Általánosságban elmondható, hogy a navigációs tulajdonságoknál érdemes mind a két irányt felvenni.</p>
+<details class="success" open="open">
+<summary>CategoryId felvéve az adat modell diagramra</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/diagram-categoryId.png" data-desc-position="bottom"><img alt="diagram-categoryId" src="images/diagram-categoryId.png"></a></p>
+<figcaption>
+<p>CategoryId felvétele az adatmodell diagramra.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+</ol>
+<h3 id="dto-k-keszitese">DTO-k készítése<a class="headerlink" href="#dto-k-keszitese" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>Az adatbázis entitások már megvannak, viszont nem szeretnénk, hogy a kliens oldalra, vagy a webes felületre entitások jussanak el, ezért a Transfer projektben hozzuk létre azokat a DTO osztályokat, amit majd a Webes projekt / kliens használni fog. A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Használjuk helyette inkább az alábbi konvenciót:</p>
+<ul>
+<li>Header: Csak alap adatokat tartalmaz, nem hivatkozik más DTO-ra</li>
+<li>Data: A fontosabb adatokat tartalmazza, hivatkozhat más DTO-ra is.</li>
+<li>Details: Minden vagy a szerkesztéshez szükséges adatokat tartalmazza.</li>
+</ul>
 </li>
 <li>
 <p>Hozzunk létre egy <code>BookData.cs</code> osztályt az alábbi tartalommal.</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
+<div class="highlight"><span class="filename">BookData.cs</span><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BookData</span>
 <span class="p">{</span>
@@ -1322,10 +1795,10 @@ A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Erről beszéd
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int?</span><span class="w"> </span><span class="n">CategoryId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Hozzuk létre hasonlóan a <code>CategoryHeader</code> osztályt is.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
+</li>
+<li>
+<p>Hozzuk létre hasonlóan a <code>CategoryHeader</code> osztályt is.</p>
+<div class="highlight"><span class="filename">CategoryHeader.cs</span><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CategoryHeader</span>
 <span class="p">{</span>
@@ -1334,16 +1807,18 @@ A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Erről beszéd
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Level</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Ez után már csak annyi feladatunk van, hogy a Bll-ben elkészítjük az adatbázis lekérdezéseket, amik DTO-kat adnak vissza.</li>
+</li>
+<li>
+<p>Ez után már csak annyi feladatunk van, hogy a BLL-ben elkészítjük az adatbázis lekérdezéseket, amik DTO-kat adnak vissza.</p>
+</li>
 </ol>
-<h2 id="bll-service-ek-megvalositasa">Bll service-ek megvalósítása<a class="headerlink" href="#bll-service-ek-megvalositasa" title="Permanent link">¶</a></h2>
+<h3 id="bll-service-ek-megvalositasa">BLL service-ek megvalósítása<a class="headerlink" href="#bll-service-ek-megvalositasa" title="Permanent link">¶</a></h3>
 <p>A BLL-ben valósítjuk meg azokat a szolgáltatásokat és hozzá tartozó interfészeket, amivel adatokat tudunk lekérdezni az adatbázisból, illetve itt valósítjuk meg az entitás → DTO mappinget is.</p>
 <ol>
 <li>Hozzunk létre a <code>BookShop.Bll</code> projektben egy <code>IServices</code> és egy <code>Services</code> mappát.</li>
-<li>Vegyük fel az <code>IServices</code> mappában az <code>IBookService.cs</code> fájlt, amiben definiálunk egy <code>GetBooksAsny()</code> metódust, ami majd visszaadja az összes könyvet egy listában.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
+<li>
+<p>Vegyük fel az <code>IServices</code> mappában az <code>IBookService.cs</code> fájlt, amiben definiálunk egy <code>GetBooksAsny()</code> metódust, ami majd visszaadja az összes könyvet egy listában.</p>
+<div class="highlight"><span class="filename">IBookService.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
 
@@ -1352,10 +1827,10 @@ A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Erről beszéd
 <span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetBooksAsync</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Vegyük fel az <code>IServices</code> mappában az <code>ICatalogService.cs</code> fájlt, amiben definiálunk egy <code>GetCategoryTreeAsync()</code> metódust, ami majd visszaadja az összes kategóriát egy listában.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
+</li>
+<li>
+<p>Vegyük fel az <code>IServices</code> mappában az <code>ICatalogService.cs</code> fájlt, amiben definiálunk egy <code>GetCategoryTreeAsync()</code> metódust, ami majd visszaadja az összes kategóriát egy listában.</p>
+<div class="highlight"><span class="filename">ICategoryService.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
 
@@ -1364,10 +1839,10 @@ A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Erről beszéd
 <span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">CategoryHeader</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetCategoryTreeAsync</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Készísük is el az <code>IBookService</code> interfész implentációját is, amit a <code>Services</code> mappában tegyünk <code>BookService</code> névvel. A metódus cím szerint sorbarendezbe kell, hogy visszaadjon a <code>BookData</code> listát. Az alábbiakban látható hozzá az implementáció.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
+</li>
+<li>
+<p>Készítsük is el az <code>IBookService</code> interfész implementációját is, amit a <code>Services</code> mappában tegyünk <code>BookService</code> névvel. A metódus cím szerint sorbarendezbe kell, hogy visszaadjon a <code>BookData</code> listát. Az alábbiakban látható hozzá az implementáció.</p>
+<div class="highlight"><span class="filename">BookService.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Dal</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
@@ -1382,28 +1857,29 @@ A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Erről beszéd
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">dbContext</span><span class="p">.</span><span class="n">Books</span>
 <span class="w">            </span><span class="p">.</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Title</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BookData</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
-<span class="w">            </span><span class="n">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Title</span><span class="p">,</span>
-<span class="w">            </span><span class="n">Subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Subtitle</span><span class="p">,</span>
-<span class="w">            </span><span class="n">ShortDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">ShortDescription</span><span class="p">,</span>
-<span class="w">            </span><span class="n">Price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Price</span><span class="p">,</span>
-<span class="w">            </span><span class="n">DiscountPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">DiscountedPrice</span><span class="p">,</span>
-<span class="w">            </span><span class="n">PublishYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">PublishYear</span><span class="p">,</span>
-<span class="w">            </span><span class="n">PageNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">PageNumber</span><span class="p">,</span>
-<span class="w">            </span><span class="n">Author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Author</span><span class="p">,</span>
-<span class="w">            </span><span class="n">CategoryId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">CategoryId</span><span class="p">,</span>
-<span class="w">        </span><span class="p">}).</span><span class="n">ToListAsync</span><span class="p">();</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BookData</span><span class="p">()</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Title</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Subtitle</span><span class="p">,</span>
+<span class="w">                </span><span class="n">ShortDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">ShortDescription</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Price</span><span class="p">,</span>
+<span class="w">                </span><span class="n">DiscountPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">DiscountedPrice</span><span class="p">,</span>
+<span class="w">                </span><span class="n">PublishYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">PublishYear</span><span class="p">,</span>
+<span class="w">                </span><span class="n">PageNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">PageNumber</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Author</span><span class="p">,</span>
+<span class="w">                </span><span class="n">CategoryId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">CategoryId</span><span class="p">,</span>
+<span class="w">            </span><span class="p">})</span>
+<span class="w">            </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
 
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">books</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Készísük is el az <code>ICategoryService</code> interfész implentációját is <code>CategoryService</code> névvel. Az összes kategóriát vissza kell adni <code>Order</code> szerint rendezve. A <code>Level</code>-t úgy tudjuk meghatározni, hogy az <code>Order</code>-ben hány darab pont szerepel. Az alábbiakban látható hozzá az implementáció.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
+</li>
+<li>
+<p>Készítsük is el az <code>ICategoryService</code> interfész implementációját is <code>CategoryService</code> névvel. Az összes kategóriát vissza kell adni <code>Order</code> szerint rendezve. A <code>Level</code>-t úgy tudjuk meghatározni, hogy az <code>Order</code>-ben hány darab pont szerepel. Az alábbiakban látható hozzá az implementáció.</p>
+<div class="highlight"><span class="filename">CategoryService.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Dal</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
@@ -1432,17 +1908,21 @@ A DTO-k elnevezésénél nem érdemes a DTO postfixet használni. Erről beszéd
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="automapper">Automapper<a class="headerlink" href="#automapper" title="Permanent link">¶</a></h3>
+</li>
+</ol>
+<h4 id="automapper">AutoMapper<a class="headerlink" href="#automapper" title="Permanent link">¶</a></h4>
 <p>Ahogy a fenti kódban látható most egy egyes Service-ekben található az entitás -&gt; DTO mappelés, ami működő megoldás, viszont nem lehet újrahasznosítani a mappeléseket.
-A gyakorlatban az <a href="https://automapper.io/">Automapper</a> csomag segítségével lehet ezeket a mappeléseket kiszervezni egy közös részbe. Regisztráció után lehet ingyenes licensz kulcsot igényelni, ami 1 évig érvényes. Lejárat után ingyenesen meghosszabítható. Csak nagyvállalatoknak kell fizetni érte részeletek az <a href="https://automapper.io/#pricing">árazás</a> oldalon. A licensz kulcs a <a href="https://luckypennysoftware.com/account">Profil</a> oldalról tölthető le.</p>
+A gyakorlatban az <a href="https://automapper.io/">AutoMapper</a> csomag segítségével lehet ezeket a mappeléseket kiszervezni egy közös részbe. Regisztráció után lehet ingyenes licensz kulcsot igényelni, ami 1 évig érvényes. Lejárat után ingyenesen meghosszabbítható. Csak nagyvállalatoknak kell fizetni érte részeletek az <a href="https://automapper.io/#pricing">árazás</a> oldalon. A licensz kulcs a <a href="https://luckypennysoftware.com/account">Profil</a> oldalról tölthető le.</p>
 <ol>
 <li>A <code>BookShop.Bll</code> projekthez vegyük fel az <code>AutoMapper</code> NuGet package-et.</li>
-<li>Vegyünk fel egy <code>Mappings</code> könyvtárat, ahova az Automapper profile-ok kerülnek majd.</li>
-<li>Készítsük el a <code>CategoryProfile</code> osztályt, ami a <code>AutoMapper.Profile</code> osztályból származik és a konstruktorában hozzunk létre egy mappinget. A mappinget az alábbi két módon hozhatjuk létre:</li>
-<li><strong><code>CreateMap&lt;Entity, Dto&gt;</code></strong>: Használható  <code>ProjectTo</code> metódussal és, a <code>Map</code>-pal is. A <code>Map</code> olyan mappelést tesz lehetőve, ahol a kód nem fordul SQL-re, tehát egy tetszőleges listát is át tudunk a memóriában Mappelni. Csak akkor érdemes a <code>CreateMap&lt;Entity, Dto&gt;</code> használata, ha memóriában is szeretnénk mappelni.</li>
-<li><strong><code>CreateProjecton&lt;Entity, Dto&gt;</code></strong>: Csak a <code>ProjectTo</code> metódussal használható, a <code>Map</code>-pel nem, cserébe gyorsabb. Általában ezt szoktuk használni, hiszne a <code>ProjectTo</code> teszi lehetővé, hogy az adatbázisból csak azt kérdezzük le, amire szükségünk van.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">AutoMapper</span><span class="p">;</span>
+<li>Vegyünk fel egy <code>Mappings</code> könyvtárat, ahova az AutoMapper profile-ok kerülnek majd.</li>
+<li>
+<p>Készítsük el a <code>CategoryProfile</code> osztályt, ami a <code>AutoMapper.Profile</code> osztályból származik és a konstruktorában hozzunk létre egy mappinget. A mappinget az alábbi két módon hozhatjuk létre:</p>
+<ul>
+<li><strong><code>CreateMap&lt;Entity, Dto&gt;</code></strong>: Használható  <code>ProjectTo</code> metódussal és, a <code>Map</code>-pal is. A <code>Map</code> olyan mappelést tesz lehetővé, ahol a kód nem fordul SQL-re, tehát egy tetszőleges listát is át tudunk a memóriában mappelni. Csak akkor érdemes a <code>CreateMap&lt;Entity, Dto&gt;</code> használata, ha memóriában is szeretnénk mappelni.</li>
+<li><strong><code>CreateProjecton&lt;Entity, Dto&gt;</code></strong>: Csak a <code>ProjectTo</code> metódussal használható, a <code>Map</code>-pel nem, cserébe gyorsabb. Általában ezt szoktuk használni, hiszen a <code>ProjectTo</code> teszi lehetővé, hogy az adatbázisból csak azt kérdezzük le, amire szükségünk van.</li>
+</ul>
+<div class="highlight"><span class="filename">CategoryProfile.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">AutoMapper</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 
@@ -1459,16 +1939,14 @@ A gyakorlatban az <a href="https://automapper.io/">Automapper</a> csomag segíts
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span><span class="w">   </span>
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>Ahogy a fenti kódban is látszódik minden tulajdonságot mappelünk. Ezt nem kötelező, mert az AutoMapper az azonos nevű tulajdonságokat automatikusan mappeli.
-Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végig, hogy a DTO-ban átnevezünk egy tulajdonságot és mindehol ahol előfordul ott is átnevezésre kerül automatikusan. Viszont mivel a mappingben nem szerepel az adott tulajdonság, mert konvenció alapján mappeli az AztoMapper és az átnevezés után már nem is egyezik meg a DTO-ban és az entitáson a tulajdonság el fog törni a kód.</p>
+Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végig, hogy a DTO-ban átnevezünk egy tulajdonságot és mindenhol ahol előfordul ott is átnevezésre kerül automatikusan. Viszont mivel a mappingben nem szerepel az adott tulajdonság, mert konvenció alapján mappeli az AutoMapper és az átnevezés után már nem is egyezik meg a DTO-ban és az entitáson a tulajdonság el fog törni a kód.</p>
 </li>
 <li>
 <p>A fentihez hasonló módon készítsük el a <code>BookProfile</code> osztályt is.</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">AutoMapper</span><span class="p">;</span>
+<div class="highlight"><span class="filename">BookProfile.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">AutoMapper</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Dal.Entities</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer</span><span class="p">;</span>
 
@@ -1492,19 +1970,25 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>A fenti kód elkészítésében a <strong>Code Completions</strong> a Visual Studióban sokat tud segíteni, akár a teljes kódot helyesen fel tudja ajánlani. Ez az opció akkor érhető el ha van GitHub Copilot előfizetés.</li>
-</ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/code-completions-AI.png" data-desc-position="bottom"><img alt="Code Completions AI" src="../images/code-completions-AI.png"></a></p>
-<ol>
+</li>
+<li>
+<p>A fenti kód elkészítésében a <strong>Code Completions</strong> a Visual Studio-ban sokat tud segíteni, akár a teljes kódot helyesen fel tudja ajánlani. Ez az opció akkor érhető el ha van GitHub Copilot előfizetés.</p>
+<details class="tip" open="open">
+<summary>AI kód kiegészítés</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/code-completions-AI.png" data-desc-position="bottom"><img alt="Code Completions AI" src="images/code-completions-AI.png"></a></p>
+<figcaption>
+<p>AI kód kiegészítés beállítása</p>
+</figcaption>
+</figure>
+</details>
+</li>
 <li>
 <p>Ha megvannak a mapper profilok, akkor már csak annyi dolgunk van, hogy a service-ekben lecseréljük a <code>Select</code>-et egy <code>ProjectTo</code>-ra. Mivel a <code>ProjectTo&lt;DTO&gt;()</code> vár egy <code>IConfigurationProvider</code> paramétert is, a szolgáltatás konstruktorának át kell adni egy <code>IMapper</code>-t, amit majd a DI konténerbe be kell regisztrálni. Ez a regisztrációt majd a Console Application-ben fogjuk megtenni.</p>
 </li>
 <li>
 <p>Módosítjuk a <code>CategoryService</code>-t, hogy a <code>ProjectTo</code>-t használja.</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">CategoryService</span><span class="p">(</span><span class="n">BookShopDbContext</span><span class="w"> </span><span class="n">dbContext</span><span class="p">,</span><span class="w"> </span><span class="n">IMapper</span><span class="w"> </span><span class="n">mapper</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICategoryService</span>
+<div class="highlight"><span class="filename">CategoryService.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">CategoryService</span><span class="p">(</span><span class="n">BookShopDbContext</span><span class="w"> </span><span class="n">dbContext</span><span class="p">,</span><span class="w"> </span><span class="n">IMapper</span><span class="w"> </span><span class="n">mapper</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICategoryService</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">BookShopDbContext</span><span class="w"> </span><span class="n">_dbContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbContext</span><span class="p">;</span>
 
@@ -1512,17 +1996,17 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">allCategories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_dbContext</span><span class="p">.</span><span class="n">Categories</span>
 <span class="w">            </span><span class="p">.</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Order</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="n">ProjectTo</span><span class="o">&lt;</span><span class="n">CategoryHeader</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mapper</span><span class="p">.</span><span class="n">ConfigurationProvider</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+<span class="hll"><span class="w">            </span><span class="p">.</span><span class="n">ProjectTo</span><span class="o">&lt;</span><span class="n">CategoryHeader</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mapper</span><span class="p">.</span><span class="n">ConfigurationProvider</span><span class="p">)</span>
+</span><span class="w">            </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
 
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">allCategories</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Módosítjuk a <code>BookService</code>-t is, hogy a <code>ProjectTo</code>-t használja.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookService</span><span class="p">(</span><span class="n">BookShopDbContext</span><span class="w"> </span><span class="n">dbContext</span><span class="p">,</span><span class="w"> </span><span class="n">IMapper</span><span class="w"> </span><span class="n">mapper</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IBookService</span>
+</li>
+<li>
+<p>Módosítjuk a <code>BookService</code>-t is, hogy a <code>ProjectTo</code>-t használja.</p>
+<div class="highlight"><span class="filename">BookService.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">BookService</span><span class="p">(</span><span class="n">BookShopDbContext</span><span class="w"> </span><span class="n">dbContext</span><span class="p">,</span><span class="w"> </span><span class="n">IMapper</span><span class="w"> </span><span class="n">mapper</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IBookService</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">BookShopDbContext</span><span class="w"> </span><span class="n">dbContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbContext</span><span class="p">;</span>
 
@@ -1530,50 +2014,131 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">dbContext</span><span class="p">.</span><span class="n">Books</span>
 <span class="w">            </span><span class="p">.</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Title</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="n">ProjectTo</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mapper</span><span class="p">.</span><span class="n">ConfigurationProvider</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+<span class="hll"><span class="w">            </span><span class="p">.</span><span class="n">ProjectTo</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mapper</span><span class="p">.</span><span class="n">ConfigurationProvider</span><span class="p">)</span>
+</span><span class="w">            </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
 
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">books</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Ezt most nem tudjuk még kipróbálni, mert nincs futtatható projektünk. Ezért a következő lépésben egy egyszerű Console App-ot adunk a solution-höz, hogy el is tudjuk indítani az alkalmazást.</li>
+</li>
+<li>
+<p>Ezt most nem tudjuk még kipróbálni, mert nincs futtatható projektünk. Ezért a következő lépésben egy egyszerű Console App-ot adunk a solution-höz, hogy el is tudjuk indítani az alkalmazást.</p>
+</li>
 </ol>
-<h3 id="console-app-letrehozasa-mint-ui-reteg">Console App létrehozása mint UI réteg<a class="headerlink" href="#console-app-letrehozasa-mint-ui-reteg" title="Permanent link">¶</a></h3>
+<h2 id="console-app-letrehozasa">Console App létrehozása<a class="headerlink" href="#console-app-letrehozasa" title="Permanent link">¶</a></h2>
 <ol>
 <li>Adjunk a solution-hoz egy Console App-ot <code>BookShop.ConsoleApp</code> névvel.</li>
 <li>Adjunk referenciát a <code>BookShop.Bll</code> projektre.</li>
-<li>Ahhoz, hogy be tudujuk regisztrálni az AutoMappert és az adatbázis contextust a <code>Program.cs</code> fájlt ki kell egészíteni, mert alapértelmezés szerint nincs benne olyan kódrészlet ami appsettings.json-t fel tudná olvasni, illetve DI containere sincs.</li>
+<li>Ahhoz, hogy be tudjuk regisztrálni az AutoMappert és az adatbázis contextust a <code>Program.cs</code> fájlt ki kell egészíteni, mert alapértelmezés szerint nincs benne olyan kódrészlet ami appsettings.json-t fel tudná olvasni, illetve DI konténere sincs.</li>
 <li>Adjuk hozzá a <code>BookShop.ConsoleApp</code> projekthez a <code>Microsoft.Extensions.Hosting</code> NuGet package-et. Ezzel tudunk majd létrehozni egy <code>HostApplicationBuilder</code>-t, amibe be tudjuk regisztrálni a szolgáltatásainkat és kezelni tudja az <code>appsetting.json</code> fájlt.</li>
-<li>Adjunk a projekthez egy új JSON típusú fájlt <code>appsettings.json</code> névvel, majd állítsuk be a fájl tulajdonságai között (appsetting.json jobb klikk → Properties), hogy ha módosul másolja át az output könyvtárba</li>
+<li>
+<p>Adjunk a projekthez egy új JSON típusú fájlt <code>appsettings.json</code> névvel, majd állítsuk be a fájl tulajdonságai között (appsettings.json jobb klikk → Properties), hogy ha módosul másolja át az output könyvtárba</p>
+<ul>
 <li><strong>Copy To Output Directory</strong>: Copy if newer.</li>
-</ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/add-appsettings-json.png" data-desc-position="bottom"><img alt="Add appsettings.json file" src="../images/add-appsettings-json.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/copy-appsettings.png" data-desc-position="bottom"><img alt="Copy appsettings" src="../images/copy-appsettings.png"></a>
-6. Adjuk hozzá az alábbi tartalmat az <code>appsettings.json</code> fájlhoz. A LicenseKey-hez azt az AutoMapper-től kapott licensz kulcsot kell bemásolni.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"ConnectionStrings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"DefaultConnection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Source=.;Initial Catalog=BookShopDb;Integrated Security=True;   TrustServerCertificate=True"</span>
-<span class="w">  </span><span class="p">},</span>
+</ul>
+<details class="info">
+<summary>Segítség - appsettings.json hozzáadása</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/add-appsettings-json.png" data-desc-position="bottom"><img alt="Add appsettings.json file" src="images/add-appsettings-json.png"></a></p>
+<figcaption>
+<p>appsettings.json fájl hozzáadása</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/copy-appsettings.png" data-desc-position="bottom"><img alt="Copy appsettings" src="images/copy-appsettings.png"></a></p>
+<figcaption>
+<p>appsettings.json kerüljön be az outputba.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Adjuk hozzá az alábbi tartalmat az <code>appsettings.json</code> fájlhoz. A LicenseKey-hez azt az AutoMapper-től kapott licensz kulcsot kell bemásolni.</p>
+<div class="highlight"><span class="filename">appsettings.json</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ConnectionStrings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"DefaultConnection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Source=.;Initial Catalog=BookShopDb;Integrated Security=True;TrustServerCertificate=True"</span>
+<span class="w">    </span><span class="p">},</span>
 
-<span class="w">  </span><span class="nt">"AutoMapper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"LicenseKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ide jön a licenszkulcs"</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"AutoMapper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="nt">"LicenseKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nem tesszük ide a licensz kulcsot, mert az titok"</span>
+</span><span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>Készítsük el a <code>Program.cs</code> kódját is.</li>
-<li>Hozzuk létre a HostApplicationBuilder példányunkat a <code>Host.CreateApplicationBuilder</code> segítségével. Ez fel fogja olvasni az appsetting.json fájunkban lévő adatokat.</li>
+</li>
+<li>
+<p>A licensz kulcs egy védendő titok, így azt nem szerencsés beletenni az appsettings.json fájlba, mert akkor felkerül a verziókezelő rendszerbe és más is elérheti. Ilyen esetben a megoldás, hogy a lokális user secret-be tesszük ezt az értékel, és az alkalmazás majd onnan olvassa ki.</p>
+</li>
+<li>
+<p>Adjuk hozzá a user secret-et a <code>BookShop.ConsoleApp</code> projekthez. Projekten jobb klikk -&gt; Manage User Secrets.</p>
+<details class="info">
+<summary>Segítség - User secrets kezelése</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/manage-user-secrets.png" data-desc-position="bottom"><img alt="Manage user secrets" src="images/manage-user-secrets.png"></a></p>
+<figcaption>
+<p>Felhasználói titkok kezelése</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Amikor az alkalmazás beolvassa az <code>appsettings.json</code> fájlt azt követően beolvassa a secret-ben tárolt adatokat is (csak Development módban), és azzal felülírja az <code>appsettings.json</code>. Tehát egyszerűen át kell másolni az <code>AutoMapper</code> szekciót a secret-be.</p>
+<div class="highlight"><span class="filename">secrets.json</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"AutoMapper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"LicenseKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ide jön a licenszkulcs"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w">    </span>
+</code></pre></div>
+</li>
+<li>
+<p>Ha meg szeretnénk találni a <code>usersecrets.json</code> akkor az <code>%APPDATA%\Microsoft\UserSecrets\&lt;user_secrets_id&gt;</code> könyvtárban kell keresni, nem a projekt vagy solution alatt. Fontos, hogy ez a fájl nincs titkosítva, viszont nem a kódbázis része, így nem kerül fel a verziókezelőbe se. A user secret egyedi azonosítóját, ami egy GUID a projekt fájlban találjuk meg a <code>UserSecretId</code> tagben.</p>
+<details class="tip" open="open">
+<summary>Hol van a usersecrets.json fájl?</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/find-user-secrets-json.png" data-desc-position="bottom"><img alt="Find user secrets.json" src="images/find-user-secrets-json.png"></a></p>
+<figcaption>
+<p>User secret fájl</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Már csak annyi dolgunk van, hogy beállítsuk, hogy Development módban induljon el az alkalmazás. Ehhez a <code>DOTNET_ENVIRONMENT</code> környezeti változót kell <code>Development</code>-re állítani. Ennek a legegyszerűbb módja, hogy létrehozunk egy <code>launchSettings.json</code> fájlt és ott megadjuk. A projekt tulajdonsági között keressük meg a Debug részt és onnan nyissuk meg a debug launch profile UI-t és ott az Environment variables alá be is tudjuk másolni a Name-nek a <code>DOTNET_ENVIRONMENT</code> a Value-nak pedig a <code>Development</code> értéket.</p>
+<details class="info" open="open">
+<summary>Launch settings profile</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/set-development-mode.png" data-desc-position="bottom"><img alt="Set development mode" src="images/set-development-mode.png"></a></p>
+<figcaption>
+<p>Launch settings profile megnyitása és környezeti változó beállíása</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Ha mindent jól csináltunk a solution explorer ablakban a projekt Properties mappájában meg is jelenik a <code>lauchSettings.json</code> fájl, így a későbbiekben egyszerűen itt tudjuk szerkeszteni.</p>
+<details class="success" open="open">
+<summary>A létrejött indítási profil</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/launch-settings.png" data-desc-position="bottom"><img alt="Launch settings" src="images/launch-settings.png"></a></p>
+<figcaption>
+<p>A létrejött launchSettings.json fájl.</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Készítsük el a <code>Program.cs</code> kódját is.</p>
+<ul>
+<li>Hozzuk létre a HostApplicationBuilder példányunkat a <code>Host.CreateApplicationBuilder</code> segítségével. Ez fel fogja olvasni az <code>appsettings.json</code> fájlunkban és a userSecrets.json-ban lévő adatokat.</li>
 <li>Regisztráljuk be az alábbi szolgáltatásokat<ul>
 <li>DbContext-et.</li>
-<li>AutoMapper profileokat és a licensz kulcsot is adjuk meg.</li>
-<li>Bll szolgáltatásokat (BookService, CategoryService)</li>
+<li>AutoMapper profilokat és a licensz kulcsot is adjuk meg.</li>
+<li>BLL szolgáltatásokat (BookService, CategoryService)</li>
 </ul>
 </li>
-<li>Majd indítsuk is el az alkalmazást, hogy addig fusson amíg nem nyomjuk le a <code>Ctrl + C</code>-t.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
+<li>Majd indítsuk is el az alkalmazást, hogy addig fusson amíg nem nyomjuk le a <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> -t.</li>
+</ul>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.Mappings</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.Services</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
@@ -1595,7 +2160,7 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
 <span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddAutoMapper</span><span class="p">(</span>
 <span class="w">        </span><span class="n">cfg</span><span class="w"> </span><span class="o">=&gt;</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">LicenseKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="n">GetRequiredSection</span><span class="p">(</span><span class="s">"AutoMapper"</span><span class="p">).</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">   </span><span class="p">(</span><span class="s">"LicenseKey"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">LicenseKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="n">GetRequiredSection</span><span class="p">(</span><span class="s">"AutoMapper"</span><span class="p">).</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"LicenseKey"</span><span class="p">);</span>
 <span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">BookProfile</span><span class="p">));</span>
 
 <span class="c1">// Szolgáltatások regisztrálása a DI containerbe.</span>
@@ -1605,18 +2170,25 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
 <span class="c1">// Host fordítása. (Ez után lehet lekérdezni a beregisztált szolgáltatásokat)</span>
 <span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
 
-<span class="n">app</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">BookShop</span><span class="p">.</span><span class="n">Dal</span><span class="p">.</span><span class="n">BookShopDbContext</span><span class="o">&gt;</span><span class="p">().</span><span class="n">Database</span><span class="p">.</span><span class="n">Migrate</span><span class="p">();</span>
-
-<span class="c1">// TODO: Ide tudjuk majd írni a tesztelendő kódot.</span>
+<span class="hll"><span class="c1">// Létrehozunk egy új scope-ot és abból kérjük le a szükséges osztály példányokat</span>
+</span><span class="hll"><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">CreateScope</span><span class="p">())</span>
+</span><span class="hll"><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">BookShop</span><span class="p">.</span><span class="n">Dal</span><span class="p">.</span><span class="n">BookShopDbContext</span><span class="o">&gt;</span><span class="p">().</span><span class="n">Database</span><span class="p">.</span><span class="n">Migrate</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// TODO: Ide tudjuk majd írni a tesztelendő kódot.</span>
+</span><span class="p">}</span>
 
 <span class="k">await</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">RunAsync</span><span class="p">();</span>
 </code></pre></div>
-<ol>
-<li>Figyeljük meg a fenti kódban, hogy a végén meghívjuk az adatbázis migrációt. Ha ez a sor benne marad a kódban, akkor nem kell sohasem futtatni az <code>Update-Database</code> parancsot, mert ez a kódsor le fogja futtatni azokat a migrációkat, amik még nem futottak. Érdemes azonban megjegyezni, hogy Production környezetben nem szeretjük ezt az automatikus megoldást, mert általában a migrációk lefuttatásához magasabb jogosultság szükséges mint az alkalmazás normál futtatásához.</li>
-<li>Ha elindítjuk az alkalmazást azt fogjuk látni, hogy valóban ellenőrzni, hogy minden EF migráció lefutott-e, ezt a konzolra naplózott SQL logokból láthatjuk.</li>
+</li>
 <li>
-<p>Ahhoz, hogy a mi kódunkat is le tudjuk tesztelni egyszerűen, hozzunk létre egy <code>TestMyCode</code> osztályt, melynek konstruktora megkapja az <code>IBookService</code> és <code>ICategoryService</code> interfészeket és impelmentál két metóudst <code>ListBooksAsync</code> és <code>ListCategoriesAsync</code> melyek meghívják az egyes szolgáltatások megfelelő metódusát és a konzolra kiírják a visszakapott listák elemet.</p>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
+<p>Figyeljük meg a fenti kódban, hogy a végén meghívjuk az adatbázis migrációt. Ha ez a sor benne marad a kódban, akkor nem kell sohasem futtatni az <code>Update-Database</code> parancsot, mert ez a kódsor le fogja futtatni azokat a migrációkat, amik még nem futottak. Érdemes azonban megjegyezni, hogy Production környezetben nem szeretjük ezt az automatikus megoldást, mert általában a migrációk lefuttatásához magasabb jogosultság szükséges mint az alkalmazás normál futtatásához.</p>
+</li>
+<li>Ahhoz, hogy a migráció le tudjon futni, létre kell hozni egy külön szkópot a szolgáltatásokhoz (AddScoped-ként adtuk hozzá), és abban a szkópban fogjuk megtalálni a <code>GetRequiredService</code> segítségével.</li>
+<li>Ha elindítjuk az alkalmazást azt fogjuk látni, hogy valóban ellenőrizni, hogy minden EF migráció lefutott-e, ezt a konzolra naplózott SQL logokból láthatjuk.</li>
+<li>
+<p>Ahhoz, hogy a mi kódunkat is le tudjuk tesztelni egyszerűen, hozzunk létre egy <code>TestMyCode</code> osztályt, melynek konstruktora megkapja az <code>IBookService</code> és <code>ICategoryService</code> interfészeket és implementál két metódust <code>ListBooksAsync</code> és <code>ListCategoriesAsync</code> melyek meghívják az egyes szolgáltatások megfelelő metódusát és a konzolra kiírják a visszakapott listák elemet.</p>
+<div class="highlight"><span class="filename">TestMyCode.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.IServices</span><span class="p">;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.ConsoleApp</span><span class="p">;</span>
 
@@ -1646,30 +2218,35 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
 </li>
 <li>
 <p>Már csak annyi dolgunk van, hogy a <code>Program.cs</code>-ből meghívjuk a két metódust, viszont mivel manuálisan nem tudjuk ezt az osztály példányosítani, így ezt is hozzá kell adni a Services-hez és onnan kell a példányt elkérni.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Szolgáltatások regisztrálása a DI containerbe.</span>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="c1">// Szolgáltatások regisztrálása a DI containerbe.</span>
 <span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IBookService</span><span class="p">,</span><span class="w"> </span><span class="n">BookService</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">ICategoryService</span><span class="p">,</span><span class="w"> </span><span class="n">CategoryService</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">TestMyCode</span><span class="o">&gt;</span><span class="p">();</span>
-
+<span class="hll"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">TestMyCode</span><span class="o">&gt;</span><span class="p">();</span>
+</span>
 <span class="c1">// Host fordítása</span>
 <span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
 
-<span class="n">app</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">BookShop</span><span class="p">.</span><span class="n">Dal</span><span class="p">.</span><span class="n">BookShopDbContext</span><span class="o">&gt;</span><span class="p">().</span><span class="n">Database</span><span class="p">.</span><span class="n">Migrate</span><span class="p">();</span>
+<span class="c1">// Létrehozunk egy új scope-ot és abból kérjük le a szükséges osztály példányokat</span>
+<span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">CreateScope</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">BookShop</span><span class="p">.</span><span class="n">Dal</span><span class="p">.</span><span class="n">BookShopDbContext</span><span class="o">&gt;</span><span class="p">().</span><span class="n">Database</span><span class="p">.</span><span class="n">Migrate</span><span class="p">();</span>
 
-<span class="kt">var</span><span class="w"> </span><span class="n">testMyCodeService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">TestMyCode</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="hll"><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">testMyCodeService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">TestMyCode</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">testMyCodeService</span><span class="p">.</span><span class="n">ListBooksAsync</span><span class="p">();</span>
+</span><span class="hll"><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">testMyCodeService</span><span class="p">.</span><span class="n">ListCategoriesAsync</span><span class="p">();</span>
+</span><span class="p">}</span>
 
-<span class="k">await</span><span class="w"> </span><span class="n">testMyCodeService</span><span class="p">.</span><span class="n">ListBooksAsync</span><span class="p">();</span>
-<span class="k">await</span><span class="w"> </span><span class="n">testMyCodeService</span><span class="p">.</span><span class="n">ListCategoriesAsync</span><span class="p">();</span>
 
 <span class="k">await</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">RunAsync</span><span class="p">();</span>
 </code></pre></div>
 </li>
 <li>
-<p>Ha így elindítjuk az alkalmazást, akkor látható lesz, hogy tényleg megkapjuk az adatokat az adatbázisból, sőt a futtatot SQL kódot is látjuk.</p>
+<p>Ha így elindítjuk az alkalmazást, akkor látható lesz, hogy tényleg megkapjuk az adatokat az adatbázisból, sőt a futtatott SQL kódot is látjuk.</p>
 </li>
 </ol>
-<h3 id="teljes-dal-reteg">Teljes DAL réteg<a class="headerlink" href="#teljes-dal-reteg" title="Permanent link">¶</a></h3>
-<p>Ezek alapján már el tudnánk készíteni a teljes adatelérési réteget, de miven az sok időt vesz igénybe ezért az a következő labor kiinduló anyagába már benne lesz.</p>
+<h2 id="teljes-dal-reteg">Teljes DAL réteg<a class="headerlink" href="#teljes-dal-reteg" title="Permanent link">¶</a></h2>
+<p>Ezek alapján már el tudnánk készíteni a teljes adatelérési réteget, de mivel az sok időt vesz igénybe ezért az a következő labor kiinduló anyagába már benne lesz.</p>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1677,8 +2254,8 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
           </path>
         </svg>
       </span>
-      <span title="2026. január 13. 13:45:15">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. január 13. 13:45:15 CET"><span class="timeago" datetime="2026-01-13T13:45:15+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. január 13. 13:45:15 CET">2026-01-13</span>
+      <span title="2026. január 13. 19:00:41">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. január 13. 19:00:41 CET"><span class="timeago" datetime="2026-01-13T19:00:41+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. január 13. 19:00:41 CET">2026-01-13</span>
       </span>
     </span>
 
@@ -1741,14 +2318,14 @@ Azonban ha a kódot refaktoráljuk, akkor a mappelés eltörhet. Gondoljuk végi
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
     
   

@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/</loc>
+         <loc>https://webportalok.github.io/webportalok/</loc>
          <lastmod>2026-01-13</lastmod>
     </url>
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/homework/01-hw/</loc>
+         <loc>https://webportalok.github.io/webportalok/homework/01-hw/</loc>
          <lastmod>2026-01-13</lastmod>
     </url>
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/information/contributing/</loc>
+         <loc>https://webportalok.github.io/webportalok/information/contributing/</loc>
          <lastmod>2026-01-13</lastmod>
     </url>
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/lecture-notes/01-topic/</loc>
+         <loc>https://webportalok.github.io/webportalok/lecture-notes/01-topic/</loc>
          <lastmod>2026-01-13</lastmod>
     </url>
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/seminar/00%20-%20Adatb%C3%A1zis%20alapok/00%20-%20Adatbazisok%20ismetles/</loc>
+         <loc>https://webportalok.github.io/webportalok/seminar/04%20-%20Blazor/</loc>
          <lastmod>2026-01-13</lastmod>
     </url>
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/seminar/01%20-%20Tervezes/01%20-%20Tervezes/</loc>
+         <loc>https://webportalok.github.io/webportalok/seminar/06%20-%20Felhasznalo%20kezeles/</loc>
          <lastmod>2026-01-13</lastmod>
     </url>
     <url>
-         <loc>https://bmeaut.github.io/mkdocs-course-materials-template/seminar/02%20-%20Projekt%20struktura/02%20-%20Projekt%20struktura%20es%20adatmodell/</loc>
+         <loc>https://webportalok.github.io/webportalok/seminar/Tartalomjegyzek/</loc>
+         <lastmod>2026-01-13</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/00%20-%20Adatb%C3%A1zis%20alapok/</loc>
+         <lastmod>2026-01-13</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/01%20-%20Tervezes/</loc>
+         <lastmod>2026-01-13</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/02%20-%20Projekt%20struktura/</loc>
+         <lastmod>2026-01-13</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/03%20-%20Backend%20services/03%20-%20Backend%20services/</loc>
+         <lastmod>2026-01-13</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/04%20-%20ASP.NET%20MVC%20and%20Razor%20Pages/04%20-%20ASP.NET%20MVC%2C%20Razor%20Page/</loc>
          <lastmod>2026-01-13</lastmod>
     </url>
 </urlset>
