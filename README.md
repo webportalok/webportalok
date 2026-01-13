@@ -1,8 +1,8 @@
-# COURSE Code - Course Name
+# VIAUJV83 - Webportálok fejlesztése
 
 ![Build docs](https://github.com/dotnet/mkdocs-course-materials-template/workflows/Build%20docs/badge.svg?branch=main)
 
-[COURSE Code - Course Name](https://www.aut.bme.hu/Course/COURSECODE/) tárgy jegyzetei, labor anyagai, házi feladatai.
+[VIAUJV83 - Webportálok fejlesztése](https://www.aut.bme.hu/Course/webportalok) tárgy jegyzetei, labor anyagai, házi feladatai.
 
 A jegyzetek [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) segítségével készülnek és GitHub Pages-en kerülnek publikálásra: <https://bmeaut.github.io/mkdocs-course-materials-template/>
 
@@ -33,11 +33,11 @@ A repository tartalmaz egy Dockerfile-t, mely az MKDocs keretrendszer és függ�
 3. <http://localhost:8000> vagy a codespace átirányított címének megnyitása böngészőből.
 4. Markdown szerkesztése és mentése után automatikusan frissül a weboldal.
 
-# COURSE Code - Course Name
+# VIAUJV83 - Webportálok fejlesztése
 
 ![Build docs](https://github.com/dotnet/mkdocs-course-materials-template/workflows/Build%20docs/badge.svg?branch=master)
 
-[BMEVIAUAC01 Data-driven systems](https://www.aut.bme.hu/Course/COURSECODE/) course lecture notes, seminar materials and homework exercises.
+[VIAUJV83 - Webportálok fejlesztése](https://www.aut.bme.hu/Course/webportalok) course lecture notes, seminar materials and homework exercises.
 
 The content in built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and is published to GitHub Pages at: <https://dotnet.github.io/mkdocs-course-materials-template/>
 

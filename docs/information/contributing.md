@@ -23,8 +23,7 @@ Amennyiben hibát találsz az anyagban, vagy szeretnéd bővíteni, de nem áll 
 1. Az issues tabon a new issue gombbal hozz létre egy új issue-t.
     ![How to create new issue](images/github-new-issue.png)
 2. Lásd el a megfelelő címkékkel
-    1. A labor típusa (`android` az androidos laboroknál és `web` a webes laboroknál)
-    2. A hiba típusa (`clarification`, `typo`, `illustration` vagy `notes`)
+    1. A hiba típusa (`clarification`, `typo`, `illustration` vagy `notes`)
 3. Írd le, hogy mit kéne tartalmaznia a javításnak
 
 !!! tip
