@@ -1,6 +1,6 @@
-# COURSE NAME
+# Webportálok fejlesztése
 
-Jegyzetek, gyakorlati anyagok és házi feladatok a COURSE NAME c. tárgyhoz.
+Jegyzetek, gyakorlati anyagok és házi feladatok a Webportálok fejlesztése c. tárgyhoz.
 
 !!! note "Javítás az anyagban"
     A tárgy hallgatóinak a jegyzet anyagában történő javításért, kiegészítésért plusz pontot adunk! Ha hibát találsz a jegyzet bármely részében, vagy kiegészítenéd azt, nyiss egy _pull request_-et! A repository linkjét a jobb felső sarokban találod.
