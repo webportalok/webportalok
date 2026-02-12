@@ -100,14 +100,25 @@ plugins:
       branch: master
 
 nav:
-  - index.md
   - "Tudnivalók":
-      - information/contributing.md
+      - information/terms of use/index.md
+      - information/course/index.md
+      - information/requirements/index.md
+      - information/contributing/index.md
   - "Laborok":
-      - seminar/00 - Adatbázis alapok/index.md
-      - seminar/01 - Tervezes/index.md
-      - seminar/02 - Projekt struktura/index.md
+      - seminar/0 - Adatbazis alapok/index.md
+      - seminar/1 - Tervezes/index.md
+      - seminar/2 - Projekt struktura/index.md
+      - seminar/3 - Backend services/index.md
+      - "4. ASP.NET Razor Pages":
+          - seminar/4 - ASP.NET Razor Pages/4.1 Basics/index.md
+          - seminar/4 - ASP.NET Razor Pages/4.2 Main pages/index.md
+          - seminar/4 - ASP.NET Razor Pages/4.3 Felhasznalokezeles/index.md
+          - seminar/4 - ASP.NET Razor Pages/4.4 Admin pages/index.md
+      - "ASP.NET MVC":
+          - seminar/5 - ASP.NET MVC/index.md
+      - "6. Blazor WASM":
+          - seminar/6 - Blazor WASM/index.md
   - "Házi feladatok":
-      - homework/01-hw/index.md
-  - "Jegyzetek":
-      - lecture-notes/01-topic/index.md
+      - homework/01 - Specifikacio/index.md
+      - homework/02 - Nagy hazi feladat/index.md
