@@ -28,35 +28,25 @@ Az alábbi ábrán látható a Microsoft webes technológiájának, az ASP.NET-n
 ![ASP.NET timeline](images/asp-net-timeline.png)
 
 ## Az ASP.NET mely részeit fogjuk használni a laborokon?
+
 A rövid válasz, hogy mindegyiket.
 
-Razor szintaxissal készített szerver oldalon renderelt nézetek két típusa (Razor Pages és Razor MVC).
-WebAPI készítése kliens oldali keretrendszerekhez, melyek JSON-ban adják vissza az adatokat például egy Angular vagy mobil kliensnek.
-ASP.NET Core Identity a felhasználó- és jogosultságkezelés megvalósításához.
-Újrahasznosítható komponensek (View components, Tag helpers) készítése.
-Modellvalidáció szerver és kliens oldalon.
-Aszinkron felhasználói felületek megvalósítása.
-SignalR a valós idejű kommunikációhoz.
-SEO lehetőségei
- 
+- Razor szintaxissal készített szerver oldalon renderelt nézetek (Razor Pages).
+- WebAPI készítése kliens oldali keretrendszerekhez, melyek JSON-ban adják vissza az adatokat például egy Blazor WASM, Angular, React vagy mobil kliensnek.
+- ASP.NET Core Identity a felhasználó- és jogosultságkezelés megvalósításához.
+- Újrahasznosítható komponensek (View components, Tag helpers) készítése.
+- Modellvalidáció szerver és kliens oldalon.
+- Blazor WebApp
+
 Ezen felül ahhoz, hogy teljes értékű alkalmazást tudjunk készíteni a laborokon - nem pedig egyszerű, különálló példákat -, az alábbi technológiákat használjuk fel:
-HTML, CSS, JavaScript, jQuery (Mobil és webes szoftvereken elsajátítható)
-SQL és Entity Framework Core az adatelérési réteg megvalósításához
+
+- HTML, CSS, JavaScript, jQuery (Mobil és webes szoftvereken elsajátítható)
+- SQL és Entity Framework Core az adatelérési réteg megvalósításához
 
 ## Előtanulmányi rend
 
-A tárgy felvételéhez kötelező előtanulmányi rend nincsen. A tárgy a C# nyelv és a HTML, CSS és JavaScript nyelv alapjainak ismeretére épít, így felvétele csak azon hallgatók számára ajánlott, akik ezekkel a technológiákkal tisztában vannak (a Mobil- és webes szoftverek címtű tárgyon elhangozztak ismerete elegendő a HTML, CSS és JavaScript nyelvekből). Ezen nyelvek ismerete szükséges a tárgy teljesítéséhez, viszont a tárgy ezekkel bevezető szinten sem foglalkozik, hiszen kötelező tárgyak formájában elsajátíthatók.
-
-## A tárgy teljesítésének feltételei
-
-Házi feladat specifikáció benyújtása a gyakorlatvezetőnek a tárgy honlapján keresztül a 10. oktatási hét végéig. A specifikációval és a házi feladat követelményekkel kapcsolatban a tárgy honlapján útmutató található. Csak ASP.NET-ben írt és a honlapon feltöltött (nem e-mailben küldött) házi feladatot tudunk elfogadni. A specifikáció késedelmes benyújtása a leadási határidőt követő hét péntek 23:59-ig lehetséges.
-Házi feladat bemutatása a gyakorlatvezetőnek kizárólag az előre meghirdetett időpontokban (az időpontok meghirdetése gyakorlatokon és a tárgy honlapján keresztül történik). A házi feladat késedelmes benyújtására pótlási hét csütörtökön 12:15-től van lehetőség. A specifikáció és a házi feladat beadása az aláírás megszerzésének és egyben a vizsgára bocsájtásnak szükséges feltétele. A jegy beírásának feltétele, hogy az elfogadott házi feladat kódja a tárgy honlapjára fel legyen töltve (e-mailben nem küldhető)! Vigyázat: a tárgy honlapján megjelenő feltöltési határidő nem azonos a beadási határidővel! A beadási határidőt a bemutatási időpontokkal együtt a tárgy hírei között szoktuk feltüntetni!
-Vizsga a vizsgaidőszakban, melynek anyagát az előadáson és a gyakorlatokon elhangzottak képezik, azonban kiemelkedően jó házi feladat határidőre történő leadása esetén megajánlott jegy leheséges.
-
-### Megajánlott jegy
-Teljeskörűen működő és igényesen elkészített házi feladatra megajánlott jegy kapható, ha a hallgató legfeljebb 4 előadásról és 4 gyakorlatról hiányzott. A megajánlott jegy csak jó (4) vagy jeles (5) osztályzat lehet, amit a nagyházi feladat alapján állapítunk meg. A specifikáció leadása után a hallgatók visszajelzést kapnak, hogy a házi feladatuk esélyes-e a megajánlott jegyre. Ilyenkor még van lehetőség bővíteni a funkciókat, hogy megajánlott jegyet szerezhessenek.
-
-Fontos: aki megajánlott jegyet szerzett, az is jelentkezzen a Neptunon vizsgára, mert a Neptunban megszűnt a megajánlott jegy fogalma!
+A tárgy felvételéhez kötelező előtanulmányi rend nincsen. A tárgy a C# nyelv és a HTML, CSS és JavaScript nyelv alapjainak ismeretére épít, így felvétele csak azon hallgatók számára ajánlott, akik ezekkel a technológiákkal tisztában vannak (a Mobil- és webes szoftverek című tárgyon elhangzottak ismerete elegendő a HTML, CSS és JavaScript nyelvekből). Ezen nyelvek ismerete szükséges a tárgy teljesítéséhez, viszont a tárgy ezekkel bevezető szinten sem foglalkozik, hiszen kötelező tárgyak formájában elsajátíthatók.
 
 ### Önálló laboron is ASP.NET Core-ral szeretnék foglalkozni. Felvehetem-e ezt a tárgyat is mellé?
-Az önálló labor és a választható tárgyak nem tudják egymást kizárni. Ezért egy optimális választás lehet, hogy a webportálok tárgy mellé egy ASP.NET Core-ral foglalkozó önálló labor témát választasz. Ebben az esetben megfelelően komplex alkalmazás készítése esetén ugyanaz az alkalmazás beadható mindkét tárgyhoz, csak meg kell jelölni, hogy mely részek melyik tárgyhoz készültek. Ennek részleteit Gincsai Gáborral tudod egyeztetni.
+
+Az önálló labor és a választható tárgyak nem tudják egymást kizárni. Ezért egy optimális választás lehet, hogy a webportálok tárgy mellé egy ASP.NET Core / Blazor alapú önálló labor témát választasz. Ebben az esetben megfelelően komplex alkalmazás készítése esetén ugyanaz az alkalmazás beadható mindkét tárgyhoz, csak meg kell jelölni, hogy mely részek melyik tárgyhoz készültek.
