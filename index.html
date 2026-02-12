@@ -7,31 +7,29 @@
         <meta name="author" content="Gábor Gincsai">
       
       
-        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/6%20-%20Blazor%20WASM/">
+        <link rel="canonical" href="https://webportalok.github.io/webportalok/">
       
       
-        <link rel="prev" href="../5%20-%20ASP.NET%20MVC/">
       
-      
-        <link rel="next" href="../../homework/01%20-%20Specifikacio/">
+        <link rel="next" href="information/terms%20of%20use/">
       
       
         
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>6.1. Blazor WASM alapok - VIAUJV83 - Webportálok fejlesztése</title>
+        <title>VIAUJV83 - Webportálok fejlesztése</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,17 +48,17 @@
       
     
     
-      <link rel="stylesheet" href="../../css/timeago.css">
+      <link rel="stylesheet" href="css/timeago.css">
     
-      <link rel="stylesheet" href="../../extra-material-theme.css">
+      <link rel="stylesheet" href="extra-material-theme.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -89,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#61-blazor-wasm-alapok" class="md-skip">
+        <a href="#webportalok-fejlesztese" class="md-skip">
           Kihagyás
         </a>
       
@@ -103,9 +101,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Élőfej">
-    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../logo-bme-aut.png" alt="logo">
+  <img src="logo-bme-aut.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -122,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6.1. Blazor WASM alapok
+              Webportálok fejlesztése
             
           </span>
         </div>
@@ -233,9 +231,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
         
   
   
@@ -256,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../information/terms%20of%20use/" class="md-tabs__link">
+        <a href="information/terms%20of%20use/" class="md-tabs__link">
           
   
   
@@ -272,13 +272,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="seminar/0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
           
   
   
@@ -298,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
+        <a href="homework/01%20-%20Specifikacio/" class="md-tabs__link">
           
   
   
@@ -332,9 +330,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../logo-bme-aut.png" alt="logo">
+  <img src="logo-bme-aut.png" alt="logo">
 
     </a>
     VIAUJV83 - Webportálok fejlesztése
@@ -358,10 +356,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webportálok fejlesztése
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
         
   
   
@@ -377,6 +402,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#celkituzes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Célkitűzés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi-az-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mi az ASP.NET Core?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miert-idotallo-technologia-a-webes-vilagban-az-aspnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miért időtálló technológia a webes világban az ASP.NET?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#az-aspnet-mely-reszeit-fogjuk-hasznalni-a-laborokon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Az ASP.NET mely részeit fogjuk használni a laborokon?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elotanulmanyi-rend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Előtanulmányi rend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-targy-teljesitesenek-feltetelei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tárgy teljesítésének feltételei
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A tárgy teljesítésének feltételei">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#megajanlott-jegy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Megajánlott jegy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onallo-laboron-is-aspnet-core-ral-szeretnek-foglalkozni-felvehetem-e-ezt-a-targyat-is-melle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Önálló laboron is ASP.NET Core-ral szeretnék foglalkozni. Felvehetem-e ezt a tárgyat is mellé?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -438,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/terms%20of%20use/" class="md-nav__link">
+      <a href="information/terms%20of%20use/" class="md-nav__link">
         
   
   
@@ -466,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/course/" class="md-nav__link">
+      <a href="information/course/" class="md-nav__link">
         
   
   
@@ -494,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/requirements/" class="md-nav__link">
+      <a href="information/requirements/" class="md-nav__link">
         
   
   
@@ -522,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/contributing/" class="md-nav__link">
+      <a href="information/contributing/" class="md-nav__link">
         
   
   
@@ -554,29 +693,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -594,7 +728,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -612,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
+      <a href="seminar/0%20-%20Adatbazis%20alapok/" class="md-nav__link">
         
   
   
@@ -640,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1%20-%20Tervezes/" class="md-nav__link">
+      <a href="seminar/1%20-%20Tervezes/" class="md-nav__link">
         
   
   
@@ -668,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2%20-%20Projekt%20struktura/" class="md-nav__link">
+      <a href="seminar/2%20-%20Projekt%20struktura/" class="md-nav__link">
         
   
   
@@ -696,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3%20-%20Backend%20services/" class="md-nav__link">
+      <a href="seminar/3%20-%20Backend%20services/" class="md-nav__link">
         
   
   
@@ -774,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/" class="md-nav__link">
+      <a href="seminar/4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/" class="md-nav__link">
         
   
   
@@ -802,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/" class="md-nav__link">
+      <a href="seminar/4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/" class="md-nav__link">
         
   
   
@@ -830,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="seminar/4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/" class="md-nav__link">
         
   
   
@@ -858,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/" class="md-nav__link">
+      <a href="seminar/4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/" class="md-nav__link">
         
   
   
@@ -944,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5%20-%20ASP.NET%20MVC/" class="md-nav__link">
+      <a href="seminar/5%20-%20ASP.NET%20MVC/" class="md-nav__link">
         
   
   
@@ -977,8 +1111,6 @@
                 
   
   
-    
-  
   
   
     
@@ -989,11 +1121,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7">
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
@@ -1014,7 +1146,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1029,19 +1161,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="seminar/6%20-%20Blazor%20WASM/" class="md-nav__link">
         
   
   
@@ -1057,7 +1180,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1135,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homework/01%20-%20Specifikacio/" class="md-nav__link">
+      <a href="homework/01%20-%20Specifikacio/" class="md-nav__link">
         
   
   
@@ -1163,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
+      <a href="homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
         
   
   
@@ -1211,6 +1333,108 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#celkituzes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Célkitűzés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi-az-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mi az ASP.NET Core?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miert-idotallo-technologia-a-webes-vilagban-az-aspnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miért időtálló technológia a webes világban az ASP.NET?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#az-aspnet-mely-reszeit-fogjuk-hasznalni-a-laborokon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Az ASP.NET mely részeit fogjuk használni a laborokon?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elotanulmanyi-rend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Előtanulmányi rend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-targy-teljesitesenek-feltetelei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tárgy teljesítésének feltételei
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A tárgy teljesítésének feltételei">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#megajanlott-jegy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Megajánlott jegy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onallo-laboron-is-aspnet-core-ral-szeretnek-foglalkozni-felvehetem-e-ezt-a-targyat-is-melle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Önálló laboron is ASP.NET Core-ral szeretnék foglalkozni. Felvehetem-e ezt a tárgyat is mellé?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1226,7 +1450,7 @@
 
 
   
-    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/6 - Blazor WASM/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/webportalok/webportalok/edit/master/docs/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -1234,7 +1458,45 @@
   
 
 
-<h1 id="61-blazor-wasm-alapok">6.1. Blazor WASM alapok<a class="headerlink" href="#61-blazor-wasm-alapok" title="Permanent link">¶</a></h1>
+<h1 id="webportalok-fejlesztese">Webportálok fejlesztése<a class="headerlink" href="#webportalok-fejlesztese" title="Permanent link">¶</a></h1>
+<h2 id="celkituzes">Célkitűzés<a class="headerlink" href="#celkituzes" title="Permanent link">¶</a></h2>
+<p>A tárgy keretében a hallgatók megismerkednek a modern webes portálokkal szemben támasztott követelményekkel, és megoldásokat látnak azok gyakorlati megvalósítására. A cél, hogy a hallgató a webes portálokat komplex, a gyakorlatban általában kritikus fontosságú megoldásként lássa, ismerje az ilyen jellegű projektekhez tartozó problémaköröket, és tisztában legyen a lehetséges megoldási módokkal.</p>
+<p>A tárgy átfogó és teljes képet ad a portálok különböző felhasználási területeiről, külön hangsúlyt fektetve az architektúra, a teljesítmény és a biztonság kérdéseire.</p>
+<p>A tárgyhoz kapcsolódó online laborok során a hallgatók számára lehetőség nyílik az előadás anyagának gyakorlati alkalmazására is ASP.NET Core 10 és Blazor WASM segítségével, így a félév végére az ASP.NET Core és Balzor WASM által nyújtott teljes palettát megismerhetik a <em>Webportálok fejlesztése</em> című tárgyat választó hallgatók.</p>
+<p>A laborok során két komplex alkalmazást készítünk el. Egy ASP.NET Razor Page alapút és egy Blazor WebApp alapút.
+A feladatot a funkciók, felületek és adatbázis tervezéstől, az alkalmazás teljes megvalósításáig mely során a hallgatók egyre mélyebben ismerhetik meg az ASP.NET lehetőségeit és kihívásait, hogy a félév végére egy komplex ASP.NET Core Razor Page vagy egy Blazor WebApp webalkalmazást tudjanak önállóan elkészíteni, amit a félév végén nagyházi feladat formájában prezentálni is kell.</p>
+<h2 id="mi-az-aspnet-core">Mi az ASP.NET Core?<a class="headerlink" href="#mi-az-aspnet-core" title="Permanent link">¶</a></h2>
+<p>A .NET Core a Microsoft nyílt forráskódú, több platformon is (Windows, Linux, OS X) futtatható alkalmazásfejlesztési környezete. Az ASP.NET Core pedig ennek a technológiának a felhasználásával Windows-on, Linux-on és Mac OS-en futtatható webalkalmazások fejlesztésére szolgáló eszköz.</p>
+<p>Az ASP.NET Core 10 jelenleg a Microsoft legújabb webfejlesztő eszköze, amit Visual Studio Code vagy Visual Studio 2026 segítségével fejleszthetünk.</p>
+<h2 id="miert-idotallo-technologia-a-webes-vilagban-az-aspnet">Miért időtálló technológia a webes világban az ASP.NET?<a class="headerlink" href="#miert-idotallo-technologia-a-webes-vilagban-az-aspnet" title="Permanent link">¶</a></h2>
+<p>2002-ben jelent meg először az ASP.NET 1.0, azóta kisebb átnevezésekkel, mint ASP.NET MVC vagy ASP.NET Core MVC még mindig virágzik.</p>
+<p>Kicsit zavaróak lehetnek az elnevezések, hiszen a Core elnevezés is csak egy marketing fogás miatt került be az elnevezésbe, sugallva az újat, mint sem egy egyszerű főverziószámot növeltek. A .NET 10 megjelenésével viszont ismét eltűnt a Core szó a megnevezésből.</p>
+<p>Az alábbi ábrán látható a Microsoft webes technológiájának, az ASP.NET-nek a fejlődése a megjelenéstől napjainkig.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/asp-net-timeline.png" data-desc-position="bottom"><img alt="ASP.NET timeline" src="images/asp-net-timeline.png"></a></p>
+<h2 id="az-aspnet-mely-reszeit-fogjuk-hasznalni-a-laborokon">Az ASP.NET mely részeit fogjuk használni a laborokon?<a class="headerlink" href="#az-aspnet-mely-reszeit-fogjuk-hasznalni-a-laborokon" title="Permanent link">¶</a></h2>
+<p>A rövid válasz, hogy mindegyiket.</p>
+<p>Razor szintaxissal készített szerver oldalon renderelt nézetek két típusa (Razor Pages és Razor MVC).
+WebAPI készítése kliens oldali keretrendszerekhez, melyek JSON-ban adják vissza az adatokat például egy Angular vagy mobil kliensnek.
+ASP.NET Core Identity a felhasználó- és jogosultságkezelés megvalósításához.
+Újrahasznosítható komponensek (View components, Tag helpers) készítése.
+Modellvalidáció szerver és kliens oldalon.
+Aszinkron felhasználói felületek megvalósítása.
+SignalR a valós idejű kommunikációhoz.
+SEO lehetőségei</p>
+<p>Ezen felül ahhoz, hogy teljes értékű alkalmazást tudjunk készíteni a laborokon - nem pedig egyszerű, különálló példákat -, az alábbi technológiákat használjuk fel:
+HTML, CSS, JavaScript, jQuery (Mobil és webes szoftvereken elsajátítható)
+SQL és Entity Framework Core az adatelérési réteg megvalósításához</p>
+<h2 id="elotanulmanyi-rend">Előtanulmányi rend<a class="headerlink" href="#elotanulmanyi-rend" title="Permanent link">¶</a></h2>
+<p>A tárgy felvételéhez kötelező előtanulmányi rend nincsen. A tárgy a C# nyelv és a HTML, CSS és JavaScript nyelv alapjainak ismeretére épít, így felvétele csak azon hallgatók számára ajánlott, akik ezekkel a technológiákkal tisztában vannak (a Mobil- és webes szoftverek címtű tárgyon elhangozztak ismerete elegendő a HTML, CSS és JavaScript nyelvekből). Ezen nyelvek ismerete szükséges a tárgy teljesítéséhez, viszont a tárgy ezekkel bevezető szinten sem foglalkozik, hiszen kötelező tárgyak formájában elsajátíthatók.</p>
+<h2 id="a-targy-teljesitesenek-feltetelei">A tárgy teljesítésének feltételei<a class="headerlink" href="#a-targy-teljesitesenek-feltetelei" title="Permanent link">¶</a></h2>
+<p>Házi feladat specifikáció benyújtása a gyakorlatvezetőnek a tárgy honlapján keresztül a 10. oktatási hét végéig. A specifikációval és a házi feladat követelményekkel kapcsolatban a tárgy honlapján útmutató található. Csak ASP.NET-ben írt és a honlapon feltöltött (nem e-mailben küldött) házi feladatot tudunk elfogadni. A specifikáció késedelmes benyújtása a leadási határidőt követő hét péntek 23:59-ig lehetséges.
+Házi feladat bemutatása a gyakorlatvezetőnek kizárólag az előre meghirdetett időpontokban (az időpontok meghirdetése gyakorlatokon és a tárgy honlapján keresztül történik). A házi feladat késedelmes benyújtására pótlási hét csütörtökön 12:15-től van lehetőség. A specifikáció és a házi feladat beadása az aláírás megszerzésének és egyben a vizsgára bocsájtásnak szükséges feltétele. A jegy beírásának feltétele, hogy az elfogadott házi feladat kódja a tárgy honlapjára fel legyen töltve (e-mailben nem küldhető)! Vigyázat: a tárgy honlapján megjelenő feltöltési határidő nem azonos a beadási határidővel! A beadási határidőt a bemutatási időpontokkal együtt a tárgy hírei között szoktuk feltüntetni!
+Vizsga a vizsgaidőszakban, melynek anyagát az előadáson és a gyakorlatokon elhangzottak képezik, azonban kiemelkedően jó házi feladat határidőre történő leadása esetén megajánlott jegy leheséges.</p>
+<h3 id="megajanlott-jegy">Megajánlott jegy<a class="headerlink" href="#megajanlott-jegy" title="Permanent link">¶</a></h3>
+<p>Teljeskörűen működő és igényesen elkészített házi feladatra megajánlott jegy kapható, ha a hallgató legfeljebb 4 előadásról és 4 gyakorlatról hiányzott. A megajánlott jegy csak jó (4) vagy jeles (5) osztályzat lehet, amit a nagyházi feladat alapján állapítunk meg. A specifikáció leadása után a hallgatók visszajelzést kapnak, hogy a házi feladatuk esélyes-e a megajánlott jegyre. Ilyenkor még van lehetőség bővíteni a funkciókat, hogy megajánlott jegyet szerezhessenek.</p>
+<p>Fontos: aki megajánlott jegyet szerzett, az is jelentkezzen a Neptunon vizsgára, mert a Neptunban megszűnt a megajánlott jegy fogalma!</p>
+<h3 id="onallo-laboron-is-aspnet-core-ral-szeretnek-foglalkozni-felvehetem-e-ezt-a-targyat-is-melle">Önálló laboron is ASP.NET Core-ral szeretnék foglalkozni. Felvehetem-e ezt a tárgyat is mellé?<a class="headerlink" href="#onallo-laboron-is-aspnet-core-ral-szeretnek-foglalkozni-felvehetem-e-ezt-a-targyat-is-melle" title="Permanent link">¶</a></h3>
+<p>Az önálló labor és a választható tárgyak nem tudják egymást kizárni. Ezért egy optimális választás lehet, hogy a webportálok tárgy mellé egy ASP.NET Core-ral foglalkozó önálló labor témát választasz. Ebben az esetben megfelelően komplex alkalmazás készítése esetén ugyanaz az alkalmazás beadható mindkét tárgyhoz, csak meg kell jelölni, hogy mely részek melyik tárgyhoz készültek. Ennek részleteit Gincsai Gáborral tudod egyeztetni.</p>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1242,8 +1504,8 @@
           </path>
         </svg>
       </span>
-      <span title="2026. február 12. 13:24:53">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 12. 13:24:53 CET"><span class="timeago" datetime="2026-02-12T13:24:53+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 12. 13:24:53 CET">2026-02-12</span>
+      <span title="2026. február 12. 16:52:57">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 12. 16:52:57 CET"><span class="timeago" datetime="2026-02-12T16:52:57+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 12. 16:52:57 CET">2026-02-12</span>
       </span>
     </span>
 
@@ -1306,14 +1568,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        <script src="js/timeago.min.js"></script>
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        <script src="js/timeago_mkdocs_material.js"></script>
       
     
   
