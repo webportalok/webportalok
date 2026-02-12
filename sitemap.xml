@@ -1,51 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://webportalok.github.io/webportalok/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/homework/01%20-%20Specifikacio/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/homework/01-hw/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/homework/02%20-%20Nagy%20hazi%20feladat/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
          <loc>https://webportalok.github.io/webportalok/information/contributing/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/lecture-notes/01-topic/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/information/course/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/seminar/04%20-%20Blazor/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/information/requirements/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/seminar/06%20-%20Felhasznalo%20kezeles/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/information/terms%20of%20use/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
          <loc>https://webportalok.github.io/webportalok/seminar/Tartalomjegyzek/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/seminar/00%20-%20Adatb%C3%A1zis%20alapok/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/seminar/0%20-%20Adatbazis%20alapok/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/seminar/01%20-%20Tervezes/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/seminar/1%20-%20Tervezes/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/seminar/02%20-%20Projekt%20struktura/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/seminar/2%20-%20Projekt%20struktura/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/seminar/03%20-%20Backend%20services/03%20-%20Backend%20services/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/seminar/3%20-%20Backend%20services/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
     <url>
-         <loc>https://webportalok.github.io/webportalok/seminar/04%20-%20ASP.NET%20MVC%20and%20Razor%20Pages/04%20-%20ASP.NET%20MVC%2C%20Razor%20Page/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <loc>https://webportalok.github.io/webportalok/seminar/4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/</loc>
+         <lastmod>2026-02-12</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/</loc>
+         <lastmod>2026-02-12</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/</loc>
+         <lastmod>2026-02-12</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/</loc>
+         <lastmod>2026-02-12</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/5%20-%20ASP.NET%20MVC/</loc>
+         <lastmod>2026-02-12</lastmod>
+    </url>
+    <url>
+         <loc>https://webportalok.github.io/webportalok/seminar/6%20-%20Blazor%20WASM/</loc>
+         <lastmod>2026-02-12</lastmod>
     </url>
 </urlset>

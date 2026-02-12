@@ -1,0 +1,1978 @@
+<!DOCTYPE html><html lang="hu" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Gábor Gincsai">
+      
+      
+        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/">
+      
+      
+        <link rel="prev" href="../4.3%20Felhasznalokezeles/">
+      
+      
+        <link rel="next" href="../../5%20-%20ASP.NET%20MVC/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>4.4. Admin oldalak - VIAUJV83 - Webportálok fejlesztése</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../extra-material-theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#44-admin-oldalak" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+      
+  <img src="../../../logo-bme-aut.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VIAUJV83 - Webportálok fejlesztése
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4.4. Admin oldalak
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red" aria-label="Váltás sötét témára" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét témára" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo" aria-label="Váltás világos témára" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos témára" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    webportalok
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../information/terms%20of%20use/" class="md-tabs__link">
+          
+  
+  
+  Tudnivalók
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
+          
+  
+  
+  Laborok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
+          
+  
+  
+  Házi feladatok
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+      
+  <img src="../../../logo-bme-aut.png" alt="logo">
+
+    </a>
+    VIAUJV83 - Webportálok fejlesztése
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    webportalok
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tudnivalók
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tudnivalók
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/terms%20of%20use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Felhasználási feltételek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tárgy információk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Házi feladat követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hozzájárulás az anyaghoz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laborok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Laborok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MS SQL ADATBÁZIS ÉS EF ALAPOK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Tervezes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Tervezés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20Projekt%20struktura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Project struktúra és adatmodell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Backend%20services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Kiinduló Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. ASP.NET Razor Pages
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. ASP.NET Razor Pages
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1. Projekt felépítése és alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2%20Main%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2. Főbb oldalak létrehozása
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3%20Felhasznalokezeles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3. Felhasználó kezelés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kategoriak-szerkesztese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kategóriák szerkesztése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kategóriák szerkesztése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kliens-oldali-validacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kliens oldali validáció
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konyvek-szerkesztese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Könyvek szerkesztése
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASP.NET MVC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ASP.NET MVC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20ASP.NET%20MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ASP.NET Core MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Blazor WASM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Blazor WASM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Blazor%20WASM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1. Blazor WASM alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Házi feladatok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Házi feladatok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework/01%20-%20Specifikacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specifikáció készítése
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nagyházi feladat készítése
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kategoriak-szerkesztese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kategóriák szerkesztése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kategóriák szerkesztése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kliens-oldali-validacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kliens oldali validáció
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konyvek-szerkesztese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Könyvek szerkesztése
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/4 - ASP.NET Razor Pages/4.4 Admin pages/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="44-admin-oldalak">4.4. Admin oldalak<a class="headerlink" href="#44-admin-oldalak" title="Permanent link">¶</a></h1>
+<h2 id="kategoriak-szerkesztese">Kategóriák szerkesztése<a class="headerlink" href="#kategoriak-szerkesztese" title="Permanent link">¶</a></h2>
+<p>A <em>ManageCategories</em> oldalt már létrehoztuk, most készítsük is el úgy, hogy a bal oldalon megjelenik a kategória fa ViewComponent, a jobb oldalon pedig attól függően, hogy választottunk-e ki kategóriát a szerkesztés vagy új felvitele rész.</p>
+<p>A kategória menedzselésénél a <em>kategória nevét</em>, a <em>szülő kategóriát</em> és a <em>sorrendet</em> szeretnénk beállítani, illetve az Id-ra lesz szükség, hogy el tudjuk dönteni, hogy szerkesztésről vagy új kategória felviteléről van szó.</p>
+<p>Jelenleg a <code>CategoryService</code>-ben a <code>GetCategoryTreeAsync()</code> egy <code>CategoryData</code> listát ad vissza, amiben csak azok az adatok szerepelnek, amire a kategória fa kirajzolásánál szükség van. Lehetne bővíteni ezt a DTO-t, hogy a kategória szerkesztésre és létrehozásra is alkalmas legyen (kvázi minden adatot tartalmaz), azonban szerencsésebb ha külön DTO-t hozunk erre létre, mert így átláthatóbb a kód és a validációs szabályokat is rá tudjuk tenni.<br>
+Abban az esetben ha csak bizonyos mezők lennének szerkeszthetők, akkor még a létrehozáshoz és módosításhoz használ DTO-kat is külön érdemes felvenni. Így a kód átláthatósága növelhető.</p>
+<ol>
+<li>
+<p>A megvalósításhoz a DTO és szolgáltatás osztályok már készen vannak, nézzük is át, hogy mit kell használni.</p>
+<ul>
+<li>Az összes kategóriát a <code>CategoryService</code>-ben található <code>GetCategoryTreeAsync()</code> segítségével tudjuk lekérdezni.</li>
+<li>A <code>CategoryService</code>-ben található <code>AddOrUpdateAsync</code> metódussal tudunk új kategóriát létrehozni, vagy egy meglévőt módosítani. Attól függ, hogy szerkesztjük vagy létrehozzuk a kategóriát, hogy az Id ki van-e töltve. A metódus egy <code>CreateOrEditCategory</code> DTO-t vár ami alapján létrehozza a <code>Category</code> entitást és beszúrja az adatbázisba, majd visszaadja a <code>CategoryData</code>-t. Ezt most nem fogjuk kihasználni, de egy Blazor alkalmazás esetén hasznos lehet, hogy nem kell a teljes kategóriafát újratölteni, hiszen az újonnan beszúr kategória adatait egyből visszakapjuk.</li>
+<li>Figyeljük meg, hogy a <code>CreateOrEditCategory</code> DTO-ba nem vettük fel a <code>Level</code>-t hiszen az egy számított tulajdonság, illetve a validációhoz szükséges annotációkat is elkészítettük.</li>
+</ul>
+</li>
+<li>
+<p>A fentiek alapján készítsük el a <code>ManageCategories</code> oldalt is. Kezdjük az adatbetöltéssel.</p>
+<ul>
+<li>A primary konstruktorban várjuk az <code>ICategoryService</code>-t.</li>
+<li>Az oldalnak szüksége lesz egy <code>CategoryId</code>-ra illetve egy Category-ra amit adatkötni kell. Ebben tároljuk a szerkesztéshez kiválasztott kategóriát, ami lehet null hiszen a létrehozásnál nem lesz kategória kiválasztva.</li>
+<li>Az <code>OnGetAsync()</code>-ban pedig először le kell kérni az összes kategóriát, hogy a dropdown listát fel tudjuk tölteni elemekkel, illetve attól függően, hogy a CategoryId ki van-e töltve le kell kérdezni a módosítandó kategóriát.</li>
+</ul>
+<div class="highlight"><span class="filename">ManageCategories.cshtml.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.ServicesInterfaces</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer.Dtos</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.RazorPages</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.Rendering</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Pages.Admin</span><span class="p">;</span>
+
+<span class="hll"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">ManageCategoriesModel</span><span class="p">(</span><span class="n">ICategoryService</span><span class="w"> </span><span class="n">categoryService</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PageModel</span>
+</span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">SelectListItem</span><span class="o">&gt;</span><span class="w"> </span><span class="n">AllCategories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="hll"><span class="w">    </span><span class="na">[BindProperty(SupportsGet = true)]</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int?</span><span class="w"> </span><span class="n">CategoryId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span>
+<span class="hll"><span class="w">    </span><span class="na">[BindProperty]</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CreateOrEditCategory</span><span class="w"> </span><span class="n">Category</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CreateOrEditCategory</span><span class="p">();</span>
+</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnGetAsync</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="hll"><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">categoryList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">GetCategoryTreeAsync</span><span class="p">();</span>
+</span>
+<span class="w">        </span><span class="c1">// Create list for dropdown, indenting names based on level</span>
+<span class="w">        </span><span class="n">AllCategories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoryList</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SelectListItem</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">'\</span><span class="n">xA0</span><span class="err">'</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span>
+<span class="w">        </span><span class="p">});</span><span class="w"> </span>
+
+<span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CategoryId</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span><span class="w"> </span>
+</span><span class="hll"><span class="w">            </span><span class="n">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">GetCategoryForEditAsync</span><span class="p">(</span><span class="n">CategoryId</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span>
+</span><span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Készítsük el az oldalhoz a cshtml-t is az alábbiak szerint.</p>
+<ul>
+<li>Bal oldalra kerüljön a categoryList ViewComponent.</li>
+<li>Jobb oldalon pedig kérjük be az alábbi adatokat, amit a SelectedCategory-hoz kell kötni<ul>
+<li><code>Name</code> - szövegdoboz</li>
+<li><code>ParentCategoryId</code> – Dropdown lista, amiben az <code>AllCategories</code> adja meg a lehetséges elemeket</li>
+<li><code>Order</code> – szövegdoboz.</li>
+<li>Létrehozás / Módosítás / Mégsem / Törlés gomb a megfelelő <code>asp-handler</code> beállításával.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><span class="filename">ManageCategories.cshtml</span><pre><span></span><code>@page
+@model<span class="w"> </span>BookShop.Web.RazorPage.Pages.Admin.ManageCategoriesModel
+
+<span class="nt">&lt;h2&gt;</span>Kategóriák<span class="w"> </span>menedzselése<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;p&gt;</span>Az<span class="w"> </span>adminisztrátorok<span class="w"> </span>itt<span class="w"> </span>hozhatnak<span class="w"> </span>létre<span class="w"> </span>új<span class="w"> </span>kategóriát,<span class="w"> </span>vagy<span class="w"> </span>módosíthatják<span class="w"> </span>/<span class="w"> </span>törölhetik<span class="w"> </span>a<span class="w"> </span>meglévőket.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-md-3"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">        </span><span class="nt">&lt;vc:category-list</span><span class="w"> </span><span class="na">category-id=</span><span class="s">"@Model.CategoryId"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="w">    </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-md-9"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">        </span><span class="nt">&lt;h2&gt;</span>@(Model.CategoryId.HasValue<span class="w"> </span>?<span class="w"> </span>"Kategória<span class="w"> </span>módosítása"<span class="w"> </span>:<span class="w"> </span>"Új<span class="w"> </span>kategória<span class="w"> </span>felvitele")<span class="nt">&lt;/h2&gt;</span>
+</span>
+<span class="w">        </span><span class="nt">&lt;form</span><span class="w"> </span><span class="na">method=</span><span class="s">"post"</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-horizontal"</span><span class="w"> </span><span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">asp-validation-summary=</span><span class="s">"All"</span><span class="w"> </span><span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</span>
+<span class="hll"><span class="w">            </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">type=</span><span class="s">"hidden"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Category.Id"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span>
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Category.Name"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="hll"><span class="w">                </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Category.Name"</span><span class="nt">&gt;</span>Kategória<span class="w"> </span>neve<span class="nt">&lt;/label&gt;</span>
+</span><span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">                </span><span class="nt">&lt;select</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-select"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Category.ParentCategoryId"</span><span class="w"> </span><span class="na">asp-items=</span><span class="s">"Model.AllCategories"</span><span class="nt">&gt;</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&lt;option</span><span class="w"> </span><span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Nincs<span class="nt">&lt;/option&gt;</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&lt;/select&gt;</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Category.ParentCategoryId"</span><span class="nt">&gt;</span>Szülő<span class="w"> </span>kategória<span class="nt">&lt;/label&gt;</span>
+</span><span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Category.Order"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="hll"><span class="w">                </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Category.Order"</span><span class="nt">&gt;</span>Sorrend<span class="nt">&lt;/label&gt;</span>
+</span><span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"d-flex justify-content-between"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">                </span><span class="nt">&lt;button</span><span class="w"> </span><span class="na">asp-page-handler=</span><span class="s">"AddOrUpdate"</span><span class="w"> </span><span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>
+</span><span class="hll"><span class="w">                    </span>@(Model.Category.Id.HasValue<span class="w"> </span>?<span class="w"> </span>"Módosítás"<span class="w"> </span>:<span class="w"> </span>"Létrehozás")
+</span><span class="hll"><span class="w">                </span><span class="nt">&lt;/button&gt;</span><span class="w"> </span>
+</span>
+<span class="w">                </span>@if<span class="w"> </span>(Model.Category.Id.HasValue)<span class="w"> </span>
+<span class="w">                </span>{
+<span class="hll"><span class="w">                    </span><span class="nt">&lt;button</span><span class="w"> </span><span class="na">asp-page-handler=</span><span class="s">"Cancel"</span><span class="w"> </span><span class="na">class=</span><span class="s">"btn btn-dark"</span><span class="nt">&gt;</span>Mégsem<span class="nt">&lt;/button&gt;</span>
+</span>
+<span class="hll"><span class="w">                    </span><span class="nt">&lt;button</span><span class="w"> </span><span class="na">asp-page-handler=</span><span class="s">"Delete"</span><span class="w"> </span><span class="na">class=</span><span class="s">"btn btn-danger"</span><span class="nt">&gt;</span>Törlés<span class="nt">&lt;/button&gt;</span>
+</span><span class="w">                </span>}
+<span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/form&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<p>Figyeljük meg a kódban az alábbiakat:</p>
+<ul>
+<li><code>@if</code> részeket, amivel feltételesen tudunk tartalmat megjeleníteni.</li>
+<li>A <code>&lt;select&gt;</code> tag létrehozását.</li>
+<li>Az <code>asp-page-handler</code> használatát</li>
+<li>Az <code>asp-validation-summary</code>-t a form tagen belülre helyezzük el.</li>
+<li>
+<p>AntiForgeryToken-t nem használunk, mert az alapértelmezés szerint rákerül a form-ra.</p>
+<details class="note">
+<summary>Több sumbit gomb kezelése</summary>
+<p>Ha egy űrlapon több submit gomb található akkor az <code>asp-page-handler</code> segítségével tudunk köztünk különbséget tenni. A cshtml.cs-ben pedig az <code>OnPostXYZ</code> metódusokkal tudjuk kezelni, ahol az XYZ az <code>asp-page-handler</code>-ben megadott rész.</p>
+</details>
+</li>
+</ul>
+</li>
+<li>
+<p>Ha így elindítjuk az alkalmazást, akkor azt tapasztaljuk, hogy tényleg csak Admin érheti el az oldalt és a linket is, ehhez lépjünk be az admin felhasználóval (<a href="mailto:admin@exmaple.com">admin@exmaple.com</a> / <em>Password123!</em>)<br>
+Alapértelmezés szerint az új kategória létrehozása tölt be, de ha rákattintunk egy kategóriára akkor átvált módosításra.</p>
+</li>
+<li>
+<p>Ezt követően már csak annyi dolgunk van, hogy a form postolást szerver oldalok kezeljük, tehát megvalósítjuk az <em>új kategória létrehozásához</em>, <em>módosításához</em>, <em>törléséhez</em> és <em>mégsem</em> gombhoz szükséges kódot.</p>
+<ul>
+<li>
+<p>A létrehozás és módosítást ugyanaz a gomb kezeli, csak más a felirata. Ennek a gombnak az <code>asp-page-hander="AddOrUpdate"</code> van megadva, tehát ehhez kell elkészíteni a megfelelő metódust, aminek a neve <code>OnPostAddOrUpdate</code> vagy ha aszinkron akkor <code>OnPostAddOrUpdateAsync</code> kell legyen.</p>
+<div class="highlight"><span class="filename">ManageCategories.cshtml.cs - OnPostAddOrUpdateAsync</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OnPostAddOrUpdateAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ModelState</span><span class="p">.</span><span class="n">IsValid</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">AddOrUpdateAsync</span><span class="p">(</span><span class="n">Category</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">RedirectToPageResult</span><span class="p">(</span><span class="s">"/Admin/ManageCategories"</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="c1">// TODO: Hiba esetén a Model-t újra betölteni.</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">Page</span><span class="p">();</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Mégsem gomb csak null-ra állítja a kiválasztott <code>CategoryId</code>-t</p>
+<div class="highlight"><span class="filename">ManageCategories.cshtml.cs - OnPostCancelAsync</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OnPostCancelAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">CategoryId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">RedirectToPageResult</span><span class="p">(</span><span class="s">"/Admin/ManageCategories"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Hasonlóan a létrehozáshoz készítsük el a törés gomb eseménykezelőjét is.</p>
+<div class="highlight"><span class="filename">ManageCategories.cshtml.cs - OnPostDeleteAsync</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OnPostDeleteAsync</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Category</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">DeleteAsync</span><span class="p">(</span><span class="n">Category</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">RedirectToPageResult</span><span class="p">(</span><span class="s">"/Admin/ManageCategories"</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+<details class="tip">
+<summary>Entitás törlése PK alapján</summary>
+<p>Figyeljük meg a <code>CategoryService.DeleteAsync()</code> kódjában, hogy a kódban nem kérdeztük le a kategóriát az adatbázisból, hanem csak létrehoztunk egy új <code>Category</code>-t, aminek az <code>Id</code>-ját (Primary key) állítottuk be és ez alapján töröltük a rekordot az adatbázisból. Így egy adatbázishoz fordulást meg tudunk spórolni.<br>
+A kikommentezett sorban látható az a megoldás, ahol először lekérdezzük adatbázisból a rekordot és ezt követően töröljük.</p>
+</details>
+</li>
+<li>
+<p>Indítsuk el az alkalmazást és vegyünk fel egy kategóriát, megadva minden adatát, majd szerkesszük meg és töröljük. Ezzel a happy path-t le is teszteltük.</p>
+</li>
+<li>De mi a helyzet akkor nem adjuk meg a kategória nevét?<br>
+Ha nem adtunk volna meg validációs szabályokat akkor az adatbázis constraint miatt kapnánk hibát. Viszont mivel felvettük a kötelező mezőkhöz a <code>[Required]</code> attribútumokat így szép validációs hibát kapunk.</li>
+<li>
+<p>Fontos, hogy a szerver oldali validáció a <code>Model.IsValid</code> hívás miatt fut le. Erre mindig figyelni kell. Viszont hiba esetén eltűnnek a Szülő kategória elemei. Ennek az az oka, hogy csak az <code>OnGetAsync()</code>-ban töltjük fel az <code>AllCategories</code>-t. A megoldás annyi, hogy akkor is töltsük fel, ha validációs hiba van. Ennek a legegyszerűbb módja, ha készítünk egy <code>LoadModelAsync()</code> metódust és oda szervezzük ki az összes ilyen adatfeltöltést, és ezt hívjuk az <code>OnGetAsync()</code>-ban és mindenhol ahol újra fel kell tölteni az adatokat.</p>
+<div class="highlight"><span class="filename">ManageCategories.cshtml.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnGetAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">LoadModelAsync</span><span class="p">();</span>
+</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CategoryId</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">GetCategoryForEditAsync</span><span class="p">(</span><span class="n">CategoryId</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+
+<span class="hll"><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">LoadModelAsync</span><span class="p">()</span>
+</span><span class="hll"><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">categoryList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">GetCategoryTreeAsync</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// Create list for dropdown, indenting names based on level</span>
+</span><span class="hll"><span class="w">    </span><span class="n">AllCategories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoryList</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SelectListItem</span>
+</span><span class="hll"><span class="w">    </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">'\</span><span class="n">xA0</span><span class="err">'</span><span class="p">),</span>
+</span><span class="hll"><span class="w">        </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span>
+</span><span class="hll"><span class="w">    </span><span class="p">});</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OnPostAddOrUpdateAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ModelState</span><span class="p">.</span><span class="n">IsValid</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">AddOrUpdateAsync</span><span class="p">(</span><span class="n">Category</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">RedirectToPageResult</span><span class="p">(</span><span class="s">"/Admin/ManageCategories"</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Load the model if any validation error occurs, otherwise the dropdown will be empty and the page will not render correctly</span>
+<span class="hll"><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">LoadModelAsync</span><span class="p">();</span>
+</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">Page</span><span class="p">();</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="kliens-oldali-validacio">Kliens oldali validáció<a class="headerlink" href="#kliens-oldali-validacio" title="Permanent link">¶</a></h3>
+<p>Már majdnem készen is vagyunk, viszont érdemes lenne a validációkat kliens oldalon is kiértékelni. Ezt a <a href="https://jqueryvalidation.org/">jquery validate</a> segítségével lehet megtenni, amit a <code>_ValidationScriptsPartial.cshtml</code>-ben lévő kódrészlet tud beemelni. Ebben a fájlban vannak a validációhoz szükséges JavaScript fájlok behivatkozva. Azért egy külön partial view-ban, hogy csak azokon az oldalakon töltsük be, ahol tényleg szükséges.</p>
+<p>Az oldalainknak a váza a <code>_Layout.csml</code> fájlt található. Itt töltjük be azokat a CSS és JS fájlokat, ami minden oldalon szükséges és itt adjuk meg az oldal elrendezését is.</p>
+<p>Két kódsort érdemes kiemelni.</p>
+<ul>
+<li>A <code>@RenderBody()</code> helyére kerülnek be az oldalak (például a <code>Book.cshtml</code>)</li>
+<li>Az oldal alján lévő <code>@await RenderSectionAsync("Scripts", required: false)</code> pedig egy opcionális <code>Scripts</code> nevű szekciót hoz létre. Így az oldalon jelen esetben a <code>ManageCategories.cshtml</code> ha létrehozunk egy ilyen nevű szekciót, akkor annak a tartalma ide fog bekerülni.</li>
+</ul>
+<p>Tehát a megoldás annyi, hogy a <code>ManageCategories.cshtml</code> oldal aljára tegyük oda az alábbi kódrészletet.</p>
+<div class="highlight"><span class="filename">ManageCategories.cshtml</span><pre><span></span><code>@section<span class="w"> </span>Scripts<span class="w"> </span>{
+<span class="w">    </span><span class="nt">&lt;partial</span><span class="w"> </span><span class="na">name=</span><span class="s">"_ValidationScriptsPartial"</span><span class="w"> </span><span class="nt">/&gt;</span>
+}
+</code></pre></div>
+<p>Így futtatva a kódot már megtörténik a kliens oldali validációs is, sőt mivel már kliens oldalon kiderül a hiba el sem jut a szerverre a kérés, így a legördülőben lévő elemek is megmaradnak. Természetesen a <code>LoadModelAsync()</code> megoldásra így is szükség van, mert elképzelhető, hogy bizonyos hibák csak szerver oldalon derülnek ki, tehát érdemes ezt a gyakorlatot követni.</p>
+<details class="success">
+<summary>Ha mindent jól csináltunk az alábbi oldalt kapjuk</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/manage-categories-final.png" data-desc-position="bottom"><img alt="Manage categories final" src="images/manage-categories-final.png"></a></p>
+<figcaption>
+<p>A kategória menedzselő oldal kliens oldali validációval</p>
+</figcaption>
+</figure>
+</details>
+<h2 id="konyvek-szerkesztese">Könyvek szerkesztése<a class="headerlink" href="#konyvek-szerkesztese" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>A kezdő oldalon a kategória könyvek láblécébe az ár mellé az admin felhasználónak tegyünk ki egy szerkesztés gombot, ami ugyanúgy a <code>ManageBooks</code> oldalra visz minket a kiválasztott könyv <code>Id</code>-jával, így a könyv szerkesztés / törlés is elérhető lesz navigációval.</p>
+<div class="highlight"><span class="filename">Index.cshtml</span><pre><span></span><code><span class="hll">&lt;div class="card-footer d-flex justify-content-evenly text-muted fw-bold small"&gt;
+</span><span class="hll">    @if (User.IsInRole("Admin"))
+</span><span class="hll">    {
+</span><span class="hll">        &lt;a asp-page="/Admin/ManageBooks" asp-route-bookId="@book.Id"&gt;&lt;i class="bi bi-pencil-fill"&gt;&lt;/i&gt;&lt;/a&gt;
+</span><span class="hll">    }
+</span>    @(book.DiscountedPrice ?? book.Price)&amp;nbsp;Ft
+&lt;/div&gt;
+</code></pre></div>
+<details class="success">
+<summary>Könyv szerkesztés gomb</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/book-with-edit-button.png" data-desc-position="bottom"><img alt="Book edit button" src="images/book-with-edit-button.png"></a></p>
+<figcaption>
+<p>Szerkesztés gomb a könyv alatt</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Hozzunk létre a <code>BookShop.Web.RazorPage</code> projektben a <code>Settings</code> mappa alatt egy <code>FileSettings</code> osztályt, amibe a file feltöltéssel kapcsolatos beállításokat fogjuk felolvasni az <code>appsettings.json</code>-ból.</p>
+<div class="highlight"><span class="filename">FileSettings.cs</span><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Settings</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">FileSettings</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">FileSizeLimit</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">PermittedExtensions</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Adjuk hozzá az <code>appsettings.json</code>-höz a beállítás értékeit A ConnectionStrings mögé. Azért nem az <em>appsettings.Development.json</em>-ba tesszük mert ez a beállítás minden környezetben azonos lesz.</p>
+<div class="highlight"><span class="filename">appsettings.json</span><pre><span></span><code><span class="nt">"FileSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"FileSizeLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2097152</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"PermittedExtensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">".jpg"</span><span class="w"> </span><span class="p">]</span>
+<span class="p">},</span>
+</code></pre></div>
+</li>
+<li>
+<p>A <code>Program.cs</code>-t egészítsük ki, hogy ezt az Options-t is felolvassa. A kódot közvetlenül az <code>EmailSettings</code> felolvasása után tegyük.</p>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">Configure</span><span class="o">&lt;</span><span class="n">FileSettings</span><span class="o">&gt;</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="n">GetSection</span><span class="p">(</span><span class="s">"FileSettings"</span><span class="p">));</span>
+</code></pre></div>
+</li>
+<li>
+<p>Készítsük el az oldal kódját</p>
+<ul>
+<li>Az oldal vár egy opcionális BookId-t az URL-ben (GET esetén)</li>
+<li>Itt is egy külön DTO-t használunk a <code>CreateOrEditBook</code>-ot, amit bind-olni kell.</li>
+<li>A kép feltöltéshez is szükséges egy <code>IFormFile</code> típusú paraméter, amit bind-olni kell.</li>
+<li>A kategóriák és kiadók kiválasztását egy dropdown listában szeretnénk megjeleníteni, így le kell kérdezni az összes kategóriát és kiadót is.</li>
+<li>Használjuk itt is a <code>LoadModelAsync</code>-os megoldást.</li>
+<li>Ha van BookId, akkor kérdezzük le a szervertől az adatait <code>CreateOrEditBook</code> típus.</li>
+<li>
+<p>Az <code>OnPostAddOrUpdateAsync</code> kicsivel összetettebb a képfeltöltés miatt.</p>
+<ul>
+<li>Validáljuk a Model-t,</li>
+<li>Ha töltünk fel képet, de a kiterjesztése nem szerepel az <code>appsettings.json</code>-ban megadott listában akkor adjunk vissza validációs hibát.</li>
+<li>Mentsük el a könyv adatait a <code>BookService</code>-ben már létező <code>AddOrUpdateAsync</code> metódussal.</li>
+<li>Ha töltünk fel képet, akkor mentsük is le a fájlrendszerbe.</li>
+<li>Végül irányítsuk vissza a felhasználót az <code>Index</code> oldalra.</li>
+</ul>
+</li>
+<li>
+<p>A <code>OnPostDeleteAsync()</code> a sikeres törlés után irányítson vissza az <code>Index</code> oldalra.</p>
+</li>
+</ul>
+<div class="highlight"><span class="filename">ManageBooks.cshtml.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.ServicesInterfaces</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer.Dtos</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Settings</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.RazorPages</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.Rendering</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Extensions.Options</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Pages.Admin</span><span class="p">;</span>
+
+<span class="hll"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">ManageBooksModel</span><span class="p">(</span><span class="n">IBookService</span><span class="w"> </span><span class="n">bookService</span><span class="p">,</span><span class="w"> </span><span class="n">ICategoryService</span><span class="w"> </span><span class="n">categoryService</span><span class="p">,</span><span class="w"> </span><span class="n">IPublisherService</span><span class="w"> </span><span class="n">publisherService</span><span class="p">,</span>
+</span><span class="w">    </span><span class="n">IOptions</span><span class="o">&lt;</span><span class="n">FileSettings</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fileSettingsOptions</span><span class="p">,</span><span class="w"> </span><span class="n">IWebHostEnvironment</span><span class="w"> </span><span class="n">environment</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PageModel</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IBookService</span><span class="w"> </span><span class="n">bookService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bookService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ICategoryService</span><span class="w"> </span><span class="n">categoryService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoryService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IPublisherService</span><span class="w"> </span><span class="n">publisherService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">publisherService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IWebHostEnvironment</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">environment</span><span class="p">;</span>
+
+<span class="hll"><span class="w">    </span><span class="c1">// Must be public to be able to access from cshtml.</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">FileSettings</span><span class="w"> </span><span class="n">FileSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fileSettingsOptions</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+</span>
+<span class="hll"><span class="w">    </span><span class="na">[BindProperty(SupportsGet = true)]</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int?</span><span class="w"> </span><span class="n">BookId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span>
+<span class="w">    </span><span class="na">[BindProperty]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CreateOrEditBook</span><span class="w"> </span><span class="n">Book</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">PublishYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Year</span><span class="w"> </span><span class="p">};</span>
+
+<span class="hll"><span class="w">    </span><span class="na">[BindProperty]</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IFormFile</span><span class="o">?</span><span class="w"> </span><span class="n">CoverImage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">SelectListItem</span><span class="o">&gt;</span><span class="w"> </span><span class="n">AllCategories</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">SelectListItem</span><span class="o">&gt;</span><span class="w"> </span><span class="n">AllPublishers</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnGetAsync</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nf">LoadModelAsync</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">BookId</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetBookForEditAsync</span><span class="p">(</span><span class="n">BookId</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OnPostAddOrUpdateAsync</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ModelState</span><span class="p">.</span><span class="n">IsValid</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nf">LoadModelAsync</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nf">Page</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="hll"><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">GetExtension</span><span class="p">(</span><span class="n">CoverImage</span><span class="o">?.</span><span class="n">FileName</span><span class="p">)</span><span class="o">?.</span><span class="n">ToLowerInvariant</span><span class="p">();</span>
+</span>
+<span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CoverImage</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">FileSettings</span><span class="p">.</span><span class="n">PermittedExtensions</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">ext</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s">""</span><span class="p">))</span>
+</span><span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Add validation error if the file extension is not permitted.</span>
+<span class="hll"><span class="w">            </span><span class="n">ModelState</span><span class="p">.</span><span class="n">AddModelError</span><span class="p">(</span><span class="s">"CoverImage"</span><span class="p">,</span><span class="w"> </span><span class="s">"A kép kiterjesztése nem megfelelő."</span><span class="p">);</span>
+</span>
+<span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nf">LoadModelAsync</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nf">Page</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">updatedBook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">AddOrUpdateAsync</span><span class="p">(</span><span class="n">Book</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CoverImage</span><span class="o">?.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="hll"><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">environment</span><span class="p">.</span><span class="n">WebRootPath</span><span class="p">,</span><span class="w"> </span><span class="s">$"images/covers/{updatedBook.Id}{ext}"</span><span class="p">);</span>
+</span><span class="hll"><span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+</span><span class="hll"><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">CoverImage</span><span class="p">.</span><span class="n">CopyToAsync</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+</span><span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">RedirectToPageResult</span><span class="p">(</span><span class="s">"/Index"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OnPostDeleteAsync</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Book</span><span class="o">?.</span><span class="n">Id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">DeleteAsync</span><span class="p">(</span><span class="n">Book</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">RedirectToPageResult</span><span class="p">(</span><span class="s">"/Index"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="hll"><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">LoadModelAsync</span><span class="p">()</span>
+</span><span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">categoryList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">categoryService</span><span class="p">.</span><span class="n">GetCategoryTreeAsync</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">AllCategories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoryList</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SelectListItem</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="err">'\</span><span class="n">xA0</span><span class="err">'</span><span class="p">),</span>
+<span class="w">            </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="n">AllPublishers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="n">publisherService</span><span class="p">.</span><span class="n">GetAllPublishersAsync</span><span class="p">()).</span><span class="n">Select</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SelectListItem</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Figyeljük meg hogy a DI-tól elkértük az <code>IWebHostEnvironment</code>-et is, hogy amikor a képet lementjük ismerjük a <code>wwwroot</code> könyvtár fizikai helyét. </li>
+<li>A <code>FileSettings</code> publikus lett, hogy a file input tagben le tudjunk szűrni majd az engedélyezett kiterjesztésekre.</li>
+</ul>
+</li>
+<li>
+<p>Készítsük el az oldal megjelenítését is.</p>
+<ul>
+<li>Az URL-ben várjuk a bookId-t ami opcionális és egész szám</li>
+<li>Az oldal címe változzon, hogy "Könyv szerkesztése" vagy "Új könyv felvitele"</li>
+<li>A <code>form</code> tagben meg kell adni az <code>enctype="multipart/form-data"</code>, hogy tudjunk fájlt feltölteni.</li>
+<li>Tegyünk ki validation summary-t.</li>
+<li>
+<p>Bal oldalon szerepeljenek a könyv adatai:</p>
+<ul>
+<li><em>kiadó</em>: legördülő lista, </li>
+<li><em>kategória</em>: legördülő lista, a kiadóval egy sorban</li>
+<li><em>kiadás éve</em>: number típusú</li>
+<li><em>oldalszám</em>: number típusú és a kiadás évével egy sorban.</li>
+<li><em>cím</em>: sima input.</li>
+<li><em>alcím</em>: sima input.</li>
+<li><em>fülszöveg</em>: text area</li>
+</ul>
+</li>
+<li>
+<p>Jobb oldalon a kép feltöltés, ár és kedvezményes ár legyen.</p>
+</li>
+<li>Létrehozás / Módosítás illetve Törlés gombok a megfelelő <code>asp-page-handler</code>-rel.</li>
+</ul>
+<div class="highlight"><span class="filename">ManageBooks.cshtml</span><pre><span></span><code><span class="hll">@page<span class="w"> </span>"{bookId:int?}"
+</span>@model<span class="w"> </span>BookShop.Web.RazorPage.Pages.Admin.ManageBooksModel
+
+<span class="nt">&lt;h1&gt;</span>Könyvek<span class="w"> </span>kezelése<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>@(<span class="w"> </span>Model.BookId.HasValue<span class="w"> </span>?<span class="w"> </span>"Könyv<span class="w"> </span>szerkesztése"<span class="w"> </span>:<span class="w"> </span>"Új<span class="w"> </span>könyv<span class="w"> </span>felvitele")<span class="nt">&lt;/h2&gt;</span>
+
+<span class="hll"><span class="nt">&lt;form</span><span class="w"> </span><span class="na">method=</span><span class="s">"post"</span><span class="w"> </span><span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-horizontal"</span><span class="w"> </span><span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+</span><span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">asp-validation-summary=</span><span class="s">"All"</span><span class="w"> </span><span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="hll"><span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">type=</span><span class="s">"hidden"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.Id"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span>
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"row g-4"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;h4&gt;</span>Alapadatok<span class="nt">&lt;/h4&gt;</span>
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"row g-3"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">                    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+</span><span class="hll"><span class="w">                        </span><span class="nt">&lt;select</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-select"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.PublisherId"</span><span class="w"> </span><span class="na">asp-items=</span><span class="s">"Model.AllPublishers"</span><span class="nt">&gt;</span>
+</span><span class="hll"><span class="w">                            </span><span class="nt">&lt;option</span><span class="w"> </span><span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Nincs<span class="nt">&lt;/option&gt;</span>
+</span><span class="hll"><span class="w">                        </span><span class="nt">&lt;/select&gt;</span>
+</span><span class="hll"><span class="w">                        </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.PublisherId"</span><span class="nt">&gt;</span>Kiadó<span class="nt">&lt;/label&gt;</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&lt;/div&gt;</span>
+</span><span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;select</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-select"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.CategoryId"</span><span class="w"> </span><span class="na">asp-items=</span><span class="s">"Model.AllCategories"</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;option</span><span class="w"> </span><span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Nincs<span class="nt">&lt;/option&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/select&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.CategoryId"</span><span class="nt">&gt;</span>Kategória<span class="nt">&lt;/label&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-6"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.PublishYear"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.PublishYear"</span><span class="nt">&gt;</span>Kiadás<span class="w"> </span>éve<span class="nt">&lt;/label&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-6"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.PageNumber"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.PageNumber"</span><span class="nt">&gt;</span>Oldalszám<span class="nt">&lt;/label&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.Title"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.Title"</span><span class="nt">&gt;</span>Cím<span class="nt">&lt;/label&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.Subtitle"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.Subtitle"</span><span class="nt">&gt;</span>Alcím<span class="nt">&lt;/label&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating mb-3"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;textarea</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.ShortDescription"</span><span class="w"> </span><span class="na">rows=</span><span class="s">"10"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+<span class="w">                </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.ShortDescription"</span><span class="nt">&gt;</span>Fülszöveg<span class="nt">&lt;/label&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;h4&gt;</span>Borítókép<span class="nt">&lt;/h4&gt;</span>
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"mb-3"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">                </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"CoverImage"</span><span class="w"> </span><span class="na">accept=</span><span class="s">"@string.Join(',', Model.FileSettings.PermittedExtensions)"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"row g-3"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-6"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating"</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.Price"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.Price"</span><span class="nt">&gt;</span>Ár<span class="nt">&lt;/label&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-6"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-floating"</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">class=</span><span class="s">"form-control"</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.DiscountedPrice"</span><span class="w"> </span><span class="na">placeholder=</span><span class="s">" "</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">asp-for=</span><span class="s">"Book.DiscountedPrice"</span><span class="nt">&gt;</span>Kedv.<span class="w"> </span>ár<span class="nt">&lt;/label&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"d-flex justify-content-between"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">            </span><span class="nt">&lt;button</span><span class="w"> </span><span class="na">asp-page-handler=</span><span class="s">"AddOrUpdate"</span><span class="w"> </span><span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>
+</span><span class="hll"><span class="w">                </span>@(Model.BookId<span class="w"> </span>is<span class="w"> </span>null<span class="w"> </span>?<span class="w"> </span>"Létrehozás"<span class="w"> </span>:<span class="w"> </span>"Módosítás")
+</span><span class="hll"><span class="w">            </span><span class="nt">&lt;/button&gt;</span>
+</span>
+<span class="w">            </span>@if<span class="w"> </span>(Model.BookId.HasValue)
+<span class="w">            </span>{
+<span class="hll"><span class="w">                </span><span class="nt">&lt;button</span><span class="w"> </span><span class="na">asp-page-handler=</span><span class="s">"Delete"</span><span class="w"> </span><span class="na">class=</span><span class="s">"btn btn-danger"</span><span class="nt">&gt;</span>Törlés<span class="nt">&lt;/button&gt;</span>
+</span><span class="w">            </span>}
+<span class="w">        </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+
+@section<span class="w"> </span>Scripts<span class="w"> </span>{
+<span class="w">    </span><span class="nt">&lt;partial</span><span class="w"> </span><span class="na">name=</span><span class="s">"_ValidationScriptsPartial"</span><span class="w"> </span><span class="nt">/&gt;</span>
+}
+</code></pre></div>
+<ul>
+<li>Figyeljük meg, hogy itt is használjuk a kliens oldali validációt.</li>
+</ul>
+</li>
+</ol>
+<details class="success">
+<summary>Könyv módosítása</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/book-edit.png" data-desc-position="bottom"><img alt="Edit book" src="images/book-edit.png"></a></p>
+<figcaption>
+<p>Könyv szerkesztése</p>
+</figcaption>
+</figure>
+</details>
+<details class="success">
+<summary>Új könyv létrehozása</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/book-creating-validation-error.png" data-desc-position="bottom"><img alt="alt text" src="images/book-creating-validation-error.png"></a></p>
+<figcaption>
+<p>Könyv létrehozása validációs hibák.</p>
+</figcaption>
+</figure>
+</details>
+<details class="success">
+<summary>Létrehozott új könyv</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/book-creted-successfully.png" data-desc-position="bottom"><img alt="Book created" src="images/book-creted-successfully.png"></a></p>
+<figcaption>
+<p>Sikeresen létrehozott könyv</p>
+</figcaption>
+</figure>
+</details>
+  <hr>
+  <div class="md-source-file">
+    <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z">
+          </path>
+        </svg>
+      </span>
+      <span title="2026. február 12. 13:24:53">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 12. 13:24:53 CET"><span class="timeago" datetime="2026-02-12T13:24:53+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 12. 13:24:53 CET">2026-02-12</span>
+      </span>
+    </span>
+
+    
+
+    <span class="md-source-file__fact">
+      <span class="md-icon" title="Szerzők">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z">
+          </path>
+        </svg>
+      </span>
+      <span>Szerzők</span>
+      <nav></nav>      
+    </span>
+  </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Vissza a tetejére
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © BME VIK AUT
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

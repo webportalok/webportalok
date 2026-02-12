@@ -1,0 +1,2018 @@
+<!DOCTYPE html><html lang="hu" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Gábor Gincsai">
+      
+      
+        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/">
+      
+      
+        <link rel="prev" href="../../3%20-%20Backend%20services/">
+      
+      
+        <link rel="next" href="../4.2%20Main%20pages/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>4.1. Projekt felépítése és alapok - VIAUJV83 - Webportálok fejlesztése</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../extra-material-theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#41-projekt-felepitese-es-alapok" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+      
+  <img src="../../../logo-bme-aut.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VIAUJV83 - Webportálok fejlesztése
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4.1. Projekt felépítése és alapok
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red" aria-label="Váltás sötét témára" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét témára" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo" aria-label="Váltás világos témára" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos témára" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    webportalok
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../information/terms%20of%20use/" class="md-tabs__link">
+          
+  
+  
+  Tudnivalók
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
+          
+  
+  
+  Laborok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
+          
+  
+  
+  Házi feladatok
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+      
+  <img src="../../../logo-bme-aut.png" alt="logo">
+
+    </a>
+    VIAUJV83 - Webportálok fejlesztése
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    webportalok
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tudnivalók
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tudnivalók
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/terms%20of%20use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Felhasználási feltételek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tárgy információk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Házi feladat követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hozzájárulás az anyaghoz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laborok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Laborok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MS SQL ADATBÁZIS ÉS EF ALAPOK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Tervezes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Tervezés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20Projekt%20struktura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Project struktúra és adatmodell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Backend%20services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Kiinduló Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. ASP.NET Razor Pages
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. ASP.NET Razor Pages
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1. Projekt felépítése és alapok
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1. Projekt felépítése és alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-felepitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt felépítése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programcs-fajl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program.cs fájl
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program.cs fájl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-statement-nelkul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top level statement nélkül
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-statement-tel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top level statement-tel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dbcontext-es-service-ek-regisztralasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DbContext és Service-ek regisztrálása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appsettingsjson-beallitasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        appsettings.json beállítása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kezdo-oldal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kezdő oldal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2%20Main%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2. Főbb oldalak létrehozása
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3%20Felhasznalokezeles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3. Felhasználó kezelés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4%20Admin%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASP.NET MVC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ASP.NET MVC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20ASP.NET%20MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ASP.NET Core MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Blazor WASM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Blazor WASM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Blazor%20WASM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1. Blazor WASM alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Házi feladatok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Házi feladatok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework/01%20-%20Specifikacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specifikáció készítése
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nagyházi feladat készítése
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-felepitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt felépítése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programcs-fajl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program.cs fájl
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program.cs fájl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-statement-nelkul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top level statement nélkül
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-statement-tel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top level statement-tel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dbcontext-es-service-ek-regisztralasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DbContext és Service-ek regisztrálása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appsettingsjson-beallitasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        appsettings.json beállítása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kezdo-oldal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kezdő oldal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/4 - ASP.NET Razor Pages/4.1 Basics/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="41-projekt-felepitese-es-alapok">4.1. Projekt felépítése és alapok<a class="headerlink" href="#41-projekt-felepitese-es-alapok" title="Permanent link">¶</a></h1>
+<p>Ezen a laboron egy ASP.NET Core Razor Pages projektet hozunk létre, melyben megnézzük, hogyan lehet szerver oldalon a Razor Page-eket felhasználva webes alkalmazást fejleszteni.</p>
+<p>Eddig a UI réteg helyett csak egy egyszerű Console App-ot használtunk arra, hogy kipróbáljuk a backend alkalmazásunkat. Most ezt cseréljük le, az ASP.NET Core Razor Page projektre és tekintsük át a projekt felépítését</p>
+<h2 id="projekt-letrehozasa">Projekt létrehozása<a class="headerlink" href="#projekt-letrehozasa" title="Permanent link">¶</a></h2>
+<p>Hozzuk létre az ASP.NET Core Web App (Razor Page) projektünket <code>BookShop.Web.RazorPage</code> névvel.</p>
+<ul>
+<li>ASP.NET Core Web App (Razor Page) típust válasszuk.</li>
+<li>
+<p>A harmadik oldalon, ahol az ASP.NET Core projekt tulajdonságainál az Authentication Type-nál válasszuk a None-t. Az alábbi listában láthatjuk, hogy ezen felül még milyen opciókat választhatnánk. (<a href="https://learn.microsoft.com/en-us/aspnet/core/security/authentication/individual?view=aspnetcore-10.0">További részletek</a>).</p>
+<ul>
+<li><strong>None</strong>: Nincs felhasználókezelés az alkalmazásban.</li>
+<li><strong>Individual Accounts</strong>: ASP.NET Identity segítségével adatbázisban tárolt felhasználókezelést tesz lehetővé.</li>
+<li><strong>Microsoft identity platform</strong>: Azure AD belépést teszt lehetővé.</li>
+<li><strong>Windows</strong>: A számítógépen lévő windows felhasználókkal lehet belépni az alkalmazásba, így az alkalmazáson belül nincs szükség felhasználó kezelésre, hiszen azt az operációs rendszer végzi.</li>
+</ul>
+</li>
+<li>
+<p>Ezen felül a HTTPS maradhat bekapcsolva, bár érdemes tudni, hogy ahhoz, hogy a HTTPS működjön a gépen adminisztrátornak kell lennünk, hogy fel tudja telepíteni a szükséges fejlesztői tanúsítvány.</p>
+</li>
+<li>Dockert pedig nem szeretnénk használni.</li>
+</ul>
+<details class="info">
+<summary>Segítség - ASP.NET Core Web App (Razor Page) létrehozása</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/aspnet-razorpage.png" data-desc-position="bottom"><img alt="ASP.NET Core Web App (Razor Page) létrehozása 1." src="images/aspnet-razorpage.png"></a></p>
+<figcaption>
+<p>ASP.NET Core Web App (Razor Page) létrehozása 1.</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/aspnet-razorpage-2.png" data-desc-position="bottom"><img alt="ASP.NET Core Web App (Razor Page) létrehozása 2." src="images/aspnet-razorpage-2.png"></a></p>
+<figcaption>
+<p>ASP.NET Core Web App (Razor Page) létrehozása 2.</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/aspnet-razorpage-3-noauth.png" data-desc-position="bottom"><img alt="ASP.NET Core Web App (Razor Page) létrehozása 3." src="images/aspnet-razorpage-3-noauth.png"></a></p>
+<figcaption>
+<p>ASP.NET Core Web App (Razor Page) létrehozása 3.</p>
+</figcaption>
+</figure>
+</details>
+<h2 id="projekt-felepitese">Projekt felépítése<a class="headerlink" href="#projekt-felepitese" title="Permanent link">¶</a></h2>
+<p>Az alábbi ábrán látható a létrehozott projekt struktúrája.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/aspnet-razorpage-project-structure.png" data-desc-position="bottom"><img alt="ASP.NET Core Web App (Razor Page) projekt struktúra authentikációval" src="images/aspnet-razorpage-project-structure.png"></a></p>
+<figcaption>
+<p>ASP.NET Core Web App (Razor Page) projekt struktúra</p>
+</figcaption>
+</figure>
+<ul>
+<li>
+<p>A <code>Properties</code> könyvtárban található a <code>launchSettings.json</code>, ami az alkalmazás indításával kapcsolatos beállításokat fogja össze. Itt található, hogy</p>
+<ul>
+<li>milyen porton induljon az alkalmazás,</li>
+<li>milyen környezeti változók legyenek beállítva. Pl.: ASPNETCORE_ENVIRONMENT legyen Development</li>
+<li>vagy például a Windows authentication be legyen-e kapcsolva IIS alatt.</li>
+</ul>
+</li>
+<li>
+<p>A <code>wwwroot</code> alatt találhatók a statikusan kiszolgálandó fájlok. (CSS, JS, képek…)</p>
+</li>
+<li>A <code>Pages</code> mappában az Razor Pages lapkomponensek találhatók. Ezek MVVM mintát követő oldalak, melyeknek szerveroldali logikai kódrészletei a hozzájuk tartozó mögöttes kód (code behind) fájlokban találhatók, a kirajzolandó HTML-t pedig Razor szintaxissal állítjuk össze, szerveroldali megjelenítési logikával ötvözve.
+A konvenció szerint _ (alulvonás) karakterrel kezdődő nézetek vagy elrendezés (layout, master) nézetek, melyek keretet adnak egyes oldalaknak, vagy részleges (partial) nézetek, melyeket egyszerű kód-újrafelhasználás szempontjából szervezhetünk ki, hogy elkerüljük az ismétlődő részek kódmásolását. Utóbbi Razor Pages használata esetén kerülendő, ugyanis erre a célra a ViewComponent megoldások használatosak.</li>
+<li><code>appsettings.json</code>: Egy JSON fájl amiben az alkalmazás beállításai találhatók. Azért érdemes használni, mert az itt lévő adatokat egyszerűen az alkalmazás újratelepítése nélkül is meg tudjuk változtatni és kódból is egyszerűen elérhetőek. Ezen felül az Azure-be telepítjük az alkalmazást, akkor a CI / CD pipeline-ban is le tudjuk ezeket cserélni automatikusan attól függően, hogy éppen milyen környezetbe telepítünk.</li>
+</ul>
+<h2 id="programcs-fajl">Program.cs fájl<a class="headerlink" href="#programcs-fajl" title="Permanent link">¶</a></h2>
+<p>Az alkalmazás belépési pontja a <code>Program.cs</code> fájl. A korábbi .NET verziókkal ellentétben a generált fájlban már nem találunk <code>Main</code> metódust, hanem top level statement-ek formájában van megadva minden. A korábbi <code>Main</code> metódusos forma is használható, nem kötelező az "egybeömlesztett" kódírási formát választani.</p>
+<p>Mivel a .NET Core 3.1-es megoldást (Top Level Statement nélkül) jobban meg lehet érteni ezért először azt nézzük meg.</p>
+<h3 id="top-level-statement-nelkul">Top level statement nélkül<a class="headerlink" href="#top-level-statement-nelkul" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>.NET Core 3.1-ben az alábbiak szerint néz ki a <code>Program.cs</code> fájl. Az alkalmazás belépési pontja az itt található <code>Main</code> metódus.</p>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">CreateHostBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">).</span><span class="n">Build</span><span class="p">().</span><span class="n">Run</span><span class="p">();</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">IHostBuilder</span><span class="w"> </span><span class="nf">CreateHostBuilder</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Host</span><span class="p">.</span><span class="n">CreateDefaultBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">ConfigureWebHostDefaults</span><span class="p">(</span><span class="n">webBuilder</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">webBuilder</span><span class="p">.</span><span class="n">UseStartup</span><span class="o">&lt;</span><span class="n">Startup</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="p">});</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>A belépési pont a <code>CreateHostBuilder</code> függvényt hívja meg a parancssorról (esetleg) érkező paraméterekkel, amit átad a <code>Host</code> statikus osztály <code>CreateDefaultBuilder</code> metódusának.</p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Builder minta</p>
+<p>A builder minta megvalósítását több helyen is látni fogjuk az alkalmazásban, lényege, hogy egy belső konfigurációs objektumot .NET bővítő metódusokon keresztül konfigurálunk fel. A minta azt a problémát oldja meg, hogy tudjuk komponálni a bonyolult paraméterezéseket (pl. komplex objektum példányosítás vagy függvényhívás).</p>
+</div>
+<ul>
+<li>A builder mintát használja a <code>UseStartup&lt;T&gt;()</code> metódus is, ami a <code>Startup</code> osztályt regisztrálja be, mint a webalkalmazás indításáért felelős osztály (típus). Miután ez megtörtént, további konfigurációkat végezhetünk az objektumon, vagy a <code>Main</code>-be visszatérve "megépítjük" a szerver példányt, amit a <code>Run()</code> meghívásával el is indítunk.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Vizsgáljuk meg a <code>CreateDefaultBuilder</code> eredeti implementációját</p>
+<p>A <code>CreateDefaultBuilder</code> <a href="https://github.com/dotnet/aspnetcore/blob/v10.0.2/src/DefaultBuilder/src/WebHost.cs">eredeti implementációja</a>, ami néhány gyakori műveletet előre elvégez helyettünk, például a Kestrel és IIS integráció, vagy az <code>appsettings.json</code> konfigurációs fájl beregisztrálását és a naplózó komponens elérhetővé tételét.</p>
+</div>
+<ul>
+<li>
+<p>Nézzük meg a <code>Startup.cs</code> fájl kódját is!</p>
+<div class="highlight"><span class="filename">Startup.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Startup</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Startup</span><span class="p">(</span><span class="n">IConfiguration</span><span class="w"> </span><span class="n">configuration</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Configuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuration</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IConfiguration</span><span class="w"> </span><span class="n">Configuration</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="c1">// This method gets called by the runtime. Use this method to add services to the container. </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span><span class="w"> </span><span class="n">services</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">services</span><span class="p">.</span><span class="n">AddRazorPages</span><span class="p">()</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="c1">// This method gets called by the runtime. Use this method to configure the HTTP request pipeline. </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span><span class="w"> </span><span class="n">app</span><span class="p">,</span><span class="w"> </span><span class="n">IHostEnvironment</span><span class="w"> </span><span class="n">env</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span><span class="w"> </span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="n">app</span><span class="p">.</span><span class="n">UseDeveloperExceptionPage</span><span class="p">();</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="n">app</span><span class="p">.</span><span class="n">UseExceptionHandler</span><span class="p">(</span><span class="s">"/Error"</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span><span class="w"> </span>
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="n">UseRouting</span><span class="p">();</span><span class="w"> </span>
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="n">UseAuthorization</span><span class="p">();</span><span class="w"> </span>
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="n">UseEndpoints</span><span class="p">(</span><span class="n">endpoints</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">endpoints</span><span class="p">.</span><span class="n">MapRazorPages</span><span class="p">();</span><span class="w"> </span><span class="p">});</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Ez az osztály egy általános osztály, amely leírja az ASP.NET Core alkalmazásunkat. Az osztály formátuma részben kötött, ugyanis a két implementált metódus neve kötött, paraméterlistája viszont tetszőleges. Ennek oka, hogy az ASP.NET Core központi eleme a .NET Core által nyújtott inversion of control (IoC) dependency injection (DI) container, ami a függőségek feloldásáért felelős. Ez ebben a konkrét esetben azt jelenti, hogy például a <code>Configure()</code> által olyan paramétereket várhatunk, amelyeket a DI konténer ismer, az így várt típusokat a DI konténer fogja nekünk feloldani, szükség esetén példányosítani.</p>
+</li>
+<li>
+<p>A <code>Startup</code> osztály példányosításakor kapunk egy <code>IConfiguration</code> objektumot, amely által elérhetjük az <code>appsettings.json</code> fájlokban megadott konfigurációkat, ezt eltároljuk a <code>Configuration</code> tulajdonságban.</p>
+</li>
+<li>Ezután meghívódik a <code>ConfigureServices()</code> metódus, amelyben a kapott <code>IServiceCollection</code> DI konténerbe regisztrálunk be saját objektumokat, szolgáltatásokat: jelenleg magát a RazorPage keretrendszert (pontosabban annak ilyen módon definiált függőségeit, szolgáltatásait). Itt is látjuk a builder minta egyik variánsát.</li>
+<li>Végül a <code>Configure()</code> metódusban építjük fel az alkalmazás middleware-jeit.</li>
+</ul>
+<h3 id="top-level-statement-tel">Top level statement-tel<a class="headerlink" href="#top-level-statement-tel" title="Permanent link">¶</a></h3>
+<p>Az előbbiekben áttekintett kód helyett már Top Level Statement-tel generálódik a Program.cs fájl az alábbi tartalommal.</p>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="hll"><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="c1">// Add services to the container.</span>
+<span class="w">    </span><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddRazorPages</span><span class="p">();</span>
+
+<span class="hll"><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span>
+<span class="w">    </span><span class="c1">// Configure the HTTP request pipeline.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">app</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="n">UseExceptionHandler</span><span class="p">(</span><span class="s">"/Error"</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.</span>
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="n">UseHsts</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseHttpsRedirection</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseRouting</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseAuthorization</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">MapStaticAssets</span><span class="p">();</span>
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">MapRazorPages</span><span class="p">().</span><span class="n">WithStaticAssets</span><span class="p">();</span>
+
+<span class="hll"><span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</span></code></pre></div>
+<p>A fenti kódban látható, hogy ugyanúgy a <code>CreateBuilder</code>-rel hozzuk létre a <code>WebApplication</code>-t, majd regisztráljuk a szolgáltatásainkat. Ezt követően hozzáadjuk a middleware-eket és elindítjuk az alkalmazást. Pont ugyanúgy mint top level statement nélkül, csak most a kód igazából egymás mögé van "dobálva".</p>
+<h2 id="dbcontext-es-service-ek-regisztralasa">DbContext és Service-ek regisztrálása<a class="headerlink" href="#dbcontext-es-service-ek-regisztralasa" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>Adjunk referenciát a <code>BookShop.Web.RazorPage</code> projektből az alábbiakra</p>
+<ul>
+<li>BookShop.<strong>Bll</strong> projekt: Így tudjuk a DI-ba beregisztrálni a szolgáltatásainkat.</li>
+<li>BookShop.<strong>Transfer</strong> projekt: Hogy a DTO-kat is elérjük.</li>
+<li>BookShop.<strong>Server.Abstraction</strong>: Hogy az IRequestContext-et be tudjuk regisztrálni.</li>
+</ul>
+</li>
+<li>
+<p>Ahhoz, hogy le tudjuk futtatni a migrációkat úgy, hogy a Startup projekt a <code>BookShop.Web.RazorPage</code> adjuk hozzá a projekthez a <code>Microsoft.EntityFrameworkCore.Design</code> nuGet package-et.</p>
+</li>
+<li>
+<p>A <code>Program.cs</code>-ben regisztráljuk be a BLL szolgáltatásainkat. Ehhez már megvan a <code>Wireup.cs</code>-ben a <code>AddBllServices</code> metódus, amit csak meg kell hívunk.</p>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="hll"><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll</span><span class="p">;</span>
+</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+
+<span class="c1">// Register BLL and DAL Services.</span>
+<span class="hll"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddBllServices</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">);</span>
+</span>
+<span class="c1">// TODO: Register addtional services</span>
+
+<span class="c1">// Add services to the container.</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddRazorPages</span><span class="p">();</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</code></pre></div>
+</li>
+<li>
+<p>Mivel a kiinduló kódban már használjuk az <code>IRequestContext</code>-et, ezért készítenünk kell hozzá egy implementációt és be kell regisztrálni mint szolgáltatás. Implementáljuk először az <code>IRequestContext</code> interfészt egy mock kóddal.</p>
+<div class="highlight"><span class="filename">RequestContext.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Server.Abstraction.Context</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Security.Claims</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Services</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">RequestContext</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IRequestContext</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">RequestId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ClaimsIdentity</span><span class="o">?</span><span class="w"> </span><span class="n">CurrentUser</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int?</span><span class="w"> </span><span class="n">UserId</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//throw new NotImplementedException();</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Regisztráljuk be a <code>Program.cs</code>-ben</p>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll</span><span class="p">;</span>
+<span class="hll"><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Server.Abstraction.Context</span><span class="p">;</span>
+</span><span class="hll"><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Services</span><span class="p">;</span>
+</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+
+<span class="c1">// Register Bll and Dal Servces.</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddBllServices</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">);</span>
+
+<span class="hll"><span class="c1">// Register additional non-BLL services.</span>
+</span><span class="hll"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IRequestContext</span><span class="p">,</span><span class="w"> </span><span class="n">RequestContext</span><span class="o">&gt;</span><span class="p">();</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Állítsuk be, hogy a <code>BookShop.Web.RazorPages</code> projekt legyen a startup project és indítsuk el. Első indításkor egy felugró ablakban rákérdez, hogy megbízunk-e az újonnan generált SSL tanúsítványban, és telepítjük-e.</p>
+<details class="info">
+<summary>Segítség - Tanúsítvány elfogadása képernyők</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/trust-sslcert.png" data-desc-position="bottom"><img alt="Trust SSL cert text" src="images/trust-sslcert.png"></a></p>
+<figcaption>
+<p>Figyelmeztetés, hogy a generált SSL tanúsítványban megbízunk-e</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/install-certificate.png" data-desc-position="bottom"><img alt="Install certificate" src="images/install-certificate.png"></a></p>
+<figcaption>
+<p>Tanúsítvány telepítése</p>
+</figcaption>
+</figure>
+</details>
+</li>
+<li>
+<p>Ha mindent jól csináltunk el is indul az alkalmazás</p>
+</li>
+</ol>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/bookShop-initial-run.png" data-desc-position="bottom"><img alt="Initial run" src="images/bookShop-initial-run.png"></a></p>
+<figcaption>
+<p>ASP.NET oldalunk futás közben.</p>
+</figcaption>
+</figure>
+<h2 id="middleware">Middleware<a class="headerlink" href="#middleware" title="Permanent link">¶</a></h2>
+<p>Hivatalos dokumentáció: <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-10.0">middleware</a>.</p>
+<p>A middleware-ek egymásra épülő rétegek, amelyek a HTTP kérés alapján:</p>
+<ul>
+<li>vagy a kontextusunk állapotát módosítják, például a HTTP kérésben található süti alapján a kontextushoz hozzárendelik az aktuális felhasználót reprezentáló objektumot</li>
+<li>vagy előállítják a HTTP választ.</li>
+</ul>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/aspnet-middlewares.png" data-desc-position="bottom"><img alt="ASP.NET Middleware-ek" src="images/aspnet-middlewares.png"></a></p>
+<figcaption>
+<p>ASP.NET Middleware-ek</p>
+</figcaption>
+</figure>
+<p>A middleware-ek sorrendje és regisztrációjának módja (pl. opcionális vagy futási idejű feltételhez kötött mondjuk az útvonalban szereplő paraméter, vagy azon vizsgált feltétel alapján) kritikus, ugyanis, ha egy middleware előállítja a választ, nem jut tovább a kérés a következő middleware-hez. Ezért, ha az Razor Page végpontokat regisztrálnánk előbb, akkor statikus fájlokat nem tudnánk kiszolgálni (az esetek túlnyomó részében, de a példa kedvéért elegendő most ennyi).</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/aspnet-razorpage-middleware-pipeline.png" data-desc-position="bottom"><img alt="ASP.NET Core middleware-ek" src="images/aspnet-razorpage-middleware-pipeline.png"></a></p>
+<figcaption>
+<p>ASP.NET Core Razor page middleware-ek</p>
+</figcaption>
+</figure>
+<p>A kódban a middleware-eket regisztráló metódusok általában a <code>Use...</code> prefix-szel kezdődnek.</p>
+<p>Esetünkben a middleware-ek közül az általános hibakezelő middleware-t és a HTST-t csak akkor regisztráljuk be, ha nem Development módban fut az alkalmazás. Ettől függetlenül a statikus fájlkiszolgálást engedélyezzük a <code>wwwroot</code> mappából, majd beállítjuk a Https átirányítást, a routing-ot, az authorizációt, majd a RazorPage-ek végpontjaira bízzuk a válasz előállítását.</p>
+<p>A <code>wwwroot</code> mappában a statikusan kiszolgálandó fájljaink találhatók. Ezeket a böngésző letölti, amikor hivatkozunk rájuk pl. <code>&lt;script&gt;</code> vagy <code>&lt;style&gt;</code> tagben. A statikus fájlok kiszolgálásáért szintén middleware felelős, a Static Files middleware.</p>
+<h2 id="appsettingsjson-beallitasa">appsettings.json beállítása<a class="headerlink" href="#appsettingsjson-beallitasa" title="Permanent link">¶</a></h2>
+<ol>
+<li>A kód azért tudott elindulni, mert nem akart adatbázishoz nyúlni. Ha megnézzük az appsettings.json fájlt akkor láthatjuk, hogy nem vettük fel a szükséges adatbázis kapcsolódási sztringet és az AutoMapper licensz kulcsot sem állítottuk be.</li>
+<li>
+<p>Vegyük fel a <code>DefaultConnectionString</code>-et és az <code>AutoMapper</code> kulcsot az alábbiak szerint az <code>appsettings.json</code>-ban</p>
+<div class="highlight"><span class="filename">appsettings.json</span><pre><span></span><code><span class="p">{</span>
+<span class="nt">"Logging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"LogLevel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"Default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Information"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"Microsoft.AspNetCore"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Warning"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">},</span>
+<span class="nt">"AllowedHosts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span>
+
+<span class="hll"><span class="nt">"ConnectionStrings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">"DefaultConnection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Source=.;Initial Catalog=BookShopDb2;Integrated Security=True;TrustServerCertificate=True"</span>
+</span><span class="hll"><span class="p">},</span>
+</span>
+<span class="hll"><span class="nt">"AutoMapper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">"LicenseKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user secretből állítsuk be"</span>
+</span><span class="hll"><span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Mivel a licensz kulcs egy érzékeny, titkos adat ezért azt a user secrets.json-ba vegyük fel. (BookShop.Web.RazorPage -&gt; Manage User Secrets)</p>
+<div class="highlight"><span class="filename">secrets.json</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"AutoMapper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"LicenseKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ide jön a licensz kulcs"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="kezdo-oldal">Kezdő oldal<a class="headerlink" href="#kezdo-oldal" title="Permanent link">¶</a></h2>
+<p>Most, hogy már vannak adataink, és az alkalmazásvázzal is elkészültünk, meg tudjuk jeleníteni a felületen az adatbázisban levő könyvek adatait. Ehhez az <code>Index</code> page-et fogjuk átírni, így az oldal kezdeti betöltésekor a root URL-en meg fog jelenni az elérhető könyvek listája.</p>
+<ol>
+<li>Ahhoz, hogy a képek megjelenjenek, a <code>Solution Items</code> mappában (ha fájl rendszer szinten keressük, akkor a solution gyökerében) lévő <code>Boritok.zip</code> fájlban található covers mappát másoljuk át, hogy a képek a <code>BookShop.Web.RazorPage\wwwroot\images\covers</code> könyvtárba kerüljenek!</li>
+<li>
+<p>Nyissuk meg a <code>Pages</code> mappában található <code>Index.cshtml</code> és <code>Index.cshtml.cs</code> fájlokat.</p>
+<ul>
+<li>A <code>.cshtml</code>-ben az oldal megjelenése van leírva html és razor szintaxissal,</li>
+<li>A <code>.cshtml.cs</code> fájl pedig a code behind C# nyelven</li>
+</ul>
+</li>
+<li>
+<p>A mögöttes kódfájlban egy üres <code>OnGet</code> metódust látunk.</p>
+<div class="highlight"><span class="filename">Index.razor.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.RazorPages</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Pages</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">IndexModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PageModel</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnGet</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Az <code>OnGet</code> várhat tetszőleges paramétereket, melyeket a <em>model binder</em> fog feltölteni nekünk. A model binder-nek megadható, hogy adott paramétert ne a kérés alapján kössön, hanem oldjon fel a DI konténerből, így az <code>OnGet</code> metódusban elkérhetjük a BLL szolgáltatásokat is az interfész megadásával.</p>
+<div class="admonition tip">
+<p class="admonition-title">Model binding hivatalos dokumentáció</p>
+<p>Érdemes a Microsoft hivatalos dokumentációját is átfutni, a <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-10.0">model binder</a>-ről.</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">DbContext közvetlen elérése</p>
+<p>Akár a <code>DbContext</code>-et is elérhetnénk, de a többrétegű architektúra miatt a Web csak a BLL-be hívhat be, a DAL réteget közvetlenül nem érheti el. E miatt fontos az is, hogy a Webes réteghez már csak DTO-k jussanak el.</p>
+</div>
+<div class="highlight"><span class="filename">Index.razor.cs - OnGet DI</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnGet</span><span class="p">([</span><span class="n">FromServices</span><span class="p">]</span><span class="w"> </span><span class="n">IBookService</span><span class="w"> </span><span class="n">bookService</span><span class="p">)</span>
+<span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>A modellosztály konstruktorában is várhatja és eltárolja a függőségére a referenciát, ilyen esetben attribútummal sem szükséges ellátni. Ennek a megoldásnak a hátránya, hogy lehet, hogy feleslegesen kérünk el egy függőséget, mert nem feltétlenül az <code>OnGet</code> ágba fog befutni a kérés. Ez viszont igen ritkán okoz valódi teljesítményproblémákat és mikrooptimalizálásnak számít, ezért a leggyakrabban használt módszer.
+Módosítsuk a kódot, hogy ne az <code>OnGet</code> kapja meg az <code>IBookService</code>-t, amit a DI-ból kell feloldani, hanem a primary constructor, így az egész osztályban elérhető lesz.</p>
+<div class="highlight"><span class="filename">Index.razor.cs - Primary ctor</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">IndexModel</span><span class="p">(</span><span class="n">IBookService</span><span class="w"> </span><span class="n">bookService</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PageModel</span>
+<span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Módosítsuk úgy a fenti kódot, hogy az <code>IBookService</code>-en keresztül kérjük le az akciós és a legújabb 5-5 könyvet, valamit alá az összes könyvet (később itt jelennek majd meg a kategória könyvei), amit eltárolunk egy-egy BookData listában. Ügyeljünk rá, hogy a <code>GetDiscountedBooksAsync</code>, <code>GetNewestBooksAsync</code> és a <code>GetBooksAsync</code> metódusok aszinkronok!</p>
+<div class="highlight"><span class="filename">Index.razor.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Bll.ServicesInterfaces</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Transfer.Dtos</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.RazorPages</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Web.RazorPage.Pages</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">IndexModel</span><span class="p">(</span><span class="n">IBookService</span><span class="w"> </span><span class="n">bookService</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PageModel</span>
+<span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IList</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">NewestBooks</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IList</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DiscountedBooks</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IList</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnGet</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Query book data from the BLL service</span>
+<span class="hll"><span class="w">        </span><span class="n">NewestBooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetNewestBooksAsync</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span><span class="hll"><span class="w">        </span><span class="n">DiscountedBooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetDiscountedBooksAsync</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span><span class="hll"><span class="w">        </span><span class="n">Books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetBooksAsync</span><span class="p">(</span><span class="k">null</span><span class="p">);</span>
+</span><span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Alternatív megoldásokkal is elérhetjük a függőségeinket:</p>
+<ul>
+<li>Lehetséges a nézetbe közvetlenül injektálni függőséget az <code>@inject</code> direktíva segítségével. Ez ellenjavallt, nagyon ritka esetekben szabad csak használni, mert a kód átláthatatlanságához és rejtett függőségekhez vezet (amiket nehéz vagy lehetetlen lehet tesztelni).</li>
+<li>Bárhol elkérhetjük függőségként az <code>IServiceProvider</code> interfészt, ami az IoC konténerért felelős objektum. Tőle kérjük el a függőségeinket akkor is, amikor azt pl. konstruktorparaméterbe tesszük, de a keretrendszer ezt elfedi. Ha az <code>IServiceProvider</code>-en keresztül kérünk el függőséget, akkor az a függőség rejtett lesz, a statikus kódanalízis nem tudja felderíteni egyértelműen, hogy az osztályunk függ egy másiktól. A tiszta függőségekre mindig ügyeljünk!</li>
+</ul>
+</li>
+<li>
+<p>Készítsük el az <code>Index.razor</code> fájlt is, ami megjeleníti a legújabb könyveket. A könyvlista fölött legyen egy cím, hogy <em>Legújabb könyvek</em>. A könyvlista megjelenítéséhez egy ciklussal iteráljunk végig a könyveket és jelenítsük meg a borító képüket, amire kattintva el tudunk navigálni a <em>Book</em> oldalra és paraméterként adjuk át a könyv Id-ját. Az <code>img-fluid</code> CSS osztállyal tudjuk megadni, hogy a kép az oldal átméretezésével összemenjen.</p>
+<div class="highlight"><span class="filename">Index.razor</span><pre><span></span><code>@page<span class="w"> </span>
+@model<span class="w"> </span>IndexModel<span class="w"> </span>
+
+@{<span class="w"> </span>
+<span class="w">    </span>ViewData["Title"]<span class="w"> </span>=<span class="w"> </span>"Könyvek";<span class="w"> </span>
+}<span class="w"> </span>
+
+<span class="nt">&lt;h2&gt;</span>Legújabb<span class="w"> </span>könyvek<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"row row-cols-5 g-2"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">    </span>@foreach<span class="w"> </span>(var<span class="w"> </span>book<span class="w"> </span>in<span class="w"> </span>Model.NewestBooks)
+</span><span class="w">    </span>{
+<span class="hll"><span class="w">        </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">asp-page=</span><span class="s">"Book"</span><span class="w"> </span><span class="na">asp-route-id=</span><span class="s">"@book.Id"</span><span class="w"> </span><span class="na">class=</span><span class="s">"col"</span><span class="nt">&gt;</span>
+</span><span class="hll"><span class="w">            </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">"images/covers/@(book.Id).jpg"</span><span class="w"> </span><span class="na">alt=</span><span class="s">"@book.Title"</span><span class="w"> </span><span class="na">title=</span><span class="s">"@book.Title"</span><span class="w"> </span><span class="na">class=</span><span class="s">"img-fluid w-100"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="w">        </span><span class="nt">&lt;/a&gt;</span>
+<span class="w">    </span>}
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Hasonlóan készítsük el, hogy a legújabb könyvek alatt az akciós könyvek is megjelenjenek. Itt figyeljünk arra is, hogy csak akkor jelenjen meg ez a blokk, ha a listában található könyv.</p>
+<details class="info">
+<summary>Segítség - Akciós könyvek megjelenítése</summary>
+<div class="highlight"><span class="filename">Index.razor</span><pre><span></span><code><span class="hll">@if<span class="w"> </span>(Model.DiscountedBooks?.Any()<span class="w"> </span>==<span class="w"> </span>true)
+</span>{
+<span class="w">    </span><span class="nt">&lt;h2&gt;</span>Legújabb<span class="w"> </span>könyvek<span class="nt">&lt;/h2&gt;</span>
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"row row-cols-5 g-2"</span><span class="nt">&gt;</span>
+<span class="w">        </span>@foreach<span class="w"> </span>(var<span class="w"> </span>book<span class="w"> </span>in<span class="w"> </span>Model.DiscountedBooks)
+<span class="w">        </span>{
+<span class="w">            </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">asp-page=</span><span class="s">"Book"</span><span class="w"> </span><span class="na">asp-route-id=</span><span class="s">"@book.Id"</span><span class="w"> </span><span class="na">class=</span><span class="s">"col"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">"images/covers/@(book.Id).jpg"</span><span class="w"> </span><span class="na">alt=</span><span class="s">"@book.Title"</span><span class="w"> </span><span class="na">title=</span><span class="s">"@book.Title"</span><span class="w"> </span><span class="na">class=</span><span class="s">"img-fluid w-100"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/a&gt;</span>
+<span class="w">        </span>}
+<span class="w">    </span><span class="nt">&lt;/div&gt;</span>
+}
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>Az oldal aljára készítsük el az összes könyv megjelenítését is. A megjelenítéshez használjuk a Bootstrap-es <a href="https://getbootstrap.com/docs/5.0/components/card/#grid-cards">Card Group</a>-ot.</p>
+<div class="highlight"><span class="filename">Index.razor</span><pre><span></span><code><span class="nt">&lt;h2&gt;</span>A<span class="w"> </span>kategória<span class="w"> </span>könyvei<span class="nt">&lt;/h2&gt;</span>
+<span class="hll"><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4"</span><span class="nt">&gt;</span>
+</span><span class="w">    </span>@foreach<span class="w"> </span>(var<span class="w"> </span>book<span class="w"> </span>in<span class="w"> </span>Model.Books)
+<span class="w">    </span>{
+<span class="w">        </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"card h-100"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">asp-page=</span><span class="s">"Book"</span><span class="w"> </span><span class="na">asp-route-id=</span><span class="s">"@book.Id"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">class=</span><span class="s">"card-img-top"</span><span class="w"> </span><span class="na">src=</span><span class="s">"~/images/covers/@(book.Id).jpg"</span><span class="w"> </span><span class="na">alt=</span><span class="s">"@book.Title"</span><span class="w"> </span><span class="na">title=</span><span class="s">"@book.Title"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/a&gt;</span>
+
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"card-title fw-bold mb-0"</span><span class="nt">&gt;</span>
+<span class="hll"><span class="w">                        </span>@string.Join(",<span class="w"> </span>",<span class="w"> </span>book.Authors.Select(x<span class="w"> </span>=&gt;<span class="w"> </span>x.Name))
+</span><span class="w">                    </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;p</span><span class="w"> </span><span class="na">class=</span><span class="s">"card-text"</span><span class="nt">&gt;</span>
+<span class="w">                        </span>@book.Title
+<span class="w">                    </span><span class="nt">&lt;/p&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"card-footer text-end text-muted fw-bold small"</span><span class="nt">&gt;</span>
+<span class="w">                    </span>@(book.DiscountedPrice<span class="w"> </span>??<span class="w"> </span>book.Price)<span class="ni">&amp;nbsp;</span>Ft
+<span class="w">                </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">    </span>}
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Itt azt vehetjük észre, hogy a Razor szintaxissal a C# és HTML kódot vegyítjük: a <code>@</code> karakterek után következő kódrészletek még a szerveren, .NET-ben futnak le. Bejárjuk a teljes könyv listát, és minden könyvet megjelenítünk a felületen. Érdekesség még a kiemelt <code>&lt;a&gt;</code> elem, ugyanis ez ún. tag helper-ek segítségével útvonalat generál az elemhez. A tag helper-ek új szintaxisa a Razor-nak, segítségükkel komplexebb szerveroldali kódot is futtathatunk, míg a HTML-ünk szép marad, megtartja valós markup jellegét és nem lesznek benne imperatív blokkok.</p>
+<div class="admonition tip">
+<p class="admonition-title">Razor</p>
+<p>Hivatalos dokumentáció a <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-10.0">Razor syntaxis</a>-ról</p>
+</div>
+</li>
+<li>
+<p>Indítsuk is el az alkalmazást</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/book-list.png" data-desc-position="bottom"><img alt="Book list" src="images/book-list.png"></a></p>
+<figcaption>
+<p>Könyv lista a kezdő oldalon</p>
+</figcaption>
+</figure>
+</li>
+</ol>
+  <hr>
+  <div class="md-source-file">
+    <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z">
+          </path>
+        </svg>
+      </span>
+      <span title="2026. február 12. 13:24:53">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 12. 13:24:53 CET"><span class="timeago" datetime="2026-02-12T13:24:53+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 12. 13:24:53 CET">2026-02-12</span>
+      </span>
+    </span>
+
+    
+
+    <span class="md-source-file__fact">
+      <span class="md-icon" title="Szerzők">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z">
+          </path>
+        </svg>
+      </span>
+      <span>Szerzők</span>
+      <nav></nav>      
+    </span>
+  </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Vissza a tetejére
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © BME VIK AUT
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
