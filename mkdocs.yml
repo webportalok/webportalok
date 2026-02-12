@@ -100,6 +100,7 @@ plugins:
       branch: master
 
 nav:
+  - index.md
   - "Tudnivalók":
       - information/terms of use/index.md
       - information/course/index.md
