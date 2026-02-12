@@ -1073,8 +1073,8 @@ Belépéshez szükségünk van egy harmadik fél által nyújtott authentikáci�
     ``` json title="appsettings.Developement.json"
     "Authentication": {
         "Microsoft": {
-        "ClientId": "cfe7802e-2fde-4891-8b7c-d2f5d3016180",
-        "ClientSecret": "9fN8Q~dYnU4OUsy_v9GsX2d93p~hiPhvCf-oNceY"
+        "ClientId": "cfe7...",
+        "ClientSecret": "9f..."
         }
     }
     ```
