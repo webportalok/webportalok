@@ -7,31 +7,31 @@
         <meta name="author" content="Gábor Gincsai">
       
       
-        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/1%20-%20Tervezes/">
+        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/5%20-%20Blazor/5.1%20Basics/">
       
       
-        <link rel="prev" href="../0%20-%20Adatbazis%20alapok/">
+        <link rel="prev" href="../../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/">
       
       
-        <link rel="next" href="../2%20-%20Projekt%20struktura/">
+        <link rel="next" href="../5.2%20Main%20pages/">
       
       
         
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>1. Tervezés - VIAUJV83 - Webportálok fejlesztése</title>
+        <title>5.1. Projekt felépítése, alapok - VIAUJV83 - Webportálok fejlesztése</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,17 +50,17 @@
       
     
     
-      <link rel="stylesheet" href="../../css/timeago.css">
+      <link rel="stylesheet" href="../../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../extra-material-theme.css">
+      <link rel="stylesheet" href="../../../extra-material-theme.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-tervezes" class="md-skip">
+        <a href="#51-projekt-felepitese-alapok" class="md-skip">
           Kihagyás
         </a>
       
@@ -103,9 +103,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Élőfej">
-    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../logo-bme-aut.png" alt="logo">
+  <img src="../../../logo-bme-aut.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Tervezés
+              5.1. Projekt felépítése, alapok
             
           </span>
         </div>
@@ -235,7 +235,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -256,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../information/terms%20of%20use/" class="md-tabs__link">
+        <a href="../../../information/terms%20of%20use/" class="md-tabs__link">
           
   
   
@@ -278,7 +278,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
+        <a href="../../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
           
   
   
@@ -298,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
+        <a href="../../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
           
   
   
@@ -332,9 +332,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../logo-bme-aut.png" alt="logo">
+  <img src="../../../logo-bme-aut.png" alt="logo">
 
     </a>
     VIAUJV83 - Webportálok fejlesztése
@@ -361,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/terms%20of%20use/" class="md-nav__link">
+      <a href="../../../information/terms%20of%20use/" class="md-nav__link">
         
   
   
@@ -466,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/course/" class="md-nav__link">
+      <a href="../../../information/course/" class="md-nav__link">
         
   
   
@@ -494,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/requirements/" class="md-nav__link">
+      <a href="../../../information/requirements/" class="md-nav__link">
         
   
   
@@ -522,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/github/" class="md-nav__link">
+      <a href="../../../information/github/" class="md-nav__link">
         
   
   
@@ -550,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/contributing/" class="md-nav__link">
+      <a href="../../../information/contributing/" class="md-nav__link">
         
   
   
@@ -640,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
+      <a href="../../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
         
   
   
@@ -665,37 +665,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1. Tervezés
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Tervezes/" class="md-nav__link">
         
   
   
@@ -711,160 +684,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tartalomjegyzék
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#specifikacio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Specifikáció
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ui-terv-keszitese" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UI terv készítése
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="UI terv készítése">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#balsamiq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Balsamiq
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#figma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Figma
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Figma">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#site-template-hasznalata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Site template használata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#egyszeru-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Egyszerű design
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adatbazis-tervezes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adatbázis tervezés
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adatbázis tervezés">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bookshop-db-tervezese" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BookShop DB tervezése
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="BookShop DB tervezése">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-tervezes-fontosabb-szempontjai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A tervezés fontosabb szempontjai
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#onallo-feladat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Önálló feladat
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -877,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2%20-%20Projekt%20struktura/" class="md-nav__link">
+      <a href="../../2%20-%20Projekt%20struktura/" class="md-nav__link">
         
   
   
@@ -905,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3%20-%20Backend%20services/" class="md-nav__link">
+      <a href="../../3%20-%20Backend%20services/" class="md-nav__link">
         
   
   
@@ -983,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/" class="md-nav__link">
         
   
   
@@ -1011,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/" class="md-nav__link">
         
   
   
@@ -1039,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/" class="md-nav__link">
         
   
   
@@ -1067,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/" class="md-nav__link">
         
   
   
@@ -1100,6 +919,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1110,11 +931,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
@@ -1135,7 +956,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1150,10 +971,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.1%20Basics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1. Projekt felépítése, alapok
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1169,6 +1017,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blazor-web-app-projekt-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blazor Web App projekt létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-struktura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt struktúra
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projekt struktúra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bookshopweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BookShop.Web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BookShop.Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apprazor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App.razor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program.cs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bookshopwebclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BookShop.Web.Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1181,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.2%20Main%20pages/" class="md-nav__link">
+      <a href="../5.2%20Main%20pages/" class="md-nav__link">
         
   
   
@@ -1209,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="../5.3%20Felhasznalokezeles/" class="md-nav__link">
         
   
   
@@ -1237,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.4%20Admin%20pages/" class="md-nav__link">
+      <a href="../5.4%20Admin%20pages/" class="md-nav__link">
         
   
   
@@ -1330,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homework/01%20-%20Specifikacio/" class="md-nav__link">
+      <a href="../../../homework/01%20-%20Specifikacio/" class="md-nav__link">
         
   
   
@@ -1358,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
+      <a href="../../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
         
   
   
@@ -1413,10 +1359,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#specifikacio" class="md-nav__link">
+  <a href="#blazor-web-app-projekt-letrehozasa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Specifikáció
+        Blazor Web App projekt létrehozása
       
     </span>
   </a>
@@ -1424,22 +1370,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ui-terv-keszitese" class="md-nav__link">
+  <a href="#projekt-struktura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        UI terv készítése
+        Projekt struktúra
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="UI terv készítése">
+    <nav class="md-nav" aria-label="Projekt struktúra">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#balsamiq" class="md-nav__link">
+  <a href="#bookshopweb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Balsamiq
+        BookShop.Web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BookShop.Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apprazor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App.razor
       
     </span>
   </a>
@@ -1447,33 +1405,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#figma" class="md-nav__link">
+  <a href="#programcs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Figma
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Figma">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#site-template-hasznalata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Site template használata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#egyszeru-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Egyszerű design
+        Program.cs
       
     </span>
   </a>
@@ -1485,40 +1420,11 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adatbazis-tervezes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adatbázis tervezés
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adatbázis tervezés">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#bookshop-db-tervezese" class="md-nav__link">
+  <a href="#bookshopwebclient" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BookShop DB tervezése
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="BookShop DB tervezése">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-tervezes-fontosabb-szempontjai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A tervezés fontosabb szempontjai
+        BookShop.Web.Client
       
     </span>
   </a>
@@ -1527,22 +1433,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#onallo-feladat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Önálló feladat
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1563,7 +1453,7 @@
 
 
   
-    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/1 - Tervezes/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/5 - Blazor/5.1 Basics/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -1571,161 +1461,171 @@
   
 
 
-<h1 id="1-tervezes">1. Tervezés<a class="headerlink" href="#1-tervezes" title="Permanent link">¶</a></h1>
-<h2 id="specifikacio">Specifikáció<a class="headerlink" href="#specifikacio" title="Permanent link">¶</a></h2>
-<p>Az alábbiakban az alkalmazás lefontosabb funkcióit szedjük össze, hogy a későbbiekben ez alapján tudjuk a felhasználói felületet megtervezni. A félév során ezen funkciók egy részét fogjuk megvalósítani.</p>
-<ul>
-<li>
-<p><strong>Könyvek böngészése</strong>
-A könyveket kategóriákba kell tudni szervezni (több szintű). Egy kategóriát kiválasztva megjelennek a kategóriában lévő könyvek a legfontosabb információkkal (cím, szerző, ár, borítókép) egy lapozható listában.
-Az alkalmazás kezdő oldala is egy ilyen listát tartalmaz, azonban az a kategóriákban kiemelt / újdonságokat mutatja. Ha itt egy könyvre kattintunk, akkor bejön a könyv részletes oldala, amiben minden adat megtalálható a könyvről, illetve a hozzá tartozó ajánlók és kommentek is.</p>
-</li>
-<li>
-<p><strong>Könyvek keresése</strong>
-A felhasználók több esetben konkrét könyvet keresnek, aminek ismerik a címét vagy annak egy részét. Ehhez szükséges egy kereső megvalósítása, ami felajánlja gépelés közben a találatokat, és ha egy konkrét könyvre kattintunk, elvisz annak a részletes oldalára. Ha pedig több találat lenne, akkor egy részletes keresést indít, ahol a listázzuk a találatokat egy külön oldalon.</p>
-</li>
-<li>
-<p><strong>Kosár és megrendelés</strong>
-A felhasználók a megvenni kívánt könyveket egy kosárba gyűjthetnek, majd a későbbiekben ezt feladhatják, mint egy rendelést. A korábbi rendelések listáját később visszanézhetik és nyomon követhetik azok állapotát.</p>
-</li>
-<li>
-<p><strong>Felhasználó kezelés</strong>
-Szükséges, hogy a felhasználók tudjanak regisztrálni és belépni. A belépést akár külső autentikációs szolgáltatással is lehessen megvalósítani (pl: Google, Facebook accounttal)
-Ezen felül szükséges megkülönböztetni az admin felhasználókat, akik szerkeszthetik a könyvek és a kategóriák adatait, illetve moderálhatják a közösség által készített tartalmakat.</p>
-</li>
-<li>
-<p><strong>Profil adatok kezelése</strong>
-Lehetőséget kell adni a jelszóváltoztatásra, illetve a felhasználónak a szállítási és számlázási adatait el kell tárolni.</p>
-</li>
-<li>
-<p><strong>Ajánlók létrehozása adott könyvhöz</strong>
-A felhasználók egy-egy könyvhöz ajánlókat hozhatnak létre, melyek a könyv részletes oldalán megjelennek egy listában. Az ajánlók rendelkeznek részletes oldallal is, és egy külön oldalon elérhetők a legújabb idézetek is.</p>
-</li>
-<li>
-<p><strong>Kommentek fűzése a könyvekhez</strong>
-A felhasználók egy-egy könyvhöz egyszerű kommentet is lehet fűzni, ami megjelenik a könyv részletes oldalon.</p>
-</li>
-</ul>
-<h2 id="ui-terv-keszitese">UI terv készítése<a class="headerlink" href="#ui-terv-keszitese" title="Permanent link">¶</a></h2>
-<p>A UI tervek, vagy Wireframe-ek tervezésének a lényege, hogy a specifikáció alapján a lehető legkorábban tudjunk készíteni egy, a megrendelő számára megmutatható grafikus tervet. A lényeg nem a design-on van, hanem a megjelenő adatokon és azok elrendezésén. Tehát a tervezett felületeken pontosan meg kell jeleníteni minden adatot, nem elég az, hogy ide jönnek a könyv adatai, hanem tételesen meg kell tervezni, hogy mi jelenik meg (Cím, szerző, rövid leírás, ár, kedvezményes ár...)</p>
-<p>A tervezés legfontosabb része, hogy azt tervezzük meg, amit a megrendelő szeretne. Ehhez érdemes a fejlesztés legelején  megtervezni a legfontosabb wireframe-eket, és azt egyeztetni a megrendelővel, mert amikor már látja a megrendelő, hogyan fog kinézni az alkalmazás azonnal eszébe jut még számos nem specifikált, vagy alul specifikált funkció.</p>
-<p>Ezen felül fejlesztői oldalról nézve is fontos a UI terv, hiszen azon minden adat megjelenik, tehát ez alapján el lehet kezdeni megtervezni az adatbázist. Beazonosítani az entitásokat és azok tulajdonságait.</p>
-<p>A korai UI tervezéssel számos iterációt meg tudunk spórolni a fejlesztés során, hiszen már van egy egyeztetett terv, hogyan fog kinézni az alkalmazás és milyen adatokat jelenít meg. Így kevesebb új mezők kell felvenni az adatbázisba a megvalósítás során, amit egyébként végig is kell vezetni a DTO-n, üzleti logikán és a felületen is.</p>
-<div class="admonition success">
-<p class="admonition-title">Balsamiq-ban készített BookShop UI terv</p>
-<p><a href="images/Balsamiq%20-%20UI%20terv.pdf">Balsamiq UI terv letöltése</a></p>
-</div>
-<h3 id="balsamiq">Balsamiq<a class="headerlink" href="#balsamiq" title="Permanent link">¶</a></h3>
-<p>Egy kiváló eszköz UI tervek készítésére a <a href="http://www.balsamiq.com">Balsamiq</a>, melynek webes verziója regisztráció után 14 napig ingyenesen használható.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/balsamiq.png" data-desc-position="bottom"><img alt="Balsamiq" src="images/balsamiq.png"></a></p>
-<figcaption>
-<p>Balsamiq felhasználói felülete</p>
-</figcaption>
-</figure>
-<p>A használata egyszerű és gyors, a végeredmény pedig PDF-be exportálható.</p>
-<h3 id="figma">Figma<a class="headerlink" href="#figma" title="Permanent link">¶</a></h3>
-<p>Egy másik kiváló eszköz  a UI tervek készítésére a <a href="https://www.figma.com/">Figma</a>. Létezik ingyenes verzió a személyes projektekhez, ráadásul itt nincs időkorlátozás az ingyenes verzióhoz, de ez is regisztrációhoz kötött. Az árazás részletei <a href="https://www.figma.com/pricing/">itt</a> érhető el.
-Ezen felül van kifejezetten hallgatók számára is egy ingyenes verzió, a <a href="https://www.figma.com/education/">Figma for education</a></p>
-<h4 id="site-template-hasznalata">Site template használata<a class="headerlink" href="#site-template-hasznalata" title="Permanent link">¶</a></h4>
+<h1 id="51-projekt-felepitese-alapok">5.1. Projekt felépítése, alapok<a class="headerlink" href="#51-projekt-felepitese-alapok" title="Permanent link">¶</a></h1>
+<p><strong>A labor anyag még fejlesztés alatt áll!</strong></p>
+<p>Ezen a laboron egy Blazor WebApp projektet hozunk létre, melyben megnézzük, hogyan épül fel egy modern interaktív kliens fejlesztésére alkalmaz Blazor alkalmazás a hozzá tartozó szerver oldal API projekttel.</p>
+<h2 id="blazor-web-app-projekt-letrehozasa">Blazor Web App projekt létrehozása<a class="headerlink" href="#blazor-web-app-projekt-letrehozasa" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>Hozzunk létre egy új WebSite alapú template-t. Ehhez a kezdő oldal tetején lévő menüből válasszuk ki a Site opciót, vagy ha már van megnyitva projektünk akkor a + jelre kattintva a felugró ablakban válasszuk a Site opciót.</p>
-<details class="info">
-<summary>Segítség - Hol keressem a Site gombot</summary>
+<p>Hozzuk létre az új Blazor Web App projektek <code>BookShop.Web</code> névvel. Valójában ez két projektet fog létrehozni. Egy ASP.NET Core projektet <code>BookShop.Web</code> névvel, ami a szerver oldali API-t (controller) tartalmazza és egy Blazor Web Assembly projektet <code>BookShop.Web.Client</code> névvel, ami a böngészőben futó kliens oldali kódot tartalmazza.</p>
+<details class="tip">
+<summary>Létrehozás képeryői</summary>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-menu.png" data-desc-position="bottom"><img alt="Figma menu" src="images/figma-menu.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/create-blazor-webapp-1.png" data-desc-position="bottom"><img alt="Create Blazor WebApp 1" src="images/create-blazor-webapp-1.png"></a></p>
 <figcaption>
-<p>Figma menük</p>
+<p>Projekt típus kiválasztása</p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-new-site.png" data-desc-position="bottom"><img alt="Figma new site" src="images/figma-new-site.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/create-blazor-webapp-2.png" data-desc-position="bottom"><img alt="Create Blazor WebApp 2" src="images/create-blazor-webapp-2.png"></a></p>
 <figcaption>
-<p>Új Site típusú Figma terv létrehozása</p>
+<p>Projekt neve és könyvtára</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/create-blazor-webapp-3.png" data-desc-position="bottom"><img alt="Create Blazor WebApp 3" src="images/create-blazor-webapp-3.png"></a></p>
+<figcaption>
+<p>Projekt adatok</p>
+</figcaption>
+</figure>
+</details>
+<ul>
+<li>Figyeljük meg, hogy az utolsó lépésben beállítottuk, hogy<ul>
+<li>Az Interactive render mode: <strong>WebAssembly</strong></li>
+<li>Az interactivity location: <strong>Global</strong></li>
+<li>Bekapcsoltuk a <em>Use the .dev.localhost TLD in the application URL</em>: Azaz, hogy az alkalmazás URL-je használja a <code>.dev.localhost</code> top-level-domain-t. Ennek részletei a <a href="https://learn.microsoft.com/en-us/aspnet/core/test/localhost-tld?view=aspnetcore-10.0">hivatalos dokumentációban</a> olvashatók.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Létre is jön a két projektünk úgyhogy beállíthatjuk, hogy a <code>BookShop.Web</code> azaz a szerver oldali projekt legyen a Startup projektünk. Indítsuk is el.</p>
+<details class="sussecc">
+<summary>Elindul az app</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/created-app-running.png" data-desc-position="bottom"><img alt="Created app running" src="images/created-app-running.png"></a></p>
+<figcaption>
+<p>A létrehozott alkalmazás el is indul</p>
+</figcaption>
+</figure>
+</details>
+<ul>
+<li>Az alkalmazás URL-je valóban <code>https://bookshop-web.dev.localhost:7211/</code> lett.</li>
+</ul>
+</li>
+<li>
+<p>Ha megnézzük fájlrendszerben is az solution-t akkor viszont azt vehetjük észre, hogy a <code>BookShop.Web</code> könyvtár megtalálható, de a <code>BookShop.Web.Client</code>-et nem látjuk. Ennek az az oka, hogy valójában a <code>BookShop.Web</code> amit látunk csak egy könyvtár és azon belül tatláható a két létrehozott projekt a megfelelő nevekkel.</p>
+<details class="tip">
+<summary>Projekt könyvtár struktúrája</summary>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/created-project-folders.png" data-desc-position="bottom"><img alt="alt text" src="images/created-project-folders.png"></a></p>
+<figcaption>
+<p>Létrehozott projektek egy könyvtárral lentebb találhatók</p>
 </figcaption>
 </figure>
 </details>
 </li>
-<li>
-<p>Már ekkor is választhatunk egy template-et, de ezt most hagyjuk ki csak zárjuk be a felugró ablakot.</p>
+</ol>
+<h2 id="projekt-struktura">Projekt struktúra<a class="headerlink" href="#projekt-struktura" title="Permanent link">¶</a></h2>
+<p>A <code>BookShop.Web</code> a szerver oldali kódot tartalmazza, ide fogjuk majd a Controller-eket létrehozni, ami a kliens meg tud majd hívni HTTP kéréseken keresztül.</p>
+<p>A <code>BookShop.Web.Client</code> tartalmazza a böngészőben futó kliens oldali kódot. Ennek a projektnek a kimenetét tölti le a kliens és futtatja a böngészőben, tehát minden olyan oldalt és kódot a <code>Client</code> projektbe kell tenni, amit kliens oldalon kell elérni.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-select-template.png" data-desc-position="bottom"><img alt="Select template" src="images/figma-select-template.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/project-structure.png" data-desc-position="bottom"><img alt="Projekt structure" src="images/project-structure.png"></a></p>
 <figcaption>
-<p>Site sablon választása</p>
+<p>A létrehozott Blazor Web App felépítése.</p>
 </figcaption>
 </figure>
-</li>
+<h3 id="bookshopweb">BookShop.Web<a class="headerlink" href="#bookshopweb" title="Permanent link">¶</a></h3>
+<ol>
 <li>
-<p>Ezt követően egy üres oldal fogad minket. Bal oldalon válasszuk a CMS opciót, majd a Job Listings példát.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-job-listings.png" data-desc-position="bottom"><img alt="Figma Job listings" src="images/figma-job-listings.png"></a></p>
-<figcaption>
-<p>Job listings template</p>
-</figcaption>
-</figure>
-</li>
-<li>
-<p>A megjelenő oldalon láthatjuk a teszt adatokat, amivel kitölti a template-et.</p>
-</li>
-<li>
-<p>Válasszuk ki bal oldalon a File menüpontot, hogy lássuk az elkészített oldalakat.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-sample.png" data-desc-position="bottom"><img alt="Figma - Minta template" src="images/figma-sample.png"></a></p>
-<figcaption>
-<p>Létrehozott template</p>
-</figcaption>
-</figure>
-</li>
-<li>
-<p>A fenti sablon jó minta lehet, hogy hogyan készíthetünk egy jó wireframe-et. Természetesen nem elvárás, hogy tökéletesen mint apró részletre kiterjedő wireframe-ek készüljenek, de a fő oldalakat érdemes megrajzolni.</p>
+<p>A szerver oldali projekt (ami valójában egy egyszerű ASP.NET Core projekt) tartalmaz egy referenciát a kliens oldali kódra is, ha az interaktív web assembly renderelés be van kapcsolva. Erre azért van szükség, hogy a <code>Program.cs</code>-ben be tudjuk húzni a kliens oldali kódot is, illetve e miatt indul el a szerverrel együtt a kliens is, és így tudjuk egyben telepíteni is.</p>
+<ul>
+<li>A <code>wwwroot</code> alatt találhatók a statikusan kiszolgálandó fájlok. (CSS, JS, képek ...)</li>
+<li>A <code>Pages</code> alatt csak egy hibaoldal található. Fontos, hogy az itt található oldalak szerver oldalon renderelődnek.</li>
+<li>Az <code>App.razor</code> tartalmazza a kliens oldali alkalmazás vázat, ebbe töltődnek majd be a kliens oldalon definiált oldalak.</li>
+<li>Az <code>appsettings.json</code> tartalmazza a konfiguráció függő szerver oldali beállításokat.</li>
+<li>A <code>Program.cs</code> a szerver oldali alkalmazás belépési pontja.</li>
+</ul>
 </li>
 </ol>
-<h4 id="egyszeru-design">Egyszerű design<a class="headerlink" href="#egyszeru-design" title="Permanent link">¶</a></h4>
-<p>Ha csak egyszerűbb rajzokat szeretnénk készíteni, ami sok esetben elegendő, akkor a Design opciót választva gyorsabban el lehet készíteni a wireframe-eket.
-Az alábbi képernyőképen a TDK portálhoz készített design látható.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-TDK.png" data-desc-position="bottom"><img alt="Figma TDK" src="images/figma-TDK.png"></a></p>
-<figcaption>
-<p>TDK portál Figma design-ja</p>
-</figcaption>
-</figure>
-<p>Fontos, hogy ha "csak" design-t készítünk a komponenseket akkor is használjuk, így az egyes oldalakat sokkal egyszerűbb nagyobb építőelemekből összerakni.</p>
-<h2 id="adatbazis-tervezes">Adatbázis tervezés<a class="headerlink" href="#adatbazis-tervezes" title="Permanent link">¶</a></h2>
-<p>Ha elkészültek a UI tervek, minden adattal és egyeztettük a megrendelővel már adatbázist is lehet tervezni.</p>
-<p>Az adatbázis tervezést először érdemes diagrammal akár papíron elkezdeni (ceruzával, hogy könnyű legyen javítani), és amikor már kezd körvonalazódni a terv, akkor nekilátni EF Code First megközelítéssel és adat modell diagrammal megvalósítani a tényleges adatbázist.</p>
-<h3 id="bookshop-db-tervezese">BookShop DB tervezése<a class="headerlink" href="#bookshop-db-tervezese" title="Permanent link">¶</a></h3>
-<p>Az azonosított entitások a következők: Book, Category, Author, Publisher, Comment, Rating, Address, Order, OrderItem és a User.</p>
-<h4 id="a-tervezes-fontosabb-szempontjai">A tervezés fontosabb szempontjai<a class="headerlink" href="#a-tervezes-fontosabb-szempontjai" title="Permanent link">¶</a></h4>
+<h4 id="apprazor">App.razor<a class="headerlink" href="#apprazor" title="Permanent link">¶</a></h4>
+<p>Az <code>App.razor</code> az alkalmazás gyökérkomponense.A gyökérkomponens az első komponens, amelyet az alkalmazás betölt.</p>
+<p>Mint látható itt hivatkozzuk be a CSS és JS fájlokat, többek között a <code>_framework/blazor.web.js</code>-t is amit a Blazor keretrendszer kódja. Azt is figyeljük meg, hogy ezeket a statikus tartalmakat úgy linkejük meg, hogy az <code>@Assets[]</code> tömbből indexeljük ki. Ez azért előnyös, mert ezeket a statikus tartalmakat telepítéskör betömörítve is felkerülnek a szerverre, így amikor a kliens letölti, azonnak a tömörített verziót lehet leküldeni.</p>
 <ul>
-<li>A User tábla ettől több adatot fog tartalmazni, de mivel az ASP.NET Identity-t szeretnénk használni a felhasználó kezeléshez így most azt nem részletezzük, illetve a jogosultság kezeléshez szükséges táblákat sem vesszük fel, mert azt majd az ASP.NET Identity fogja generálni.</li>
-<li>Egy könyv csak egy kategóriában lehet benne (egy-többes kapcsolat, így nem szükséges kapcsoló tábla), és a kategóriák hierarchikusan épülnek fel.</li>
-<li>Az egyes könyveknek több szerzője is lehet, ezért az Autor és Book tábla között megjelenik a BookAuthor kapcsoló tábla.</li>
-<li>A megrendeléseket az Order táblában tároljuk, ami összefogja az OrderItem-eket. Fontos, hogy egy-egy tételnél el kell tárolni a mennyiségen felül az árat is, hiszen a korábbi megrendeléseket is meg kell tudni jeleníteni és ott fontos, hogy az az ár jelenjen meg, ami a vásárláskor érvényes volt, akkor is ha akkor éppen kedvezményes volt.</li>
-<li>A felhasználóhoz több címet kell tudni eltárolni (számlázási és szállítási) és mindegyik típusból lehet akár több is, tehát jelölni kell tudni, hogy mi az alapértelmezett.</li>
-<li>A könyvekhez tartozik értékelés is. A Rating táblában tároljuk el, hogy egy-egy felhasználó az adott könyvet hogyan értékelte. Ezt azért kell eltárolni, hogy egy felhasználó ne tudjon többször értékelni. Viszont ahhoz, hogy a megjelenítésnél ne kelljen mindig kiszámolni az aktuális értékelést egy SumRating és RatingCount mezőt felveszünk a Book táblába is. Azért nem az átlagot, mert így egyszerűen tudjuk módosítani is egy új értékelés esetén.</li>
-<li>A kommenteket és ajánlókat a Comment táblában tároljuk el, és a Type mező határozza meg, hogy ez egy ajánló vagy komment.</li>
+<li><code>&lt;ResourcePreloader /&gt;</code>: .NET 10-ben a Blazor webalkalmazások ezt a komponenst használják a keretrendszer statikus fájljainak előzetes betöltéséhez, a <link> fejlécek helyett.</li>
+<li><code>&lt;ImportMap /&gt;</code>: </li>
+<li><code>&lt;HeadOutlet @rendermode="InteractiveWebAssembly" /&gt;</code>: Lehetőséget ad arra, hogy az egyes oldalakon definiáljunk elemeket, amit a <code>&lt;head&gt;</code> HTML tag végére kell fűzni, mint például a <code>title</code> vagy <code>meta</code> tag.</li>
+<li><code>&lt;Routes @rendermode="InteractiveWebAssembly" /&gt;</code>: A <code>.Client</code> projektben definiált <code>Routes.razor</code> komponenst jeleníti meg.</li>
 </ul>
-<div class="admonition success">
-<p class="admonition-title">Elkészült kiinduló adatbázis terv</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/inital-Db-diagram.png" data-desc-position="bottom"><img alt="Kezdeti adatbázis diagram" src="images/inital-Db-diagram.png"></a></p>
-<figcaption>
-<p>Kiinduló adatbázis terv</p>
-</figcaption>
-</figure>
-</div>
-<p>Fontos hangsúlyozni, hogy ez nem a végleges adatbázis terv, ez még módosulhat, de első körös kiindulásnak jó.</p>
-<h2 id="onallo-feladat">Önálló feladat<a class="headerlink" href="#onallo-feladat" title="Permanent link">¶</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Önálló feladat: Házi feladat specifikálása</p>
-<ul>
-<li>Készítse el a házi feladat specifikációját (maximum 2 oldal)</li>
-<li>Tervezze meg a legfontosabb oldalakat Balsamiq vagy Figma segítségével. (maximum 3 képernyő)</li>
-<li>Az elkészített tervet a tárgy Moodle oldalán kell a "Házi feladat specifikáció" részhez feltölteni <strong>PDF</strong> formátumban a név és neptun kód feltüntetésével.</li>
-<li>A határidő a Moodle-ben található, de a határidő előtt is fel lehet tölteni!</li>
-</ul>
-</div>
+<div class="highlight"><span class="filename">App.razor</span><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span><span class="w"> </span><span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+<span class="w">    </span><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">charset=</span><span class="s">"utf-8"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">name=</span><span class="s">"viewport"</span><span class="w"> </span><span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="hll"><span class="w">    </span><span class="nt">&lt;base</span><span class="w"> </span><span class="na">href=</span><span class="s">"/"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">&lt;ResourcePreloader</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">rel=</span><span class="s">"stylesheet"</span><span class="w"> </span><span class="na">href=</span><span class="s">"@Assets["</span><span class="err">lib/bootstrap/dist/css/bootstrap.min.css"]"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">rel=</span><span class="s">"stylesheet"</span><span class="w"> </span><span class="na">href=</span><span class="s">"@Assets["</span><span class="err">app.css"]"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">rel=</span><span class="s">"stylesheet"</span><span class="w"> </span><span class="na">href=</span><span class="s">"@Assets["</span><span class="err">BookShop.Web.styles.css"]"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="hll"><span class="w">    </span><span class="nt">&lt;ImportMap</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">rel=</span><span class="s">"icon"</span><span class="w"> </span><span class="na">type=</span><span class="s">"image/png"</span><span class="w"> </span><span class="na">href=</span><span class="s">"favicon.png"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="hll"><span class="w">    </span><span class="nt">&lt;HeadOutlet</span><span class="w"> </span><span class="err">@</span><span class="na">rendermode=</span><span class="s">"InteractiveWebAssembly"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="hll"><span class="w">    </span><span class="nt">&lt;Routes</span><span class="w"> </span><span class="err">@</span><span class="na">rendermode=</span><span class="s">"InteractiveWebAssembly"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class="w">    </span><span class="nt">&lt;script</span><span class="w"> </span><span class="na">src=</span><span class="s">"@Assets["</span><span class="err">_framework/blazor.web.js"]"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>A <em>PreRender</em> bonyolíthatja az alkalmazás működését, mivel az alkalmazás Razor komponenseinek kétszer kell renderelniük: egyszer a PreRender-hez, egyszer pedig az interaktivitás beállításához. Ha a komponensek WebAssembly-n való futtatásra vannak beállítva, akkor a komponenseket úgy kell megtervezni, hogy mind a szerverről, mind a kliensről futtathatók legyenek. E miatt célszerű a PreRender funkciót kikapcsolni.</p>
+<p>A PreRender funkció letiltásához, írjuk át a a <code>&lt;Routes&gt;</code> komponensben a <code>@rendermode</code> értékét az alábbira.</p>
+<div class="highlight"><span class="filename">App.razor</span><pre><span></span><code><span class="nt">&lt;Routes</span><span class="w"> </span><span class="err">@</span><span class="na">rendermode=</span><span class="s">"new InteractiveWebAssemblyRenderMode(prerender: false)"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<h4 id="programcs">Program.cs<a class="headerlink" href="#programcs" title="Permanent link">¶</a></h4>
+<p>Nagyon hasonló a felépítése mint a korábban használt ASP.NET Razor Page esetén, hiszen ez is egy ASP.NET Core projekt.
+    - Beregisztráljuk az interaktív web assembly komponenseket.
+    - Debug módban felcsatoljuk a web assembly debuggert.
+    - UseStatusCodePagesWithReExecute: A HTTP státusz kódokhoz tudunk egyedi hibaoldalakat rendelni.
+    - UseAntiforgery: XSRF / CSRF támadások elleni védele. Részletek a hivatalos dokumentációban találhatók: <a href="https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-10.0">Prevent Cross-Site Request Forgery (XSRF/CSRF) attacks in ASP.NET Core</a>
+    - Beállítjuk, hogy a render mode WebAssembly legyen és beregisztráljuk a kliens oldali oldalakat / komponenseket</p>
+<div class="highlight"><span class="filename">Program.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Web.Client.Pages</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">BookShop.Web.Components</span><span class="p">;</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+
+<span class="c1">// Add services to the container.</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddRazorComponents</span><span class="p">()</span>
+<span class="hll"><span class="w">    </span><span class="p">.</span><span class="n">AddInteractiveWebAssemblyComponents</span><span class="p">();</span>
+</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+
+<span class="c1">// Configure the HTTP request pipeline.</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseWebAssemblyDebugging</span><span class="p">();</span>
+</span><span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseExceptionHandler</span><span class="p">(</span><span class="s">"/Error"</span><span class="p">,</span><span class="w"> </span><span class="n">createScopeForErrors</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.</span>
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseHsts</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="hll"><span class="n">app</span><span class="p">.</span><span class="n">UseStatusCodePagesWithReExecute</span><span class="p">(</span><span class="s">"/not-found"</span><span class="p">,</span><span class="w"> </span><span class="n">createScopeForStatusCodePages</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
+</span><span class="n">app</span><span class="p">.</span><span class="n">UseHttpsRedirection</span><span class="p">();</span>
+
+<span class="hll"><span class="n">app</span><span class="p">.</span><span class="n">UseAntiforgery</span><span class="p">();</span>
+</span>
+<span class="n">app</span><span class="p">.</span><span class="n">MapStaticAssets</span><span class="p">();</span>
+<span class="hll"><span class="n">app</span><span class="p">.</span><span class="n">MapRazorComponents</span><span class="o">&lt;</span><span class="n">App</span><span class="o">&gt;</span><span class="p">()</span>
+</span><span class="hll"><span class="w">    </span><span class="p">.</span><span class="n">AddInteractiveWebAssemblyRenderMode</span><span class="p">()</span>
+</span><span class="hll"><span class="w">    </span><span class="p">.</span><span class="n">AddAdditionalAssemblies</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">BookShop</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">Client</span><span class="p">.</span><span class="n">_Imports</span><span class="p">).</span><span class="n">Assembly</span><span class="p">);</span>
+</span>
+<span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="bookshopwebclient">BookShop.Web.Client<a class="headerlink" href="#bookshopwebclient" title="Permanent link">¶</a></h3>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1733,8 +1633,8 @@ Az alábbi képernyőképen a TDK portálhoz készített design látható.</p>
           </path>
         </svg>
       </span>
-      <span title="2026. január 14. 12:38:16">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. január 14. 12:38:16 CET"><span class="timeago" datetime="2026-01-14T12:38:16+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. január 14. 12:38:16 CET">2026-01-14</span>
+      <span title="2026. február 16. 17:23:53">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 16. 17:23:53 CET"><span class="timeago" datetime="2026-02-16T17:23:53+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 16. 17:23:53 CET">2026-02-16</span>
       </span>
     </span>
 
@@ -1797,14 +1697,14 @@ Az alábbi képernyőképen a TDK portálhoz készített design látható.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        <script src="../../../js/timeago.min.js"></script>
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
       
     
   

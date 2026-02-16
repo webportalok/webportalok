@@ -7,31 +7,31 @@
         <meta name="author" content="Gábor Gincsai">
       
       
-        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/1%20-%20Tervezes/">
+        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/5%20-%20Blazor/5.4%20Admin%20pages/">
       
       
-        <link rel="prev" href="../0%20-%20Adatbazis%20alapok/">
+        <link rel="prev" href="../5.3%20Felhasznalokezeles/">
       
       
-        <link rel="next" href="../2%20-%20Projekt%20struktura/">
+        <link rel="next" href="../../../homework/01%20-%20Specifikacio/">
       
       
         
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>1. Tervezés - VIAUJV83 - Webportálok fejlesztése</title>
+        <title>5.4. Admin oldalak - VIAUJV83 - Webportálok fejlesztése</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,17 +50,17 @@
       
     
     
-      <link rel="stylesheet" href="../../css/timeago.css">
+      <link rel="stylesheet" href="../../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../extra-material-theme.css">
+      <link rel="stylesheet" href="../../../extra-material-theme.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-tervezes" class="md-skip">
+        <a href="#54-admin-oldalak" class="md-skip">
           Kihagyás
         </a>
       
@@ -103,9 +103,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Élőfej">
-    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../logo-bme-aut.png" alt="logo">
+  <img src="../../../logo-bme-aut.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Tervezés
+              5.4. Admin oldalak
             
           </span>
         </div>
@@ -235,7 +235,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -256,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../information/terms%20of%20use/" class="md-tabs__link">
+        <a href="../../../information/terms%20of%20use/" class="md-tabs__link">
           
   
   
@@ -278,7 +278,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
+        <a href="../../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
           
   
   
@@ -298,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
+        <a href="../../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
           
   
   
@@ -332,9 +332,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
       
-  <img src="../../logo-bme-aut.png" alt="logo">
+  <img src="../../../logo-bme-aut.png" alt="logo">
 
     </a>
     VIAUJV83 - Webportálok fejlesztése
@@ -361,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/terms%20of%20use/" class="md-nav__link">
+      <a href="../../../information/terms%20of%20use/" class="md-nav__link">
         
   
   
@@ -466,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/course/" class="md-nav__link">
+      <a href="../../../information/course/" class="md-nav__link">
         
   
   
@@ -494,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/requirements/" class="md-nav__link">
+      <a href="../../../information/requirements/" class="md-nav__link">
         
   
   
@@ -522,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/github/" class="md-nav__link">
+      <a href="../../../information/github/" class="md-nav__link">
         
   
   
@@ -550,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../information/contributing/" class="md-nav__link">
+      <a href="../../../information/contributing/" class="md-nav__link">
         
   
   
@@ -640,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
+      <a href="../../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
         
   
   
@@ -665,37 +665,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1. Tervezés
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Tervezes/" class="md-nav__link">
         
   
   
@@ -711,160 +684,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tartalomjegyzék
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#specifikacio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Specifikáció
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ui-terv-keszitese" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UI terv készítése
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="UI terv készítése">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#balsamiq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Balsamiq
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#figma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Figma
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Figma">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#site-template-hasznalata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Site template használata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#egyszeru-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Egyszerű design
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adatbazis-tervezes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adatbázis tervezés
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adatbázis tervezés">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bookshop-db-tervezese" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BookShop DB tervezése
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="BookShop DB tervezése">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-tervezes-fontosabb-szempontjai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A tervezés fontosabb szempontjai
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#onallo-feladat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Önálló feladat
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -877,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2%20-%20Projekt%20struktura/" class="md-nav__link">
+      <a href="../../2%20-%20Projekt%20struktura/" class="md-nav__link">
         
   
   
@@ -905,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3%20-%20Backend%20services/" class="md-nav__link">
+      <a href="../../3%20-%20Backend%20services/" class="md-nav__link">
         
   
   
@@ -983,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/" class="md-nav__link">
         
   
   
@@ -1011,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/" class="md-nav__link">
         
   
   
@@ -1039,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/" class="md-nav__link">
         
   
   
@@ -1067,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/" class="md-nav__link">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/" class="md-nav__link">
         
   
   
@@ -1100,6 +919,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1110,11 +931,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
@@ -1135,7 +956,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1153,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.1%20Basics/" class="md-nav__link">
+      <a href="../5.1%20Basics/" class="md-nav__link">
         
   
   
@@ -1181,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.2%20Main%20pages/" class="md-nav__link">
+      <a href="../5.2%20Main%20pages/" class="md-nav__link">
         
   
   
@@ -1209,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="../5.3%20Felhasznalokezeles/" class="md-nav__link">
         
   
   
@@ -1234,10 +1055,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../5%20-%20Blazor/5.4%20Admin%20pages/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1253,6 +1083,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1330,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homework/01%20-%20Specifikacio/" class="md-nav__link">
+      <a href="../../../homework/01%20-%20Specifikacio/" class="md-nav__link">
         
   
   
@@ -1358,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
+      <a href="../../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
         
   
   
@@ -1406,148 +1237,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tartalomjegyzék
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#specifikacio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Specifikáció
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ui-terv-keszitese" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UI terv készítése
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="UI terv készítése">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#balsamiq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Balsamiq
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#figma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Figma
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Figma">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#site-template-hasznalata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Site template használata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#egyszeru-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Egyszerű design
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adatbazis-tervezes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adatbázis tervezés
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adatbázis tervezés">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bookshop-db-tervezese" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BookShop DB tervezése
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="BookShop DB tervezése">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-tervezes-fontosabb-szempontjai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A tervezés fontosabb szempontjai
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#onallo-feladat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Önálló feladat
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1563,7 +1252,7 @@
 
 
   
-    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/1 - Tervezes/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/5 - Blazor/5.4 Admin pages/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -1571,161 +1260,8 @@
   
 
 
-<h1 id="1-tervezes">1. Tervezés<a class="headerlink" href="#1-tervezes" title="Permanent link">¶</a></h1>
-<h2 id="specifikacio">Specifikáció<a class="headerlink" href="#specifikacio" title="Permanent link">¶</a></h2>
-<p>Az alábbiakban az alkalmazás lefontosabb funkcióit szedjük össze, hogy a későbbiekben ez alapján tudjuk a felhasználói felületet megtervezni. A félév során ezen funkciók egy részét fogjuk megvalósítani.</p>
-<ul>
-<li>
-<p><strong>Könyvek böngészése</strong>
-A könyveket kategóriákba kell tudni szervezni (több szintű). Egy kategóriát kiválasztva megjelennek a kategóriában lévő könyvek a legfontosabb információkkal (cím, szerző, ár, borítókép) egy lapozható listában.
-Az alkalmazás kezdő oldala is egy ilyen listát tartalmaz, azonban az a kategóriákban kiemelt / újdonságokat mutatja. Ha itt egy könyvre kattintunk, akkor bejön a könyv részletes oldala, amiben minden adat megtalálható a könyvről, illetve a hozzá tartozó ajánlók és kommentek is.</p>
-</li>
-<li>
-<p><strong>Könyvek keresése</strong>
-A felhasználók több esetben konkrét könyvet keresnek, aminek ismerik a címét vagy annak egy részét. Ehhez szükséges egy kereső megvalósítása, ami felajánlja gépelés közben a találatokat, és ha egy konkrét könyvre kattintunk, elvisz annak a részletes oldalára. Ha pedig több találat lenne, akkor egy részletes keresést indít, ahol a listázzuk a találatokat egy külön oldalon.</p>
-</li>
-<li>
-<p><strong>Kosár és megrendelés</strong>
-A felhasználók a megvenni kívánt könyveket egy kosárba gyűjthetnek, majd a későbbiekben ezt feladhatják, mint egy rendelést. A korábbi rendelések listáját később visszanézhetik és nyomon követhetik azok állapotát.</p>
-</li>
-<li>
-<p><strong>Felhasználó kezelés</strong>
-Szükséges, hogy a felhasználók tudjanak regisztrálni és belépni. A belépést akár külső autentikációs szolgáltatással is lehessen megvalósítani (pl: Google, Facebook accounttal)
-Ezen felül szükséges megkülönböztetni az admin felhasználókat, akik szerkeszthetik a könyvek és a kategóriák adatait, illetve moderálhatják a közösség által készített tartalmakat.</p>
-</li>
-<li>
-<p><strong>Profil adatok kezelése</strong>
-Lehetőséget kell adni a jelszóváltoztatásra, illetve a felhasználónak a szállítási és számlázási adatait el kell tárolni.</p>
-</li>
-<li>
-<p><strong>Ajánlók létrehozása adott könyvhöz</strong>
-A felhasználók egy-egy könyvhöz ajánlókat hozhatnak létre, melyek a könyv részletes oldalán megjelennek egy listában. Az ajánlók rendelkeznek részletes oldallal is, és egy külön oldalon elérhetők a legújabb idézetek is.</p>
-</li>
-<li>
-<p><strong>Kommentek fűzése a könyvekhez</strong>
-A felhasználók egy-egy könyvhöz egyszerű kommentet is lehet fűzni, ami megjelenik a könyv részletes oldalon.</p>
-</li>
-</ul>
-<h2 id="ui-terv-keszitese">UI terv készítése<a class="headerlink" href="#ui-terv-keszitese" title="Permanent link">¶</a></h2>
-<p>A UI tervek, vagy Wireframe-ek tervezésének a lényege, hogy a specifikáció alapján a lehető legkorábban tudjunk készíteni egy, a megrendelő számára megmutatható grafikus tervet. A lényeg nem a design-on van, hanem a megjelenő adatokon és azok elrendezésén. Tehát a tervezett felületeken pontosan meg kell jeleníteni minden adatot, nem elég az, hogy ide jönnek a könyv adatai, hanem tételesen meg kell tervezni, hogy mi jelenik meg (Cím, szerző, rövid leírás, ár, kedvezményes ár...)</p>
-<p>A tervezés legfontosabb része, hogy azt tervezzük meg, amit a megrendelő szeretne. Ehhez érdemes a fejlesztés legelején  megtervezni a legfontosabb wireframe-eket, és azt egyeztetni a megrendelővel, mert amikor már látja a megrendelő, hogyan fog kinézni az alkalmazás azonnal eszébe jut még számos nem specifikált, vagy alul specifikált funkció.</p>
-<p>Ezen felül fejlesztői oldalról nézve is fontos a UI terv, hiszen azon minden adat megjelenik, tehát ez alapján el lehet kezdeni megtervezni az adatbázist. Beazonosítani az entitásokat és azok tulajdonságait.</p>
-<p>A korai UI tervezéssel számos iterációt meg tudunk spórolni a fejlesztés során, hiszen már van egy egyeztetett terv, hogyan fog kinézni az alkalmazás és milyen adatokat jelenít meg. Így kevesebb új mezők kell felvenni az adatbázisba a megvalósítás során, amit egyébként végig is kell vezetni a DTO-n, üzleti logikán és a felületen is.</p>
-<div class="admonition success">
-<p class="admonition-title">Balsamiq-ban készített BookShop UI terv</p>
-<p><a href="images/Balsamiq%20-%20UI%20terv.pdf">Balsamiq UI terv letöltése</a></p>
-</div>
-<h3 id="balsamiq">Balsamiq<a class="headerlink" href="#balsamiq" title="Permanent link">¶</a></h3>
-<p>Egy kiváló eszköz UI tervek készítésére a <a href="http://www.balsamiq.com">Balsamiq</a>, melynek webes verziója regisztráció után 14 napig ingyenesen használható.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/balsamiq.png" data-desc-position="bottom"><img alt="Balsamiq" src="images/balsamiq.png"></a></p>
-<figcaption>
-<p>Balsamiq felhasználói felülete</p>
-</figcaption>
-</figure>
-<p>A használata egyszerű és gyors, a végeredmény pedig PDF-be exportálható.</p>
-<h3 id="figma">Figma<a class="headerlink" href="#figma" title="Permanent link">¶</a></h3>
-<p>Egy másik kiváló eszköz  a UI tervek készítésére a <a href="https://www.figma.com/">Figma</a>. Létezik ingyenes verzió a személyes projektekhez, ráadásul itt nincs időkorlátozás az ingyenes verzióhoz, de ez is regisztrációhoz kötött. Az árazás részletei <a href="https://www.figma.com/pricing/">itt</a> érhető el.
-Ezen felül van kifejezetten hallgatók számára is egy ingyenes verzió, a <a href="https://www.figma.com/education/">Figma for education</a></p>
-<h4 id="site-template-hasznalata">Site template használata<a class="headerlink" href="#site-template-hasznalata" title="Permanent link">¶</a></h4>
-<ol>
-<li>
-<p>Hozzunk létre egy új WebSite alapú template-t. Ehhez a kezdő oldal tetején lévő menüből válasszuk ki a Site opciót, vagy ha már van megnyitva projektünk akkor a + jelre kattintva a felugró ablakban válasszuk a Site opciót.</p>
-<details class="info">
-<summary>Segítség - Hol keressem a Site gombot</summary>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-menu.png" data-desc-position="bottom"><img alt="Figma menu" src="images/figma-menu.png"></a></p>
-<figcaption>
-<p>Figma menük</p>
-</figcaption>
-</figure>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-new-site.png" data-desc-position="bottom"><img alt="Figma new site" src="images/figma-new-site.png"></a></p>
-<figcaption>
-<p>Új Site típusú Figma terv létrehozása</p>
-</figcaption>
-</figure>
-</details>
-</li>
-<li>
-<p>Már ekkor is választhatunk egy template-et, de ezt most hagyjuk ki csak zárjuk be a felugró ablakot.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-select-template.png" data-desc-position="bottom"><img alt="Select template" src="images/figma-select-template.png"></a></p>
-<figcaption>
-<p>Site sablon választása</p>
-</figcaption>
-</figure>
-</li>
-<li>
-<p>Ezt követően egy üres oldal fogad minket. Bal oldalon válasszuk a CMS opciót, majd a Job Listings példát.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-job-listings.png" data-desc-position="bottom"><img alt="Figma Job listings" src="images/figma-job-listings.png"></a></p>
-<figcaption>
-<p>Job listings template</p>
-</figcaption>
-</figure>
-</li>
-<li>
-<p>A megjelenő oldalon láthatjuk a teszt adatokat, amivel kitölti a template-et.</p>
-</li>
-<li>
-<p>Válasszuk ki bal oldalon a File menüpontot, hogy lássuk az elkészített oldalakat.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-sample.png" data-desc-position="bottom"><img alt="Figma - Minta template" src="images/figma-sample.png"></a></p>
-<figcaption>
-<p>Létrehozott template</p>
-</figcaption>
-</figure>
-</li>
-<li>
-<p>A fenti sablon jó minta lehet, hogy hogyan készíthetünk egy jó wireframe-et. Természetesen nem elvárás, hogy tökéletesen mint apró részletre kiterjedő wireframe-ek készüljenek, de a fő oldalakat érdemes megrajzolni.</p>
-</li>
-</ol>
-<h4 id="egyszeru-design">Egyszerű design<a class="headerlink" href="#egyszeru-design" title="Permanent link">¶</a></h4>
-<p>Ha csak egyszerűbb rajzokat szeretnénk készíteni, ami sok esetben elegendő, akkor a Design opciót választva gyorsabban el lehet készíteni a wireframe-eket.
-Az alábbi képernyőképen a TDK portálhoz készített design látható.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/figma-TDK.png" data-desc-position="bottom"><img alt="Figma TDK" src="images/figma-TDK.png"></a></p>
-<figcaption>
-<p>TDK portál Figma design-ja</p>
-</figcaption>
-</figure>
-<p>Fontos, hogy ha "csak" design-t készítünk a komponenseket akkor is használjuk, így az egyes oldalakat sokkal egyszerűbb nagyobb építőelemekből összerakni.</p>
-<h2 id="adatbazis-tervezes">Adatbázis tervezés<a class="headerlink" href="#adatbazis-tervezes" title="Permanent link">¶</a></h2>
-<p>Ha elkészültek a UI tervek, minden adattal és egyeztettük a megrendelővel már adatbázist is lehet tervezni.</p>
-<p>Az adatbázis tervezést először érdemes diagrammal akár papíron elkezdeni (ceruzával, hogy könnyű legyen javítani), és amikor már kezd körvonalazódni a terv, akkor nekilátni EF Code First megközelítéssel és adat modell diagrammal megvalósítani a tényleges adatbázist.</p>
-<h3 id="bookshop-db-tervezese">BookShop DB tervezése<a class="headerlink" href="#bookshop-db-tervezese" title="Permanent link">¶</a></h3>
-<p>Az azonosított entitások a következők: Book, Category, Author, Publisher, Comment, Rating, Address, Order, OrderItem és a User.</p>
-<h4 id="a-tervezes-fontosabb-szempontjai">A tervezés fontosabb szempontjai<a class="headerlink" href="#a-tervezes-fontosabb-szempontjai" title="Permanent link">¶</a></h4>
-<ul>
-<li>A User tábla ettől több adatot fog tartalmazni, de mivel az ASP.NET Identity-t szeretnénk használni a felhasználó kezeléshez így most azt nem részletezzük, illetve a jogosultság kezeléshez szükséges táblákat sem vesszük fel, mert azt majd az ASP.NET Identity fogja generálni.</li>
-<li>Egy könyv csak egy kategóriában lehet benne (egy-többes kapcsolat, így nem szükséges kapcsoló tábla), és a kategóriák hierarchikusan épülnek fel.</li>
-<li>Az egyes könyveknek több szerzője is lehet, ezért az Autor és Book tábla között megjelenik a BookAuthor kapcsoló tábla.</li>
-<li>A megrendeléseket az Order táblában tároljuk, ami összefogja az OrderItem-eket. Fontos, hogy egy-egy tételnél el kell tárolni a mennyiségen felül az árat is, hiszen a korábbi megrendeléseket is meg kell tudni jeleníteni és ott fontos, hogy az az ár jelenjen meg, ami a vásárláskor érvényes volt, akkor is ha akkor éppen kedvezményes volt.</li>
-<li>A felhasználóhoz több címet kell tudni eltárolni (számlázási és szállítási) és mindegyik típusból lehet akár több is, tehát jelölni kell tudni, hogy mi az alapértelmezett.</li>
-<li>A könyvekhez tartozik értékelés is. A Rating táblában tároljuk el, hogy egy-egy felhasználó az adott könyvet hogyan értékelte. Ezt azért kell eltárolni, hogy egy felhasználó ne tudjon többször értékelni. Viszont ahhoz, hogy a megjelenítésnél ne kelljen mindig kiszámolni az aktuális értékelést egy SumRating és RatingCount mezőt felveszünk a Book táblába is. Azért nem az átlagot, mert így egyszerűen tudjuk módosítani is egy új értékelés esetén.</li>
-<li>A kommenteket és ajánlókat a Comment táblában tároljuk el, és a Type mező határozza meg, hogy ez egy ajánló vagy komment.</li>
-</ul>
-<div class="admonition success">
-<p class="admonition-title">Elkészült kiinduló adatbázis terv</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/inital-Db-diagram.png" data-desc-position="bottom"><img alt="Kezdeti adatbázis diagram" src="images/inital-Db-diagram.png"></a></p>
-<figcaption>
-<p>Kiinduló adatbázis terv</p>
-</figcaption>
-</figure>
-</div>
-<p>Fontos hangsúlyozni, hogy ez nem a végleges adatbázis terv, ez még módosulhat, de első körös kiindulásnak jó.</p>
-<h2 id="onallo-feladat">Önálló feladat<a class="headerlink" href="#onallo-feladat" title="Permanent link">¶</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Önálló feladat: Házi feladat specifikálása</p>
-<ul>
-<li>Készítse el a házi feladat specifikációját (maximum 2 oldal)</li>
-<li>Tervezze meg a legfontosabb oldalakat Balsamiq vagy Figma segítségével. (maximum 3 képernyő)</li>
-<li>Az elkészített tervet a tárgy Moodle oldalán kell a "Házi feladat specifikáció" részhez feltölteni <strong>PDF</strong> formátumban a név és neptun kód feltüntetésével.</li>
-<li>A határidő a Moodle-ben található, de a határidő előtt is fel lehet tölteni!</li>
-</ul>
-</div>
+<h1 id="54-admin-oldalak">5.4. Admin oldalak<a class="headerlink" href="#54-admin-oldalak" title="Permanent link">¶</a></h1>
+<p><strong>A labor anyag még fejlesztés alatt áll!</strong></p>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1733,8 +1269,8 @@ Az alábbi képernyőképen a TDK portálhoz készített design látható.</p>
           </path>
         </svg>
       </span>
-      <span title="2026. január 14. 12:38:16">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. január 14. 12:38:16 CET"><span class="timeago" datetime="2026-01-14T12:38:16+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. január 14. 12:38:16 CET">2026-01-14</span>
+      <span title="2026. február 16. 17:23:53">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 16. 17:23:53 CET"><span class="timeago" datetime="2026-02-16T17:23:53+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 16. 17:23:53 CET">2026-02-16</span>
       </span>
     </span>
 
@@ -1797,14 +1333,14 @@ Az alábbi képernyőképen a TDK portálhoz készített design látható.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        <script src="../../../js/timeago.min.js"></script>
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
       
     
   
