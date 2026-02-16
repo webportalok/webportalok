@@ -8,4 +8,4 @@ A labor során a hallgatók egy-egy példán keresztül ismerkednek meg a Tábla
 Mivel ez egy opcionális anyag, csak azok számára akiknek új az Entity Framework és adatbázis kezelés, ezért korábbi .NET verziókkal készült, de a lényegi része még mindig ugyanúgy működik!
 
 - [0. Adatbazis alapok (opcionalis).pdf](./images/0. Adatbazis alapok (opcionalis).pdf)
-- [0. labor - TesztData.zip](./images/0.%20labor%20-%20TesztData.zip)
+- [0. labor - TesztData.sql](./images/0.%20labor%20-%20tesztData.sql)
