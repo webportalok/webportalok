@@ -1,6 +1,6 @@
-# Nagyházi feladat készítése
+# Nagy házi feladat készítése
 
-A hallgatók a félév során készített specifikáció alapján elkészíti a nagyházi feladatukat. El lehet térni a specifikációtól, nincs semmi sem kőbe vésve, viszont értékelni csak az elkészített munkát tudjuk.
+A hallgatók a félév során készített specifikáció alapján elkészíti a nagy házi feladatukat. El lehet térni a specifikációtól, nincs semmi sem kőbe vésve, viszont értékelni csak az elkészített munkát tudjuk.
 
 ## Házi feladat bemutatás (védés)
 

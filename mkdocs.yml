@@ -105,6 +105,7 @@ nav:
       - information/terms of use/index.md
       - information/course/index.md
       - information/requirements/index.md
+      - information/github/index.md
       - information/contributing/index.md
   - "Laborok":
       - seminar/0 - Adatbazis alapok/index.md
@@ -116,10 +117,11 @@ nav:
           - seminar/4 - ASP.NET Razor Pages/4.2 Main pages/index.md
           - seminar/4 - ASP.NET Razor Pages/4.3 Felhasznalokezeles/index.md
           - seminar/4 - ASP.NET Razor Pages/4.4 Admin pages/index.md
-      - "ASP.NET MVC":
-          - seminar/5 - ASP.NET MVC/index.md
-      - "6. Blazor WASM":
-          - seminar/6 - Blazor WASM/index.md
+      - "5. Blazor WASM":
+          - seminar/5 - Blazor/5.1 Basics/index.md
+          - seminar/5 - Blazor/5.2 Main pages/index.md
+          - seminar/5 - Blazor/5.3 Felhasznalokezeles/index.md
+          - seminar/5 - Blazor/5.4 Admin pages/index.md
   - "Házi feladatok":
       - homework/01 - Specifikacio/index.md
       - homework/02 - Nagy hazi feladat/index.md

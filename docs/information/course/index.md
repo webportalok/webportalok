@@ -18,7 +18,7 @@ A Webportálok fejlesztése c. tárgy **online** formában kerül lebonyolítás
 Két követelmény van a tárgyon, ami szükséges az aláíráshoz.
 
 - Specifikáció készítése: Részletek a [Házi feladatok - Specifikáció készítése](../../homework/01 - Specifikacio/index.md).
-- Nagyházi feladat: Részletek a [Házi feladatok - Nagyházi feladat készítése](../../homework/02 - Nagy hazi feladat/index.md).
+- Nagy házi feladat: Részletek a [Házi feladatok - Nagy házi feladat készítése](../../homework/02 - Nagy hazi feladat/index.md).
 
 A specifikáció és a házi feladat beadása az aláírás megszerzésének és egyben a vizsgára bocsájtásnak szükséges feltétele. A jegy beírásának feltétele, hogy az elfogadott házi feladat kódja a Moodle-be fel legyen töltve.
 
@@ -28,8 +28,8 @@ A vizsgaidőszakban legalább 3 időpont kerül meghirdetésre. A vizsga anyagá
 
 ### Megajánlott jegy
 
-Teljeskörűen működő és igényesen elkészített házi feladatra megajánlott jegy kapható. A megajánlott jegy csak jó (4) vagy jeles (5) osztályzat lehet, amit a nagyházi feladat alapján állapítunk meg.
+Teljeskörűen működő és igényesen elkészített házi feladatra megajánlott jegy kapható. A megajánlott jegy csak jó (4) vagy jeles (5) osztályzat lehet, amit a nagy házi feladat alapján állapítunk meg.
 
 A specifikáció leadása után a hallgatók visszajelzést kapnak, hogy a házi feladatuk esélyes-e a megajánlott jegyre. Ilyenkor még van lehetőség bővíteni a funkciókat, hogy megajánlott jegyet szerezhessenek.
 
-Fontos: aki megajánlott jegyet szerzett, az is jelentkezzen a Neptunon vizsgára, hogy a jegyet be tudjuk írni.
+Fontos: aki megajánlott jegyet szerzett, az is jelentkezzen a *Neptun*-on vizsgára, hogy a jegyet be tudjuk írni.

@@ -6,20 +6,21 @@ A tárgy keretében a hallgatók megismerkednek a modern webes portálokkal szem
 
 A tárgy átfogó és teljes képet ad a portálok különböző felhasználási területeiről, külön hangsúlyt fektetve az architektúra, a teljesítmény és a biztonság kérdéseire.
 
-A tárgyhoz kapcsolódó online laborok során a hallgatók számára lehetőség nyílik az előadás anyagának gyakorlati alkalmazására is ASP.NET Core 10 és Blazor WASM segítségével, így a félév végére az ASP.NET Core és Balzor WASM által nyújtott teljes palettát megismerhetik a *Webportálok fejlesztése* című tárgyat választó hallgatók.
+A tárgyhoz kapcsolódó online laborok során a hallgatók számára lehetőség nyílik az előadás anyagának gyakorlati alkalmazására is ASP.NET Core 10 és Blazor WASM segítségével, így a félév végére az ASP.NET Core és Blazor WASM által nyújtott teljes palettát megismerhetik a *Webportálok fejlesztése* című tárgyat választó hallgatók.
 
 A laborok során két komplex alkalmazást készítünk el. Egy ASP.NET Razor Page alapút és egy Blazor WebApp alapút.
-A feladatot a funkciók, felületek és adatbázis tervezéstől, az alkalmazás teljes megvalósításáig mely során a hallgatók egyre mélyebben ismerhetik meg az ASP.NET lehetőségeit és kihívásait, hogy a félév végére egy komplex ASP.NET Core Razor Page vagy egy Blazor WebApp webalkalmazást tudjanak önállóan elkészíteni, amit a félév végén nagyházi feladat formájában prezentálni is kell.
+A feladatot a funkciók, felületek és adatbázis tervezéstől, az alkalmazás teljes megvalósításáig mely során a hallgatók egyre mélyebben ismerhetik meg az ASP.NET lehetőségeit és kihívásait, hogy a félév végére egy komplex ASP.NET Core Razor Page vagy egy Blazor WebApp webalkalmazást tudjanak önállóan elkészíteni, amit a félév végén nagy házi feladat formájában prezentálni is kell.
 
 ## Mi az ASP.NET Core?
 
-A .NET Core a Microsoft nyílt forráskódú, több platformon is (Windows, Linux, OS X) futtatható alkalmazásfejlesztési környezete. Az ASP.NET Core pedig ennek a technológiának a felhasználásával Windows-on, Linux-on és Mac OS-en futtatható webalkalmazások fejlesztésére szolgáló eszköz.
+A .NET Core a Microsoft nyílt forráskódú, több platformon is (Windows, Linux, OS X) futtatható alkalmazásfejlesztési környezete. Az ASP.NET Core pedig ennek a technológiának a felhasználásával Windows-on, Linux-on és Mac OS-en futtatható webalkalmazások fejlesztésére szolgáló eszköz.  
+Az ASP.NET Core 3.0-ban jelent meg a Blazor, melynek segítségével kliens oldali alkalmazást is lehet készíteni .NET platformon. Így már a Microsoftnak is van egy WebAssembly-re építő kliens oldali megoldása, ami az Angular és React kihívója lett. A tárgy keretein belül a Blazor WASM-mal is megismerkedünk, de a Blazor Servert nem.
 
 Az ASP.NET Core 10 jelenleg a Microsoft legújabb webfejlesztő eszköze, amit Visual Studio Code vagy Visual Studio 2026 segítségével fejleszthetünk.
 
 ## Miért időtálló technológia a webes világban az ASP.NET?
 
-2002-ben jelent meg először az ASP.NET 1.0, azóta kisebb átnevezésekkel, mint ASP.NET MVC vagy ASP.NET Core MVC még mindig virágzik.
+2002-ben jelent meg először az ASP.NET 1.0, azóta kisebb átnevezésekkel, mint ASP.NET MVC vagy ASP.NET Core (aminek része a Blazor) még mindig virágzik.
 
 Kicsit zavaróak lehetnek az elnevezések, hiszen a Core elnevezés is csak egy marketing fogás miatt került be az elnevezésbe, sugallva az újat, mint sem egy egyszerű főverziószámot növeltek. A .NET 10 megjelenésével viszont ismét eltűnt a Core szó a megnevezésből.
 
@@ -31,17 +32,26 @@ Az alábbi ábrán látható a Microsoft webes technológiájának, az ASP.NET-n
 
 A rövid válasz, hogy mindegyiket.
 
-- Razor szintaxissal készített szerver oldalon renderelt nézetek (Razor Pages).
-- WebAPI készítése kliens oldali keretrendszerekhez, melyek JSON-ban adják vissza az adatokat például egy Blazor WASM, Angular, React vagy mobil kliensnek.
 - ASP.NET Core Identity a felhasználó- és jogosultságkezelés megvalósításához.
-- Újrahasznosítható komponensek (View components, Tag helpers) készítése.
-- Modellvalidáció szerver és kliens oldalon.
-- Blazor WebApp
+- ASP.NET Razor pages
+
+    - Razor szintaxissal készített szerver oldalon renderelt nézetek (Razor Pages).
+    - Felhasználói felület, űrlapok és mögöttes kód kapcsolata, életciklus, adatkötés, PageModel, PageHandler-ek.
+    - Újrahasznosítható komponensek (View components, Tag helpers) készítése.
+    - Modellvalidáció szerver és kliens oldalon.
+
+- Blazor WebApp (Blazor WASM + ASP.NET Core szerver)
+
+    - WebAPI készítése kliens oldali keretrendszerekhez, melyek JSON-ban adják vissza az adatokat a kliensnek.
+    - Szerver oldali API-ból kliens kód generálása (Nswag)
+    - Életciklus, adatkötés, felhasználó felületek készítése
+    - Modellvalidáció szerver és kliens oldalon. (FluentValidation)
+    - Radzen komponens könyvtár
 
 Ezen felül ahhoz, hogy teljes értékű alkalmazást tudjunk készíteni a laborokon - nem pedig egyszerű, különálló példákat -, az alábbi technológiákat használjuk fel:
 
 - HTML, CSS, JavaScript, jQuery (Mobil és webes szoftvereken elsajátítható)
-- SQL és Entity Framework Core az adatelérési réteg megvalósításához
+- SQL és Entity Framework Core az adatelérési réteghez
 
 ## Előtanulmányi rend
 

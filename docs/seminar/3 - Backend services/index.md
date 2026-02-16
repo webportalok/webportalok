@@ -4,9 +4,9 @@
 
 Az előző laboron áttekintettük, hogyan lehet a Backend oldalon a adatelérési réteget, üzleti logikai réteget és a DTO-kat létrehozni. A fölösleges munka csökkentése érdekében a teljes Backend kódot tartalmazza a kiinduló projekt.
 
-- TODO: Link
-
-A repo letöltése után mindenki készítsen egy új ágat `aspnet-razorpage` névvel és abba dolgozzon. Ez azért fontos, mert a többi webes alkalmazás is ezt a repository-t fogja használni, csak más ágon.
+1. A kiinduló BLL és DAL réteget tartalmazó kiinduló kódot a Moodle-ből [ASP.NET Razor Page invite link](https://edu.vik.bme.hu/mod/url/view.php?id=206516) vagy közvetlenül a [Github classroom](https://classroom.github.com/a/wgNmsHDJ)-ból is le lehet tölteni.
+2. Részletes útmutató a kiinduló kód letöltéséről és a beadásról a [Feladatok beadása (GitHub)](../../information/github/index.md) oldalon találsz információt.
+3. A repo letöltése után készítsd egy új ágat `megoldas` névvel és abba dolgozz!
 
 ## Kiinduló projekt áttekintése
 
