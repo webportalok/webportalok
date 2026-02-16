@@ -11,7 +11,7 @@ Csak azok az alkalmazások fogadhatóak el, melyek a következő követelmények
 - Jogosultág kezelés nem egyedi megoldással, hanem a beépített módon (ASP.NET Identity) és legyen minimum egy anonymous és egy belépett felhasználó, vagy külső identity provider (pl. Facebook, Google, Microsoft Identity) használatával.
 - Többrétegű architektúra használata. Külön projektekben (nem könyvárakban).
 - Módosítható, nem bedrótozott beállítások (pl. connection string appsettings.json-ban), ha lehet Options minta használata.
-- ASP.NET Core Razor Pages vagy Blazor WASM-ban készült alkalmazás.
+- *ASP.NET Razor Pages* vagy *Blazor WASM*-ban készült alkalmazás.
 
 ## Megajánlott jegyhez előnyt jelentenek
 

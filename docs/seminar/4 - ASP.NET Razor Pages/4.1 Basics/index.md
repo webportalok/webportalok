@@ -1,8 +1,12 @@
-# 4.1. Projekt felépítése és alapok
+# 4.1. Projekt felépítése, alapok
 
 Ezen a laboron egy ASP.NET Core Razor Pages projektet hozunk létre, melyben megnézzük, hogyan lehet szerver oldalon a Razor Page-eket felhasználva webes alkalmazást fejleszteni.
 
 Eddig a UI réteg helyett csak egy egyszerű Console App-ot használtunk arra, hogy kipróbáljuk a backend alkalmazásunkat. Most ezt cseréljük le, az ASP.NET Core Razor Page projektre és tekintsük át a projekt felépítését
+
+## Kiinduló alkalmazás letöltése
+
+Az előző laboron elkezdett kódot folytatjuk tovább és az összes ASP.NET Razor Pages-es labort ide fogjuk elkészíteni.
 
 ## Projekt létrehozása
 
