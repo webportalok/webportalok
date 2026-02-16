@@ -24,7 +24,7 @@
     
     
       
-        <title>MS SQL ADATBÁZIS ÉS EF ALAPOK - VIAUJV83 - Webportálok fejlesztése</title>
+        <title>0. MS-SQL adatbázis és EF (opcionális) - VIAUJV83 - Webportálok fejlesztése</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ms-sql-adatbazis-es-ef-alapok" class="md-skip">
+        <a href="#0-ms-sql-adatbazis-es-ef-opcionalis" class="md-skip">
           Kihagyás
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MS SQL ADATBÁZIS ÉS EF ALAPOK
+              0. MS-SQL adatbázis és EF (opcionális)
             
           </span>
         </div>
@@ -656,7 +656,7 @@
   <span class="md-ellipsis">
     
   
-    MS SQL ADATBÁZIS ÉS EF ALAPOK
+    0. MS-SQL adatbázis és EF (opcionális)
   
 
     
@@ -674,7 +674,7 @@
   <span class="md-ellipsis">
     
   
-    MS SQL ADATBÁZIS ÉS EF ALAPOK
+    0. MS-SQL adatbázis és EF (opcionális)
   
 
     
@@ -704,17 +704,6 @@
     <span class="md-ellipsis">
       
         Bevezetés
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adatbazis-letrehozasa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adatbázis létrehozása
       
     </span>
   </a>
@@ -1311,17 +1300,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#adatbazis-letrehozasa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adatbázis létrehozása
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1347,28 +1325,15 @@
   
 
 
-<h1 id="ms-sql-adatbazis-es-ef-alapok">MS SQL ADATBÁZIS ÉS EF ALAPOK<a class="headerlink" href="#ms-sql-adatbazis-es-ef-alapok" title="Permanent link">¶</a></h1>
+<h1 id="0-ms-sql-adatbazis-es-ef-opcionalis">0. MS-SQL adatbázis és EF (opcionális)<a class="headerlink" href="#0-ms-sql-adatbazis-es-ef-opcionalis" title="Permanent link">¶</a></h1>
 <h2 id="bevezetes">Bevezetés<a class="headerlink" href="#bevezetes" title="Permanent link">¶</a></h2>
 <p>A labor célja, az MS SQL Server ismeretek átismétlése, illetve azon hallgatóknak akik még nem foglalkoztak adatbázisokkal a gyakorlatban megmutassuk, hogyan lehet táblákat létrehozni, lekérdezéseket és tárolt eljárásokat készíteni.
 A labor során a hallgatók egy-egy példán keresztül ismerkednek meg a Táblalétrehozást, adatbázis lekérdezések és módosítások készítését, valamint a tárolt eljárások írását.</p>
-<h2 id="adatbazis-letrehozasa">Adatbázis létrehozása<a class="headerlink" href="#adatbazis-letrehozasa" title="Permanent link">¶</a></h2>
-<ol>
-<li>
-<p>Indítsuk el a Microsoft SQL Server Management Studiot-t, majd csatlakozzunk a lokális adatbázis szerverhez, amit a <code>(localdb)\MSSQLLocalDB</code> névvel érünk el.</p>
-</li>
-<li>
-<p>A lokális adatbázis szerver nem teljes SQL szerver és tipikusan fejlesztéshez érdemes használni. A Visual Studio alapértelmezés szerint feltelepíti.</p>
-</li>
-<li>
-<p>Ha a „nagy” SQL szerverhez szeretnénk kapcsolódni, ami a lokális gépen fut, akkor a . (pontot) adjuk meg mint szervernév. Ezt külön telepíteni kell.</p>
-</li>
-<li>
-<p>Az Object explorerben jobb klikk a Databases-re és válasszuk a New Database opciót, majd adjuk meg az adatbázis nevét, ami legyen TesztDB. Bal oldalon még az Options fül lehet érdekes, ahol számos adatbázis beállítást meg lehet adni, de ezeket most nem módosítjuk, jó az alapértelmezett beállítás.</p>
-</li>
-<li>
-<p>Az Ok-ra kattintva létrejön az adatbázis és az Object Explorerben a Databases alatt meg is jelenik.</p>
-</li>
-</ol>
+<p>Mivel ez egy opcionális anyag, csak azok számára akiknek új az Entity Framework és adatbázis kezelés, ezért korábbi .NET verziókkal készült, de a lényegi része még mindig ugyanúgy működik!</p>
+<ul>
+<li><a href="images/0.%20Adatbazis%20alapok%20%28opcionalis%29.pdf">0. Adatbazis alapok (opcionalis).pdf</a></li>
+<li><a href="./images/0.%20labor%20-%20TesztData.zip">0. labor - TesztData.zip</a></li>
+</ul>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1376,8 +1341,8 @@ A labor során a hallgatók egy-egy példán keresztül ismerkednek meg a Tábla
           </path>
         </svg>
       </span>
-      <span title="2026. január 13. 13:45:15">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. január 13. 13:45:15 CET"><span class="timeago" datetime="2026-01-13T13:45:15+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. január 13. 13:45:15 CET">2026-01-13</span>
+      <span title="2026. február 16. 17:45:07">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 16. 17:45:07 CET"><span class="timeago" datetime="2026-02-16T17:45:07+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 16. 17:45:07 CET">2026-02-16</span>
       </span>
     </span>
 
