@@ -403,7 +403,7 @@ public class BooksController(IBookService bookService) : BaseController
         => await bookService.GetBookHeaderAsync(bookId);
 
     [HttpGet("headers")]
-    public async Task<IList<BookHeader>> GetBookHeaders(List<int> bookIds)
+    public async Task<IList<BookHeader>> GetBookHeaders([FromQuery] List<int> bookIds)
         => await bookService.GetBookHeadersAsync(bookIds);
 
     [HttpGet("newest/{count:int}")]
@@ -419,7 +419,7 @@ public class BooksController(IBookService bookService) : BaseController
         => await bookService.GetBooksAsync(categoryId);
 
     [HttpGet("/categories/{categoryId}/books/paged")]
-    public async Task<PagedList<BookData>> GetBooksPaged(int? categoryId, LoadDataArgs? args)
+    public async Task<PagedList<BookData>> GetBooksPaged(int? categoryId, [FromQuery] LoadDataArgs? args)
         => await bookService.GetBooksPagedAsync(categoryId, args);
 
     [HttpPost]
@@ -932,14 +932,14 @@ Részeletes leírás a hivatalos dokumentációban található: [ClientGenerator
     }
     ```
 
-1.  Nyissunk egy terminál ablakot a `Generator` könyvtárból és futtassuk le a `apigenerator.ps1` scriptet. Sajnos az alábbi hibaüzenetet dobja, mert az assembly-n nincs helyesen beállítva a Public Key Token.
+1. Nyissunk egy terminál ablakot a `Generator` könyvtárból és futtassuk le a `apigenerator.ps1` scriptet. Sajnos az alábbi hibaüzenetet dobja, mert az assembly-n nincs helyesen beállítva a Public Key Token.
 
     ![alt text](images/nswag-generation-error-publickeytoken.png)
     /// caption
     Nincs beállítva a Public Key Token
     ///
 
-2.  Egészítsük ki a `Program.cs`-t a kiemelt kódrészlettel és kezeljük azt az esetet, amikor az nswag fut, azaz az Environment `SwaggerGenerator`. A feladat annyi, hogy helyesen állítsuk be az ApplicationName-et ha nincs beállítva.
+2. Egészítsük ki a `Program.cs`-t a kiemelt kódrészlettel és kezeljük azt az esetet, amikor az nswag fut, azaz az Environment `SwaggerGenerator`. A feladat annyi, hogy helyesen állítsuk be az ApplicationName-et ha nincs beállítva.
 
     ``` csharp title="Program.cs" hl_lines="8-14"
     if (app.Environment.IsDevelopment())
@@ -964,7 +964,7 @@ Részeletes leírás a hivatalos dokumentációban található: [ClientGenerator
     }
     ```
 
-3.  Ezt követően fordítsuk le az alkalmazást és futtassuk újra a terminálból az `apigenerator.ps1` scriptet. Ha mindent jól csináltunk legenerálja az `ApiClient.cs` fájlt, és elkezdhetünk végre a kliens alkalmazással foglalkozni. A biztonság kedvéért azért fordítsuk is le a teljes solution-t, hogy tényleg helyes-e a generált kód.
+3. Ezt követően fordítsuk le az alkalmazást és futtassuk újra a terminálból az `apigenerator.ps1` scriptet. Ha mindent jól csináltunk legenerálja az `ApiClient.cs` fájlt, és elkezdhetünk végre a kliens alkalmazással foglalkozni. A biztonság kedvéért azért fordítsuk is le a teljes solution-t, hogy tényleg helyes-e a generált kód.
 
     ??? tip "Nem fordul a projekt az `ApiClient` miatt"
         Ha először generáljuk és még nem épít rá kód, egyszerűen töröljük, fordítsuk újra a solution-t és generáljuk újra.
@@ -990,10 +990,16 @@ Részeletes leírás a hivatalos dokumentációban található: [ClientGenerator
     {
         private const string ApiHttpClientName = "BookShop.Web.Server.Api";
 
-        public static void AddApiClientServices(this IServiceCollection services, Uri baseAddress)
+        public static void AddApiClientServices(this IServiceCollection services, Uri baseAddress, Func<DelegatingHandler>? delegatingHandler = null)
         {
             // Configure a named HttpClient with the base address of the API. This client will be used by all API clients to make requests to the API.
             services.AddHttpClient(ApiHttpClientName, client => client.BaseAddress = baseAddress);
+
+            // To allow "ApiHttpClientName" client to be directly injected as an HttpClient instance:
+            services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient(ApiHttpClientName));
+
+            if (delegatingHandler != null)
+                client.AddHttpMessageHandler(delegatingHandler);
 
             // Register API clients with the DI container, specifying the named HttpClient to use for each client.
             services.AddHttpClient<IBooksClient, BooksClient>(ApiHttpClientName);
@@ -1138,7 +1144,7 @@ Ehhez az `Home` page-et fogjuk átírni, így az oldal kezdeti betöltésekor a 
 
 8. Így kipróbálva az alkalmazást tényleg hálózati forgalom nélkül tudunk átnavigálni a Book oldalra.
 
-9.  Hasonlóan készítsük el, hogy a legújabb könyvek alatt az akciós könyvek is megjelenjenek. Itt figyeljünk arra is, hogy csak akkor jelenjen meg ez a blokk, ha a listában található könyv.
+9. Hasonlóan készítsük el, hogy a legújabb könyvek alatt az akciós könyvek is megjelenjenek. Itt figyeljünk arra is, hogy csak akkor jelenjen meg ez a blokk, ha a listában található könyv.
 
     ??? info "Segítség - Akciós könyvek megjelenítése"
         ``` aspx-cs title="Home.razor" hl_lines="1"

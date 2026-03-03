@@ -119,9 +119,12 @@ nav:
           - seminar/4 - ASP.NET Razor Pages/4.4 Admin pages/index.md
       - "5. Blazor WASM":
           - seminar/5 - Blazor/5.1 Basics/index.md
-          - seminar/5 - Blazor/5.2 Main pages/index.md
-          - seminar/5 - Blazor/5.3 Felhasznalokezeles/index.md
-          - seminar/5 - Blazor/5.4 Admin pages/index.md
+          - seminar/5 - Blazor/5.2 Lifecycle/index.md
+          - seminar/5 - Blazor/5.3 Category and books/index.md
+          - seminar/5 - Blazor/5.4 Cart and Review/index.md
+          - seminar/5 - Blazor/5.5 Felhasznalokezeles/index.md
+          - seminar/5 - Blazor/5.6 Admin pages/index.md
+          - seminar/5 - Blazor/5.7 Radzen/index.md
   - "Házi feladatok":
       - homework/01 - Specifikacio/index.md
       - homework/02 - Nagy hazi feladat/index.md
