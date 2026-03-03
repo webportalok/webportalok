@@ -976,7 +976,7 @@ A felhasználók a könyvekhez hozzászólásokat (és ajánlókat is írhatnak)
             <div class="comment d-flex p-3">
                 <div class="d-flex flex-column align-items-center justify-content-center flex-shrink-0 me-3">
                     <i class="bi bi-person-square fs-1"></i>
-                    div class="text-muted">@(comment.CreatedDate.DateTime.ToShortDateString())</div>
+                    <div class="text-muted">@(comment.CreatedDate.DateTime.ToShortDateString())</div>
                     <div class="text-muted">@(comment.CreatedDate.DateTime.ToShortTimeString())</div>
                 </div>
                 <div class="w-100">
@@ -1061,9 +1061,10 @@ A felhasználók a könyvekhez hozzászólásokat (és ajánlókat is írhatnak)
                 </div>
             </form>
         </div>
-    </div>
-    <div class="col-lg-6">
-        @* TODO: Ajánlók *@
+
+        <div class="col-lg-6">
+            @* TODO: Ajánlók *@
+        </div>
     </div>
     ```
 
