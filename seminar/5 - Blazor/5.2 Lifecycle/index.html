@@ -1,0 +1,2035 @@
+<!DOCTYPE html><html lang="hu" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Gábor Gincsai">
+      
+      
+        <link rel="canonical" href="https://webportalok.github.io/webportalok/seminar/5%20-%20Blazor/5.2%20Lifecycle/">
+      
+      
+        <link rel="prev" href="../5.1%20Basics/">
+      
+      
+        <link rel="next" href="../5.3%20Category%20and%20books/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>5.2. Komponens életciklus - VIAUJV83 - Webportálok fejlesztése</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../extra-material-theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#52-komponens-eletciklus" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-header__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+      
+  <img src="../../../logo-bme-aut.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VIAUJV83 - Webportálok fejlesztése
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5.2. Komponens életciklus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red" aria-label="Váltás sötét témára" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét témára" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo" aria-label="Váltás világos témára" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos témára" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    webportalok
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Webportálok fejlesztése
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../information/terms%20of%20use/" class="md-tabs__link">
+          
+  
+  
+  Tudnivalók
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../0%20-%20Adatbazis%20alapok/" class="md-tabs__link">
+          
+  
+  
+  Laborok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../homework/01%20-%20Specifikacio/" class="md-tabs__link">
+          
+  
+  
+  Házi feladatok
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="VIAUJV83 - Webportálok fejlesztése" class="md-nav__button md-logo" aria-label="VIAUJV83 - Webportálok fejlesztése" data-md-component="logo">
+      
+  <img src="../../../logo-bme-aut.png" alt="logo">
+
+    </a>
+    VIAUJV83 - Webportálok fejlesztése
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/webportalok/webportalok" title="Főoldalra ugrás" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    webportalok
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webportálok fejlesztése
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tudnivalók
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tudnivalók
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/terms%20of%20use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Felhasználási feltételek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tárgy információk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Házi feladat követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feladatok beadása (GitHub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hozzájárulás az anyaghoz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laborok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Laborok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0%20-%20Adatbazis%20alapok/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. MS-SQL adatbázis és EF (opcionális)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Tervezes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Tervezés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20Projekt%20struktura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Project struktúra és adatmodell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Backend%20services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Kiinduló Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5">
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. ASP.NET Razor Pages
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. ASP.NET Razor Pages
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.1%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1. Projekt felépítése, alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.2%20Main%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2. Főbb oldalak létrehozása
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.3%20Felhasznalokezeles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3. Felhasználó kezelés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Blazor WASM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Blazor WASM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1. Projekt felépítése, alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2. Komponens életciklus
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2. Komponens életciklus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#komponens-eletciklus-metodusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Komponens életciklus metódusok
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Komponens életciklus metódusok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setparametersasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetParametersAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oninitializedasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnInitialized{Async}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onparameterssetasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnParametersSet{Async}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onafterrenderasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnAfterRender{Async}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispose
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#egyeb-fontos-fuggvenyek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egyéb fontos függvények
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Egyéb fontos függvények">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statehaschanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateHasChanged
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StateHasChanged">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esemeny-kezelok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esemény kezelők
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldrender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ShouldRender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buildrendertree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BuildRenderTree
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aszinkronitas-hatasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aszinkronitás hatása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pelda-oldal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Példa oldal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3%20Category%20and%20books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3. Kategóriák és könyvek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.4%20Cart%20and%20Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4. Kosár és hozzászólások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5%20Felhasznalokezeles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5. Felhasználó kezelés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.6%20Admin%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.7%20Radzen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.7. Radzen komponens library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Házi feladatok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Házi feladatok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework/01%20-%20Specifikacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specifikáció készítése
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework/02%20-%20Nagy%20hazi%20feladat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nagy házi feladat készítése
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#komponens-eletciklus-metodusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Komponens életciklus metódusok
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Komponens életciklus metódusok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setparametersasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetParametersAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oninitializedasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnInitialized{Async}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onparameterssetasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnParametersSet{Async}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onafterrenderasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnAfterRender{Async}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispose
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#egyeb-fontos-fuggvenyek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egyéb fontos függvények
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Egyéb fontos függvények">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statehaschanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateHasChanged
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StateHasChanged">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esemeny-kezelok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esemény kezelők
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldrender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ShouldRender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buildrendertree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BuildRenderTree
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aszinkronitas-hatasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aszinkronitás hatása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pelda-oldal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Példa oldal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/webportalok/webportalok/edit/master/docs/seminar/5 - Blazor/5.2 Lifecycle/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="52-komponens-eletciklus">5.2. Komponens életciklus<a class="headerlink" href="#52-komponens-eletciklus" title="Permanent link">¶</a></h1>
+<p>A Blazor alapú fejlesztés alapvető feltétel, hogy értsük a Blazor életciklusát, ezért ezt most alaposan áttekintjük. Az életciklusa a <a href="https://github.com/dotnet/aspnetcore/blob/main/src/Components/Components/src/ComponentBase.cs">ComponentBase</a> ősosztály határozza meg.</p>
+<p>A Blazor komponensek számos virtuális metódussal rendelkeznek, amelyeket felüldefiniálva az alkalmazásunk viselkedését befolyásolhatjuk. Ezek a metódusok a komponens élettartama alatt különböző időpontokban futnak. Az előző laboron már használtunk egy ilyen eseményt az <code>InitializeAsync</code> a kezdőoldalon, hogy betöltsük a könyv listákat.</p>
+<p>A következő ábra az életciklus-metódusok folyamatát vázolja fel. Itt csak az alapvető folyamatot nézzük, az aszinkronitás hatását még nem vizsgáljuk.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/component-lifecycle.png" data-desc-position="bottom"><img alt="Component Lifecycle" src="images/component-lifecycle.png"></a></p>
+<figcaption>
+<p>Komponens életciklusa</p>
+</figcaption>
+</figure>
+<p>Az ábrán láthatjuk, hogy</p>
+<ul>
+<li>milyen folyamat fut végig, ha egy szülő komponens renderel ki egy gyerek komponenst,</li>
+<li>az eseménykezelők után automatikusan fut a <code>StateHasChanged</code>,</li>
+<li>hogyan szűnik meg egy eltávolított komponens.</li>
+</ul>
+<h2 id="komponens-eletciklus-metodusok">Komponens életciklus metódusok<a class="headerlink" href="#komponens-eletciklus-metodusok" title="Permanent link">¶</a></h2>
+<p>Tekintsük at a fontosabb virtuális metódusokat, amelyek meghívódnak egy komponens renderelése során. Ismerjük meg, hogy melyik mire való, mikor érdemes felüldefiniálni.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/lifecycle-basics.png" data-desc-position="bottom"><img alt="Lifecycle basics" src="images/lifecycle-basics.png" width="500"></a></p>
+<figcaption>
+<p>Életciklus metódusok sorrendje (áttekintés)</p>
+</figcaption>
+</figure>
+<h3 id="setparametersasync">SetParametersAsync<a class="headerlink" href="#setparametersasync" title="Permanent link">¶</a></h3>
+<p>A <code>SetParametersAsync</code> a szülőkomponenstől kapott vagy az URL-ben lévő paramétereket állítja be.</p>
+<p>A <code>SetParametersAsync(ParameterView)</code> alapértelmezett implementációja beállítja az összes olyan <code>Parameter</code> vagy <code>CascadingParameter</code> attribútummal ellátott tulajdonság értékét, amelyhez tartozik megfelelő érték a <code>ParameterView</code>-ban. Azok a paraméterek, amelyekhez nem tartozik megfelelő érték, változatlanok maradnak.</p>
+<p>Ha <code>await</code> szerel a metódusban, akkor az első <code>await</code>-nél folytatódik az életciklus a következő metódus meghívásával, ami egy új komponens esetén az <code>OnInitialized{Async}</code>, egyébként pedig az <code>OnParametersSet{Async}</code></p>
+<p>Fontos, hogy a <code>base.SetParametersAsync</code> metódust az <code>await</code> utasítások előtt kell meghívni, különben <code>InvalidOperationException</code>-t kapunk.</p>
+<p>Általában ezt a metódust nem szoktuk felüldefiniálni.</p>
+<h3 id="oninitializedasync">OnInitialized{Async}<a class="headerlink" href="#oninitializedasync" title="Permanent link">¶</a></h3>
+<p>A <code>OnInitialized{Async}</code> metódusokat arra használjuk, hogy egy komponenst inicializáljunk a teljes élettartamára. Azaz csak egyszer hívódik meg. Ebből következik, hogy a paraméterek változása nem befolyásolhatják az inicializálást. Tehát itt csak olyan adatokat szabad betölteni, melynek értéke nem függ a paraméterek változásától.</p>
+<p>A <code>SetParametersAsync</code> után, vagy az <code>SetParametersAsync</code> első <code>await</code>-je után azonnal hívódik, miután már a paraméterek beállításra kerültek. Tehát az inicializáció során fel tudjuk használni a paraméterek aktuális értékét.</p>
+<p>Szinkron inicializáció esetén a szülő inicializálása biztosan befejeződik a gyermekkomponens inicializálása előtt. Aszinkron esetben azonban ez nem garatálható. Gondoljunk bele, hogy a szülő komponenst több lassú aszinkron kérést is végrehajt, míg a gyerek komponens csak egy gyorsat.</p>
+<p>Ha csak szinkron művelet szeretnénk végrehajtani, akkor az <code>OnInitialized</code> metódust definiáljuk felül, ami korábban hívódik mint az aszinkron. Ha szinkron és aszinkron műveletet is végre kell hajtani, akkor vagy válaszuk ketté és definiáljuk felül mindkét metódust, vagy az aszinkron elején végezzük el a szinkron műveteket.</p>
+<p>Nem szükséges meghívni a <code>ComponentBase.OnInitializedAsync</code> metódust, kivéve ha egy egyedi ősosztályt használunk saját logikával.</p>
+<p>A komponensnek biztosítania kell, hogy érvényes állapotban legyen a rendereléshez akkor is, amikor az <code>OnInitializedAsync</code> egy esetleg még be nem fejezett <code>Task</code>-ra vár.</p>
+<p>Az első <code>await</code>-nél lefut egy render ciklus (a komponens kirenderelődik), felfüggesztve addig az <code>OnInitializedAsync</code> futását. A metódus teljes lefutása után folytatja a következő életciklus metódus <code>OnParametersSet{Async}</code> meghívásával, de nem hív <code>StateHasChanged</code>-et, mert azt majd az <code>OnParametersSet{Async}</code> biztosan ki fogja váltani.</p>
+<p>Általában itt iratkozunk fel eseményekre is, azonban fontos, hogy ha feliratkoztunk valamilyen eseményre, akkor a <code>Dispose</code>-ban le kell róla iratkozni.</p>
+<h3 id="onparameterssetasync">OnParametersSet{Async}<a class="headerlink" href="#onparameterssetasync" title="Permanent link">¶</a></h3>
+<p>Mikor hívódik meg?</p>
+<ul>
+<li>Az <code>OnParametersSet{Async}</code> a komponens inicializációja <code>OnInitialized{Async}</code> után fut.</li>
+<li>Vagy amikor a szülőkomponens újrarenderelődik és a következőket adja át:<ul>
+<li>Primitív vagy immutable (változhatatlan) típusok esetén, ha legalább egy paraméter megváltozott.</li>
+<li>Komplex típusú paraméterek esetén a keretrendszer nem tudhatja, hogy a komplex típusú paraméter belső állapota megváltozott‑e, ezért a komplex típusú paramétert, a keretrendszer mindig úgy kezeli, mintha a megváltozott volna.</li>
+</ul>
+</li>
+</ul>
+<p>Az <code>OnParametersSet{Async}</code> akkor is meghívódhat, ha a paraméterértékek nem változtak. E miatt a fejlesztőnek ellenőriznie kell, hogy valóban megváltoztak-e a paraméterek, mielőtt újrainicializálná az ezekre az értékekre épülő adatokat vagy állapotot.</p>
+<p>Itt is igaz, hogy az <code>OnParametersSet</code> az <code>OnParametersSetAsync</code> előtt fut.</p>
+<p>Az első <code>await</code>-nél a metódus futása felfüggesztődik és lefut egy rendereli ciklus, amit egy <code>StateHasChanged</code> hívás vált ki. A metódus lefutása után végén hívódik egy <code>StateHasChanged</code>, tehát itt is lefut egy renderelés.</p>
+<h3 id="onafterrenderasync">OnAfterRender{Async}<a class="headerlink" href="#onafterrenderasync" title="Permanent link">¶</a></h3>
+<p>Az <code>OnAfterRender{Async}</code> akkor kerül meghívásra, amikor a komponens már interaktívan kirenderelődött, és a felhasználói felület frissítése befejeződött, például miután az elemek bekerültek a böngésző DOM‑jába. Ezen a ponton az elem‑ és komponensreferenciák már rendelkezésre állnak.</p>
+<p>Ezt a fázist arra érdemes használni, hogy további inicializálási lépéseket hajtsunk végre a renderelt tartalommal, például olyan JS‑interop hívásokat, amelyek a DOM‑elemekkel működnek együtt.</p>
+<p>Az <code>OnAfterRenderAsync</code> esetében a komponens nem renderelődik újra automatikusan a visszaadott Task befejeződése után, hogy elkerülje a végtelen renderelési ciklust.</p>
+<p>A szinkron metódus az aszinkron előtt fut le.</p>
+<p>Az <code>OnAfterRender{Async}</code> kap egy <code>firstRender</code> paramétert, ezt tudjuk arra felhasználni, hogy az ittlévő inicializálások csak egyszer fussanak le.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/ms-render-lifecycle.png" data-desc-position="bottom"><img alt="alt text" src="images/ms-render-lifecycle.png" width="350"></a></p>
+<figcaption>
+<p>A renderelés folyamata</p>
+</figcaption>
+</figure>
+<h3 id="dispose">Dispose<a class="headerlink" href="#dispose" title="Permanent link">¶</a></h3>
+<p>Ha egy komponens implementálja az <code>IDisposable</code> interfészt, akkor a Blazor meghívja a <code>Dispose</code> metódust, amikor a komponenst eltávolítják a szülő renderfájából, így lehetőségünk van leiratkozni a korábban feliratkozott eseményekről..</p>
+<p>Ha nem használjuk a code behind-ot, akkor az <code>IDisposable</code> implementálásához hozzá kell adnunk az <code>@implements</code> kódsort a razor fájlhoz.</p>
+<h2 id="egyeb-fontos-fuggvenyek">Egyéb fontos függvények<a class="headerlink" href="#egyeb-fontos-fuggvenyek" title="Permanent link">¶</a></h2>
+<p>A fenti metódusokon felül van egy pár kevésbé fontos, vagy kevésbé látványos is, amit szintén áttekintünk.</p>
+<h3 id="statehaschanged">StateHasChanged<a class="headerlink" href="#statehaschanged" title="Permanent link">¶</a></h3>
+<p>A <code>StateHasChanged</code> értesíti a komponenst arról, hogy az állapota megváltozott. Meghívása egy újrarenderelést ütemez be, amely akkor fut le, amikor az alkalmazás fő szála felszabadul.</p>
+<p>A <code>StateHasChanged</code> automatikusan meghívódik az <code>EventCallback</code> metódusok esetében.</p>
+<h4 id="esemeny-kezelok">Esemény kezelők<a class="headerlink" href="#esemeny-kezelok" title="Permanent link">¶</a></h4>
+<p>Az eseménykezelők lehetnek szinkronok vagy aszinkronok.</p>
+<ul>
+<li>Szinkron eseménykezelő esetén a <code>StateHasChanged</code> az eseménykezelő lefutása után hívódik meg.</li>
+<li>Aszinkron metódus esetén a <code>StateHasChanged</code> kétszer hívódik meg: egyszer, amikor a metódus szinkron része befejeződik, és másodszor akkor, amikor a feladat (Task) befejeződik.</li>
+</ul>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/ms-event-handler-lifecycle.png" data-desc-position="bottom"><img alt="alt text" src="images/ms-event-handler-lifecycle.png" width="400"></a></p>
+<figcaption>
+<p>Eseménykezelő mikor vált ki renderelést</p>
+</figcaption>
+</figure>
+<h3 id="shouldrender">ShouldRender<a class="headerlink" href="#shouldrender" title="Permanent link">¶</a></h3>
+<p>A <code>ShouldRender</code> minden egyes komponens rendereléskor meghívódik. Felüldefiniálásával szabályozható a felület frissítése. Ha a metódus visszatérési értéke <code>true</code>, a UI frissül.</p>
+<p>Felüldefiniálásától függetlenül a komponens első renderelése mindig megtörténik. Az alapértelmezett implementáció mindig <code>true</code>-t ad vissza.</p>
+<h3 id="buildrendertree">BuildRenderTree<a class="headerlink" href="#buildrendertree" title="Permanent link">¶</a></h3>
+<p>Vagy felüldefiniáljuk ezt a metódust, vagy Razor szintaxist használunk, hogy a fordító generálja ezt a metódust. Az osztályon belüli egyéb kódnak <em>nem szabad</em> közvetlenül meghívnia a <code>BuildRenderTree</code> metódust.</p>
+<p>Ez a metódus a komponens tartalmát egy memóriában tárolt reprezentációba (RenderTree) rendereli, amely azt írja le, hogy mi jelenjen meg a felhasználó számára.</p>
+<p>Más kliensoldali technológiák, mint például a React és az Angular, úgy kerülik el ezt a problémát, hogy Virtual DOM‑ot és Incremental DOM‑ot is alkalmaznak. A Virtual DOM a HTML‑oldalt felépítő elemek memóriabeli reprezentációja. Ez az adat egy HTML elemekből álló fát hoz létre, mintha az elemek egy HTML oldalon szerepelnének.</p>
+<p>A Blazor komponensek ezt a Virtual DOM‑ot a Razor nézeteikben hozzák létre a <code>BuildRenderTree</code> metóduson keresztül.</p>
+<p>A nézetet reprezentáló adatszerkezet felépítésének két jelentős előnye van:</p>
+<ul>
+<li>A virtuális HTML elemek attribútum értékei a kódban akár többször is módosíthatók egy összetett frissítési folyamat során anélkül, hogy a böngészőnek minden egyes módosítás után újra kellene renderelnie és újra kellene számolnia az elrendezést. A böngésző csak a folyamat végén frissít.</li>
+<li>A renderfák két fa összehasonlításával is létrehozhatók, majd egy olyan új fa építhető, amely a kettő közötti különbséget tartalmazza. Ez lehetővé teszi az Incremental DOM megközelítés alkalmazását.”</li>
+</ul>
+<h2 id="aszinkronitas-hatasa">Aszinkronitás hatása<a class="headerlink" href="#aszinkronitas-hatasa" title="Permanent link">¶</a></h2>
+<p>A Blazor nem várja meg a hosszú ideig futó aszinkron metódusok befejeződését, mielőtt renderelné a komponenst, hanem a lehető leghamarabb elindítja a renderelést. Ez lehetővé teszi, hogy a komponens már akkor is megjelenítsen valamit, amikor a háttérben még olyan feladatokat végez, mint például az adatok lekérdezése a szerverről.</p>
+<p>Az aszinkron metódus az első <code>await</code>-nél felfüggeszti a futását és egy renderelést indít a <code>StateHasChanged</code> meghívásával, hogy a felhasználónak ne kelljen várnia a frissítések megjelenésére.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/ms-component-lifecycle.png" data-desc-position="bottom"><img alt="alt text" src="images/ms-component-lifecycle.png" width="400"></a></p>
+<figcaption>
+<p>Aszinkronitás kezelése a komponens életciklusban.</p>
+</figcaption>
+</figure>
+<p>Az <code>OnRenderAsync</code> kivételnek tűnhet, mivel egyik esetben sem végez további műveletet. Ha azonban figyelembe vesszük, hogy a renderelés az egész végrehajtási lánc lezárása, akkor inkább tekinthetjük a lánc befejezésének, mintsem "nem csinál semmit" állapotnak.  </p>
+<p>Ami pedig az <code>await</code> utáni renderelést illeti: ha erre szükség van, azt a fejlesztőnek kell kifejezetten kezdeményeznie a <code>StateHasChanged</code> meghívásával, különben egy <code>await</code> az <code>OnAfterRenderAsync</code> metódusban végtelen ciklust okozna.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/component-lifecycle-async.png" data-desc-position="bottom"><img alt="Component Lifecycle Async" src="images/component-lifecycle-async.png"></a></p>
+<figcaption>
+<p>Komponens életciklusa aszinkron eseményekkel</p>
+</figcaption>
+</figure>
+<h2 id="pelda-oldal">Példa oldal<a class="headerlink" href="#pelda-oldal" title="Permanent link">¶</a></h2>
+<p>Hozzunk létre egy <code>Lifecycle</code> oldalt, ahol meg tudjuk nézni futás közben is, milyen sorrendben futnak az események.</p>
+<ul>
+<li>Használjunk itt is code behind-ot.</li>
+<li>Az oldal URL-je legyen <code>/lifecycle/{Id:int}</code>. Mivel int?-et nem lehet megadni a <code>@page "/lifecycle"</code> URL-t is felvettük az oldalhoz.</li>
+</ul>
+<div class="highlight"><span class="filename">Lifecycle.razor</span><pre><span></span><code>@page<span class="w"> </span>"/lifecycle"
+@page<span class="w"> </span>"/lifecycle/{Id:int}"
+<span class="nt">&lt;h3&gt;</span>Component<span class="w"> </span>lifecycle<span class="nt">&lt;/h3&gt;</span>
+</code></pre></div>
+<ul>
+<li>Nem adtuk meg, hogy a ComponentBase-ből származik, mert ott van mellette a razor fájl és a code behind annak az osztálynak a másik fele <code>partial class</code></li>
+<li>Várjuk az Id paramétert egy tulajdonságban, amit a razor fájlban adtunk meg <code>@page "/lifecycle/{Id:int}"</code></li>
+<li><code>Console.WriteLine</code> segítségével írunk a böngésző konzoljára (F12)</li>
+<li>Felüldefiniáltuk az életciklus metódusokat, és mindenhol kiírjuk, hogy lefutott</li>
+<li>Tettünk bele <code>await Task.Delay(100)</code> hívásokat, hogy lássuk mi történne ha ott egy aszinkron metódus futna.</li>
+</ul>
+<div class="highlight"><span class="filename">Lifecycle.razor.cs</span><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Components</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Diagnostics</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">BookShop.Web.Client.Pages</span><span class="p">;</span>
+
+<span class="hll"><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Lifecycle</span>
+</span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="na">[Parameter]</span>
+</span><span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">Stopwatch</span><span class="w"> </span><span class="n">stopwatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stopwatch</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SetParametersAsync</span><span class="p">(</span><span class="n">ParameterView</span><span class="w"> </span><span class="n">parameters</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">stopwatch</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: SetParametersAsync - 1 called. Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">SetParametersAsync</span><span class="p">(</span><span class="n">parameters</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: SetParametersAsync - 2 called. Id: {Id}"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulate async work</span>
+
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: SetParametersAsync - 3 called. + 100 Id: {Id}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">override</span><span class="w"> </span><span class="k">protected</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnInitialized</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">base</span><span class="p">.</span><span class="n">OnInitialized</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"OnInitialized called. Id: {Id}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">override</span><span class="w"> </span><span class="k">protected</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnInitializedAsync</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnInitializedAsync - 1 called. Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulate async work</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnInitializedAsync - 2 called. + 100 Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulate async work</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnInitializedAsync - 3 called. + 100 Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulate async work</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnInitializedAsync - 4 called. + 100 Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">OnInitializedAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnInitializedAsync - 5 called. Id: {Id}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnParametersSet</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">base</span><span class="p">.</span><span class="n">OnParametersSet</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"OnParametersSet called. Id: {Id}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnParametersSetAsync</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnParametersSetAsync - 1 called. Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulate async work</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnParametersSetAsync - 2 called. + 100 Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulate async work</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnParametersSetAsync - 3 called. + 100 Id: {Id}"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">OnParametersSetAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnParametersSetAsync - 4 called. Id: {Id}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">ShouldRender</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: ShouldRender called. Id: {Id}"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">ShouldRender</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAfterRender</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">firstRender</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">base</span><span class="p">.</span><span class="n">OnAfterRender</span><span class="p">(</span><span class="n">firstRender</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"OnAfterRender called. Id: {Id}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">OnAfterRenderAsync</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">firstRender</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">firstRender</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnAfterRenderAsync - 1 called. Id: {Id}, {firstRender}"</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulate async work</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnAfterRenderAsync - 2 called. + 100 Id: {Id}, {firstRender}"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">OnAfterRenderAsync</span><span class="p">(</span><span class="n">firstRender</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{stopwatch.ElapsedMilliseconds} ms: OnAfterRenderAsync - 3 called. Id: {Id}, {firstRender}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A fenti kódot futtatva a <code>/lifecycle/2</code> az alábbi sorrend jelenik meg a konzolon.</p>
+<ul>
+<li>Érdemes figyelni, hogy az ID érték mikor állítódik be, hiszen az egy <code>[Parameter]</code>.</li>
+<li>Érdemes a várakozási időt változtatni, hogy akkor hogyan változnak a hívások sorrendjei, hiszen a kód csak egy szálon tud futni.</li>
+</ul>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/lifecycle-result.png" data-desc-position="bottom"><img alt="Lifecycle result" src="images/lifecycle-result.png" width="350"></a></p>
+<figcaption>
+<p>Komponens életciklus sorrendje futás közben.</p>
+</figcaption>
+</figure>
+  <hr>
+  <div class="md-source-file">
+    <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z">
+          </path>
+        </svg>
+      </span>
+      <span title="2026. március 3. 20:41:50">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. március 3. 20:41:50 CET"><span class="timeago" datetime="2026-03-03T20:41:50+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. március 3. 20:41:50 CET">2026-03-03</span>
+      </span>
+    </span>
+
+    
+
+    <span class="md-source-file__fact">
+      <span class="md-icon" title="Szerzők">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z">
+          </path>
+        </svg>
+      </span>
+      <span>Szerzők</span>
+      <nav></nav>      
+    </span>
+  </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Vissza a tetejére
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © BME VIK AUT
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.top", "search.suggest", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

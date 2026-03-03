@@ -13,7 +13,7 @@
         <link rel="prev" href="../../4%20-%20ASP.NET%20Razor%20Pages/4.4%20Admin%20pages/">
       
       
-        <link rel="next" href="../5.2%20Main%20pages/">
+        <link rel="next" href="../5.2%20Lifecycle/">
       
       
         
@@ -1321,14 +1321,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.2%20Main%20pages/" class="md-nav__link">
+      <a href="../5.2%20Lifecycle/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.2. Főbb oldalak létrehozása
+    5.2. Komponens életciklus
   
 
     
@@ -1349,14 +1349,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="../5.3%20Category%20and%20books/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.3. Felhasználó kezelés
+    5.3. Kategóriák és könyvek
   
 
     
@@ -1377,14 +1377,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.4%20Admin%20pages/" class="md-nav__link">
+      <a href="../5.4%20Cart%20and%20Review/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.4. Admin oldalak
+    5.4. Kosár és hozzászólások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5%20Felhasznalokezeles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5. Felhasználó kezelés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.6%20Admin%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.7%20Radzen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.7. Radzen komponens library
   
 
     
@@ -2252,7 +2336,7 @@
 <span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetBookHeaderAsync</span><span class="p">(</span><span class="n">bookId</span><span class="p">);</span>
 
 <span class="w">    </span><span class="na">[HttpGet("headers")]</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IList</span><span class="o">&lt;</span><span class="n">BookHeader</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetBookHeaders</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bookIds</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IList</span><span class="o">&lt;</span><span class="n">BookHeader</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetBookHeaders</span><span class="p">([</span><span class="n">FromQuery</span><span class="p">]</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bookIds</span><span class="p">)</span>
 <span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetBookHeadersAsync</span><span class="p">(</span><span class="n">bookIds</span><span class="p">);</span>
 
 <span class="w">    </span><span class="na">[HttpGet("newest/{count:int}")]</span>
@@ -2268,7 +2352,7 @@
 <span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetBooksAsync</span><span class="p">(</span><span class="n">categoryId</span><span class="p">);</span>
 
 <span class="w">    </span><span class="na">[HttpGet("/categories/{categoryId}/books/paged")]</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">PagedList</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetBooksPaged</span><span class="p">(</span><span class="kt">int?</span><span class="w"> </span><span class="n">categoryId</span><span class="p">,</span><span class="w"> </span><span class="n">LoadDataArgs</span><span class="o">?</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">PagedList</span><span class="o">&lt;</span><span class="n">BookData</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetBooksPaged</span><span class="p">(</span><span class="kt">int?</span><span class="w"> </span><span class="n">categoryId</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">FromQuery</span><span class="p">]</span><span class="w"> </span><span class="n">LoadDataArgs</span><span class="o">?</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
 <span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">bookService</span><span class="p">.</span><span class="n">GetBooksPagedAsync</span><span class="p">(</span><span class="n">categoryId</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
 
 <span class="w">    </span><span class="na">[HttpPost]</span>
@@ -2840,10 +2924,16 @@ Részeletes leírás a hivatalos dokumentációban található: <a href="https:/
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ApiHttpClientName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"BookShop.Web.Server.Api"</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AddApiClientServices</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="n">IServiceCollection</span><span class="w"> </span><span class="n">services</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="w"> </span><span class="n">baseAddress</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AddApiClientServices</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="n">IServiceCollection</span><span class="w"> </span><span class="n">services</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="w"> </span><span class="n">baseAddress</span><span class="p">,</span><span class="w"> </span><span class="n">Func</span><span class="o">&lt;</span><span class="n">DelegatingHandler</span><span class="o">&gt;?</span><span class="w"> </span><span class="n">delegatingHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// Configure a named HttpClient with the base address of the API. This client will be used by all API clients to make requests to the API.</span>
 <span class="w">        </span><span class="n">services</span><span class="p">.</span><span class="n">AddHttpClient</span><span class="p">(</span><span class="n">ApiHttpClientName</span><span class="p">,</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">BaseAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">baseAddress</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// To allow "ApiHttpClientName" client to be directly injected as an HttpClient instance:</span>
+<span class="w">        </span><span class="n">services</span><span class="p">.</span><span class="n">AddScoped</span><span class="p">(</span><span class="n">sp</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">IHttpClientFactory</span><span class="o">&gt;</span><span class="p">().</span><span class="n">CreateClient</span><span class="p">(</span><span class="n">ApiHttpClientName</span><span class="p">));</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">delegatingHandler</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="n">AddHttpMessageHandler</span><span class="p">(</span><span class="n">delegatingHandler</span><span class="p">);</span>
 
 <span class="w">        </span><span class="c1">// Register API clients with the DI container, specifying the named HttpClient to use for each client.</span>
 <span class="w">        </span><span class="n">services</span><span class="p">.</span><span class="n">AddHttpClient</span><span class="o">&lt;</span><span class="n">IBooksClient</span><span class="p">,</span><span class="w"> </span><span class="n">BooksClient</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ApiHttpClientName</span><span class="p">);</span>
@@ -3052,8 +3142,8 @@ Welcome<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </
           </path>
         </svg>
       </span>
-      <span title="2026. február 18. 14:10:23">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 18. 14:10:23 CET"><span class="timeago" datetime="2026-02-18T14:10:23+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 18. 14:10:23 CET">2026-02-18</span>
+      <span title="2026. március 3. 20:41:50">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. március 3. 20:41:50 CET"><span class="timeago" datetime="2026-03-03T20:41:50+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. március 3. 20:41:50 CET">2026-03-03</span>
       </span>
     </span>
 

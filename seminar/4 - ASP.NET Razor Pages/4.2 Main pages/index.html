@@ -1177,14 +1177,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5%20-%20Blazor/5.2%20Main%20pages/" class="md-nav__link">
+      <a href="../../5%20-%20Blazor/5.2%20Lifecycle/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.2. Főbb oldalak létrehozása
+    5.2. Komponens életciklus
   
 
     
@@ -1205,14 +1205,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5%20-%20Blazor/5.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="../../5%20-%20Blazor/5.3%20Category%20and%20books/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.3. Felhasználó kezelés
+    5.3. Kategóriák és könyvek
   
 
     
@@ -1233,14 +1233,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5%20-%20Blazor/5.4%20Admin%20pages/" class="md-nav__link">
+      <a href="../../5%20-%20Blazor/5.4%20Cart%20and%20Review/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.4. Admin oldalak
+    5.4. Kosár és hozzászólások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20Blazor/5.5%20Felhasznalokezeles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5. Felhasználó kezelés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20Blazor/5.6%20Admin%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20Blazor/5.7%20Radzen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.7. Radzen komponens library
   
 
     
@@ -2537,7 +2621,7 @@ Hivatalos dokumentáció: <a href="https://learn.microsoft.com/en-us/aspnet/core
 <span class="w">        </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"comment d-flex p-3"</span><span class="nt">&gt;</span>
 <span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"d-flex flex-column align-items-center justify-content-center flex-shrink-0 me-3"</span><span class="nt">&gt;</span>
 <span class="w">                </span><span class="nt">&lt;i</span><span class="w"> </span><span class="na">class=</span><span class="s">"bi bi-person-square fs-1"</span><span class="nt">&gt;&lt;/i&gt;</span>
-<span class="w">                </span>div<span class="w"> </span>class="text-muted"&gt;@(comment.CreatedDate.DateTime.ToShortDateString())<span class="nt">&lt;/div&gt;</span>
+<span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span>@(comment.CreatedDate.DateTime.ToShortDateString())<span class="nt">&lt;/div&gt;</span>
 <span class="w">                </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span>@(comment.CreatedDate.DateTime.ToShortTimeString())<span class="nt">&lt;/div&gt;</span>
 <span class="w">            </span><span class="nt">&lt;/div&gt;</span>
 <span class="w">            </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"w-100"</span><span class="nt">&gt;</span>
@@ -2623,9 +2707,10 @@ Hivatalos dokumentáció: <a href="https://learn.microsoft.com/en-us/aspnet/core
 </span><span class="w">            </span><span class="nt">&lt;/div&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/form&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>
-<span class="w">    </span>@*<span class="w"> </span>TODO:<span class="w"> </span>Ajánlók<span class="w"> </span>*@
+
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>
+<span class="w">        </span>@*<span class="w"> </span>TODO:<span class="w"> </span>Ajánlók<span class="w"> </span>*@
+<span class="w">    </span><span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 </li>
@@ -2708,8 +2793,8 @@ Hivatalos dokumentáció: <a href="https://learn.microsoft.com/en-us/aspnet/core
           </path>
         </svg>
       </span>
-      <span title="2026. február 12. 13:24:53">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 12. 13:24:53 CET"><span class="timeago" datetime="2026-02-12T13:24:53+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 12. 13:24:53 CET">2026-02-12</span>
+      <span title="2026. március 3. 20:41:50">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. március 3. 20:41:50 CET"><span class="timeago" datetime="2026-03-03T20:41:50+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. március 3. 20:41:50 CET">2026-03-03</span>
       </span>
     </span>
 

@@ -1139,10 +1139,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Önálló feladat: Profil oldalak (opcionális)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3rd-party-login" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1173,11 +1172,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1360,14 +1354,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5%20-%20Blazor/5.2%20Main%20pages/" class="md-nav__link">
+      <a href="../../5%20-%20Blazor/5.2%20Lifecycle/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.2. Főbb oldalak létrehozása
+    5.2. Komponens életciklus
   
 
     
@@ -1388,14 +1382,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5%20-%20Blazor/5.3%20Felhasznalokezeles/" class="md-nav__link">
+      <a href="../../5%20-%20Blazor/5.3%20Category%20and%20books/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.3. Felhasználó kezelés
+    5.3. Kategóriák és könyvek
   
 
     
@@ -1416,14 +1410,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5%20-%20Blazor/5.4%20Admin%20pages/" class="md-nav__link">
+      <a href="../../5%20-%20Blazor/5.4%20Cart%20and%20Review/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5.4. Admin oldalak
+    5.4. Kosár és hozzászólások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20Blazor/5.5%20Felhasznalokezeles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5. Felhasználó kezelés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20Blazor/5.6%20Admin%20pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6. Admin oldalak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20Blazor/5.7%20Radzen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.7. Radzen komponens library
   
 
     
@@ -1811,10 +1889,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Önálló feladat: Profil oldalak (opcionális)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3rd-party-login" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1845,11 +1922,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2886,8 +2958,8 @@ Viszont ha megnézzük a <code>Register.cshtml.cs</code> fájlban a kódot, akko
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/manage-user-profile.png" data-desc-position="bottom"><img alt="Manage user profile" src="images/manage-user-profile.png"></a></li>
 </ul>
 </div>
-<h3 id="3rd-party-login">3<sup>rd</sup> party login<a class="headerlink" href="#3rd-party-login" title="Permanent link">¶</a></h3>
-<h4 id="app-registration-gui">App registration (GUI)<a class="headerlink" href="#app-registration-gui" title="Permanent link">¶</a></h4>
+<h2 id="3rd-party-login">3<sup>rd</sup> party login<a class="headerlink" href="#3rd-party-login" title="Permanent link">¶</a></h2>
+<h3 id="app-registration-gui">App registration (GUI)<a class="headerlink" href="#app-registration-gui" title="Permanent link">¶</a></h3>
 <p>Nagy valószínűséggel ez a megoldás a BME tenantban nem használható, mert részlegesen letiltották.</p>
 <ol>
 <li>
@@ -2924,7 +2996,7 @@ Viszont ha megnézzük a <code>Register.cshtml.cs</code> fájlban a kódot, akko
 </figure>
 </li>
 </ol>
-<h4 id="app-registration-powershell">App registration (powershell)<a class="headerlink" href="#app-registration-powershell" title="Permanent link">¶</a></h4>
+<h3 id="app-registration-powershell">App registration (powershell)<a class="headerlink" href="#app-registration-powershell" title="Permanent link">¶</a></h3>
 <p>Sajnálatos módon a BME Azure-ban ezt a webes felületet már nem lehet elérni, kis trükközéssel még a létrehozás kijátszható, de már beállítani nem tudjuk.</p>
 <ol>
 <li>Indítsunk el egy <strong>VS Code</strong>-ot</li>
@@ -3133,8 +3205,8 @@ Viszont ha megnézzük a <code>Register.cshtml.cs</code> fájlban a kódot, akko
           </path>
         </svg>
       </span>
-      <span title="2026. február 12. 13:31:10">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. február 12. 13:31:10 CET"><span class="timeago" datetime="2026-02-12T13:31:10+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. február 12. 13:31:10 CET">2026-02-12</span>
+      <span title="2026. március 3. 20:41:50">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. március 3. 20:41:50 CET"><span class="timeago" datetime="2026-03-03T20:41:50+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. március 3. 20:41:50 CET">2026-03-03</span>
       </span>
     </span>
 
